@@ -3,7 +3,7 @@
   "displayName": "Ludwig Snippets",
   "description": "Provides Ludwig snippets.",
   "repository": "https://github.com/mhabedank/ludwig-snippets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.91.0"
   },
