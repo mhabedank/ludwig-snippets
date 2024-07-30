@@ -1,7 +1,7 @@
 {
   "name": "ludwig-snippets",
   "displayName": "Ludwig Snippets",
-  "description": "Provides snippets for Ludwig, a declarative deepl learning framework build for scale and efficiency.",
+  "description": "Provides snippets for Ludwig, a declarative deep learning framework build for scale and efficiency.",
   "repository": "https://github.com/mhabedank/ludwig-snippets",
   "version": "0.0.4",
   "engines": {
