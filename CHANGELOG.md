@@ -6,4 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+## [0.0.4] - 2024-07-30
+
+- Added snippets for preprocessing configurations of input features.
+- Created all neccessary file for the extension marketplace.
+- Fixed some typos
+- Added a changelog
+- Added a logo

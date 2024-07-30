@@ -1,7 +1,7 @@
 {
   "name": "ludwig-snippets",
   "displayName": "Ludwig Snippets",
-  "description": "Provides Ludwig snippets.",
+  "description": "Provides snippets for Ludwig, a declarative deepl learning framework build for scale and efficiency.",
   "repository": "https://github.com/mhabedank/ludwig-snippets",
   "version": "0.0.3",
   "engines": {
@@ -9,6 +9,7 @@
   },
   "icon": "images/ludwig_icon.png",
   "publisher": "MartinHabedank",
+  "license": "Apache-2.0",
   "categories": [
     "Snippets",
     "AI",

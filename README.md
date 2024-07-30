@@ -1,5 +1,3 @@
-# ludwig-snippets README
-
 Ludwig Snippets provides code snippets for writing configuration files for [Ludwig](https://ludwig.ai/latest/).
 
 > **Info:** This extension is still under development and it provides only a small subset of Ludwigs configuration items.
