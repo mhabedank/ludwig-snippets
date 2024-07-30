@@ -23,7 +23,7 @@ Here is the full list of snippets.
 | input-feature-list, ifl  | Adding a set of three input features.  |
 | output-feature-list, ofl | Adding a set of three output features. |
 | add-input-feature, aif   | Adding a single input feature.         |
-| add-output-feature, aif  | Adding a single output feature.        |
+| add-output-feature, aof  | Adding a single output feature.        |
 
 ### Preprocessing Snippets
 
@@ -33,7 +33,7 @@ Here is the full list of snippets.
 | npp      | Adds a number preprocessor.     |
 | cpp      | Adds a category preprocessor.   |
 | bgpp     | Adds a bag preprocessor.        |
-| stgp     | Adds a set preprocessor.        |
+| stpp     | Adds a set preprocessor.        |
 | sqpp     | Adds a sequence preprocessor.   |
 | txpp     | Adds a text preprocessor.       |
 | vpp      | Adds a vector preprocessor.     |
