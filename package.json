@@ -1,7 +1,8 @@
 {
   "name": "ludwig-snippets",
   "displayName": "Ludwig Snippets",
-  "description": "Provides ludwig snippets.",
+  "description": "Provides Ludwig snippets.",
+  "repository": "https://github.com/mhabedank/ludwig-snippets",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.91.0"
