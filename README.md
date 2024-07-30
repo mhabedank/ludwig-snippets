@@ -8,7 +8,7 @@ Ludwig Snippets provides code snippets for writing configuration files for [Ludw
 - Add an input feature list with `input-feature-list`.
 - Add an output feature list with `output-feature-list`.
 - Add a single input or output feature with `add-input-feature` or `add-output-feature`.
-- Add type specific preprocessors by using `<type>-preprocessing (or the an appriviation). For example:
+- Add type specific preprocessors by using `<type>-preprocessing` (or an appriviation). For example:
   - Add binary preprocessor with `bpp`
   - Add text preprocessor with `txpp`
   - Add sequence preprocessor with `sqpp`.
