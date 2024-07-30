@@ -1,6 +1,9 @@
 {
   "Bootstrap Config": {
-    "prefix": "bootstrap-ecd",
+    "prefix": [
+      "bootstrap-ecd",
+      "becd"
+    ],
     "body": [
       "model_type: ecd",
       "\n",
@@ -20,7 +23,7 @@
     "description": "Create a starter YAML file with the ECD model type."
   },
   "Input Feature List": {
-    "prefix": "input_feature_list",
+    "prefix": "input-feature-list",
     "body": [
       "input_features:",
       "\t- name: ${1:featureName1}",
@@ -34,17 +37,21 @@
     "description": "Create the input feature list."
   },
   "Output Feature List": {
-    "prefix": "output_feature_list",
+    "prefix": "output-feature-list",
     "body": [
       "output_features:",
       "\t- name: ${1:outputFeature1}",
       "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector|}",
+      "\t- name: ${3:outputFeature2}",
+      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector|}",
+      "\t- name: ${5:outputFeature3}",
+      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector|}",
       "$0"
     ],
     "description": "Create the output feature list."
   },
   "Add Input Feature": {
-    "prefix": "add_input_feature",
+    "prefix": "add-input-feature",
     "body": [
       "- name: ${1:featureName}",
       "\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
@@ -54,7 +61,7 @@
   },
   "Add Output Feature": {
     "prefix": [
-      "add_output_feature",
+      "add-output-feature",
       ":auf"
     ],
     "body": [
@@ -66,7 +73,7 @@
   },
   "Add Binary Preprocessing": {
     "prefix": [
-      "binary_preprocessing",
+      "binary-preprocessing",
       "bpp"
     ],
     "body": [
@@ -80,7 +87,7 @@
   },
   "Add Number Preprocessing": {
     "prefix": [
-      "number_preprocessing",
+      "number-preprocessing",
       "npp"
     ],
     "body": [
@@ -96,7 +103,7 @@
   },
   "Add Category Preprocessing": {
     "prefix": [
-      "category_preprocessing",
+      "category-preprocessing",
       "cpp"
     ],
     "body": [
@@ -112,7 +119,7 @@
   },
   "Add Bag Preprocessing": {
     "prefix": [
-      "bag_preprocessing",
+      "bag-preprocessing",
       "bgpp"
     ],
     "body": [
@@ -128,7 +135,7 @@
   },
   "Add Set Preprocessing": {
     "prefix": [
-      "set_preprocessing",
+      "set-preprocessing",
       "stpp"
     ],
     "body": [
@@ -144,7 +151,7 @@
   },
   "Add Sequence Preprocessing": {
     "prefix": [
-      "sequence_preprocessing",
+      "sequence-preprocessing",
       "sqpp"
     ],
     "body": [
@@ -168,7 +175,7 @@
   },
   "Add Text Preprocessing": {
     "prefix": [
-      "text_preprocessing",
+      "text-preprocessing",
       "txpp"
     ],
     "body": [
@@ -199,7 +206,7 @@
   },
   "Add Vector Preprocessing": {
     "prefix": [
-      "vector_preprocessing",
+      "vector-preprocessing",
       "vpp"
     ],
     "body": [
@@ -213,7 +220,7 @@
   },
   "Add Audio Preprocessing": {
     "prefix": [
-      "audio_preprocessing",
+      "audio-preprocessing",
       "audpp"
     ],
     "body": [
@@ -236,7 +243,7 @@
   },
   "Add Date Preprocessing": {
     "prefix": [
-      "date_preprocessing",
+      "date-preprocessing",
       "dpp"
     ],
     "body": [
@@ -250,7 +257,7 @@
   },
   "Add H3 Preprocessing": {
     "prefix": [
-      "h3_preprocessing",
+      "h3-preprocessing",
       "h3pp"
     ],
     "body": [
@@ -263,7 +270,7 @@
   },
   "Add Image Preprocessing": {
     "prefix": [
-      "image_preprocessing",
+      "image-preprocessing",
       "imgpp"
     ],
     "body": [
@@ -291,7 +298,7 @@
   },
   "Add Timeseries Preprocessing": {
     "prefix": [
-      "timeseries_preprocessing",
+      "timeseries-preprocessing",
       "tspp"
     ],
     "body": [

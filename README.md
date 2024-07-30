@@ -1,65 +1,52 @@
 # ludwig-snippets README
 
-This is the README for your extension "ludwig-snippets". After writing up a brief description, we recommend including the following sections.
+Ludwig Snippets provides code snippets for writing configuration files for [Ludwig](https://ludwig.ai/latest/).
+
+> **Info:** This extension is still under development and it provides only a small subset of Ludwigs configuration items.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Bootstrap ECD configurations with `bootstrap-ecd`.
+- Add an input feature list with `input-feature-list`.
+- Add an output feature list with `output-feature-list`.
+- Add a single input or output feature with `add-input-feature` or `add-output-feature`.
+- Add type specific preprocessors by using `<type>-preprocessing (or the an appriviation). For example:
+  - Add binary preprocessor with `bpp`
+  - Add text preprocessor with `txpp``
+  - Add sequence preprocessor with `sqpp`.
 
-For example if there is an image subfolder under your extension project workspace:
+Here is the full list of snippets.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Global Snippets
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+| Snippets                 | Description                            |
+| ------------------------ | -------------------------------------- |
+| bootstrap-ecd, becd      | Bootstraps a simple ECD configuration. |
+| input-feature-list, ifl  | Adding a set of three input features.  |
+| output-feature-list, ofl | Adding a set of three output features. |
+| add-input-feature, aif   | Adding a single input feature.         |
+| add-output-feature, aif  | Adding a single output feature.        |
 
-## Requirements
+### Preprocessing Snippets
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+| Snippets | Description                     |
+| -------- | ------------------------------- |
+| bpp      | Adds a binary preprocessor.     |
+| npp      | Adds a number preprocessor.     |
+| cpp      | Adds a category preprocessor.   |
+| bgpp     | Adds a bag preprocessor.        |
+| stgp     | Adds a set preprocessor.        |
+| sqpp     | Adds a sequence preprocessor.   |
+| txpp     | Adds a text preprocessor.       |
+| vpp      | Adds a vector preprocessor.     |
+| audpp    | Adds an audio preprocessor.     |
+| dpp      | Adds a date preprocessor.       |
+| h3pp     | Adds an h3 preprocessor.        |
+| imgpp    | Adds an image preprocessor.     |
+| tspp     | Adds a timeseries preprocessor. |
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of the snippe extension. Supports bootstraping ecd configuration, adding input and output lists to it and preprocessing configurations of input features.
