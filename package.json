@@ -1,0 +1,23 @@
+{
+  "name": "ludwig-snippets",
+  "displayName": "Ludwig Snippets",
+  "description": "Provides ludwig snippets.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.91.0"
+  },
+  "categories": [
+    "Snippets",
+    "AI",
+    "Machine Learning",
+    "Data Science"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "yaml",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
