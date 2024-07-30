@@ -47,6 +47,10 @@ Here is the full list of snippets.
 
 ## Release Notes
 
+### 0.0.2
+
+Fixed minor typo issues.
+
 ### 0.0.1
 
 Initial release of the snippe extension. Supports bootstraping ecd configuration, adding input and output lists to it and preprocessing configurations of input features.
