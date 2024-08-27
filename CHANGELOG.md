@@ -1,3 +1,17 @@
+## [0.2.0]
+
+- Added global preprocessing configuration snippet.
+- Added encoding snippets for the following types:
+  - Bag
+  - Category
+  - Date
+  - H3
+  - Sequence
+  - Set
+  - Text (incomplete
+- Added some generic encoders for multiple types.
+- Changed some snippet prefixes to be more consistent.
+
 ## [0.1.1]
 
 - Fixed minor typo issues.

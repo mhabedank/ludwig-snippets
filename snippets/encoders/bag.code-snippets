@@ -1,9 +1,8 @@
 {
   "Add Bag Embeded Weight Encoder": {
-    "prefix": [
-      "bemb",
-      "bag-enc-embed"
-    ],
+
+    "prefix": ["bemb", "bag-enc-embed"],
+
     "body": [
       "encoder:",
       "\ttype: embed",
@@ -16,4 +15,6 @@
     ],
     "description": "Adds a bag encoder which applies for bag features."
   }
+
 }
+

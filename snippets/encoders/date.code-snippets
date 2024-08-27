@@ -1,0 +1,47 @@
+{
+  "Add Date Embed Encoder": {
+    "prefix": [
+      "dt-enc-embed"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tdropout: ${1:0.0}",
+      "\tembedding_size: ${2:10}",
+      "\toutput_size: ${3:10}",
+      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
+      "\tnorm: ${5|null,batch,layer|}",
+      "\tuse_bias: ${6|true,false|}",
+      "\tbias_initializer: ${7|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tembeddings_on_cpu: ${9|false,true|}",
+      "\tnorm_params: ${10|null,batch,layer|}",
+      "\tnum_fc_layers: ${11:0}",
+      "\tfc_layer: ${12:null}",
+      "$0"
+    ],
+    "description": "Add Date Embed Encoder."
+  },
+  "Add Date Wave Encoder": {
+    "prefix": [
+      "dt-enc-wave"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: wave",
+      "\tdropout: ${1:0.0}",
+      "\toutput_size: ${2:10}",
+      "\tactivation: ${3|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
+      "\tnorm: ${4|null,batch,layer|}",
+      "\tuse_bias: ${5|true,false|}",
+      "\tbias_initializer: {6|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tactivation: ${7|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
+      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tnorm_params: ${9|null,batch,layer|}",
+      "\tnum_fc_layers: ${10:1}",
+      "\tfc_layer: ${11:null}",
+      "$0"
+    ],
+    "description": "Add Date Wave Encoder."
+  }
+}

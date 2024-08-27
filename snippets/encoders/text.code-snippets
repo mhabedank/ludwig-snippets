@@ -1,0 +1,17 @@
+{
+    "Add Text Embed Encoder": {
+        "prefix": "txt-enc-embed",
+        "body": [
+            "encoder:",
+            "\ttype: embed",
+            "\tdropout: ${1:0.0}",
+            "\tembedding_size: ${2:256}",
+            "\trepresentation: ${3|dense,sparse|}",
+            "\tweight_initializer: ${4|uniform,xavier_uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+            "\treduce_output: ${5|sum,last,mean,avg,max,concat,attention,none,None,null|}",
+            "\tembeddings_on_cpu: ${6|false,true|}",
+            "\tembeddings_trainable: ${7|true,false|}",
+            "\tpretrained_embeddings: ${8:null}",
+        ]
+    }
+}

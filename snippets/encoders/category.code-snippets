@@ -1,0 +1,31 @@
+{
+  "Add Categorical Dense Encoder": {
+    "prefix": ["cdenc", "cat-enc-dense", "cat-enc-embed"],
+    "body": [
+      "encoder:",
+      "\ttype: dense",
+      "\tdropout: ${1:0.0}",
+      "\tembedding_size: ${2:50}",
+      "\tembedding_initializer: ${3|null,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tembedings_on_cpu: ${4|false,true|}",
+      "\tembedings_trainable: ${5|true,false|}",
+      "\tpretrained_embeddings: ${6:null}",
+      "$0"
+    ],
+    "description": "Adds a dense encoder which applies for categorical features."
+  },
+  "Add Categorical Sparse Encoder": {
+    "prefix": ["csparse", "cat-enc-sparse"],
+    "body": [
+      "encoder:",
+      "\ttype: sparse",
+      "\tdropout: ${1:0.0}",
+      "\tembedding_initializer: ${3|null,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tembedings_on_cpu: ${4|false,true|}",
+      "\tembedings_trainable: ${5|true,false|}",
+      "\tpretrained_embeddings: ${6:null}",
+      "$0"
+    ],
+    "description": "Adds a sparse encoder which applies for categorical features."
+  }
+}

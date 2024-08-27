@@ -1,80 +1,111 @@
 {
-  "Bootstrap Config": {
+  "Add Global Preprocessing": {
     "prefix": [
-      "bootstrap-ecd",
-      "becd"
+      "global-preprocessing",
+      "gpp",
+      "glo-pre"
     ],
     "body": [
-      "model_type: ecd",
-      "\n",
-      "input_features:",
-      "\t- name: ${1:featureName1}",
-      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "\t- name: ${3:featureName2}",
-      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "\t- name: ${5:featureName3}",
-      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "\n",
-      "output_features:",
-      "\t- name: ${7:outputFeature1}",
-      "\t\ttype: ${8|binary,number,category,bag,set,sequence,text,vector|}",
+      "preprocessing:",
+      "\tsample_ratio: ${1:1.0}",
+      "\tsample_size: ${2:null}",
+      "\toversample_minority: ${3:null}",
+      "\tundersample_majority: ${4:null}",
+      "\tglobal_max_sequence_length: ${5:null}",
       "$0"
     ],
-    "description": "Create a starter YAML file with the ECD model type."
+    "description": "Add global preprocessing."
   },
-  "Input Feature List": {
-    "prefix": "input-feature-list",
-    "body": [
-      "input_features:",
-      "\t- name: ${1:featureName1}",
-      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "\t- name: ${3:featureName2}",
-      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "\t- name: ${5:featureName3}",
-      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "$0"
-    ],
-    "description": "Create the input feature list."
-  },
-  "Output Feature List": {
-    "prefix": "output-feature-list",
-    "body": [
-      "output_features:",
-      "\t- name: ${1:outputFeature1}",
-      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector|}",
-      "\t- name: ${3:outputFeature2}",
-      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector|}",
-      "\t- name: ${5:outputFeature3}",
-      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector|}",
-      "$0"
-    ],
-    "description": "Create the output feature list."
-  },
-  "Add Input Feature": {
-    "prefix": "add-input-feature",
-    "body": [
-      "- name: ${1:featureName}",
-      "\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
-      "$0"
-    ],
-    "description": "Add an input feature."
-  },
-  "Add Output Feature": {
+  "Add Global Preprocessing Random Split": {
     "prefix": [
-      "add-output-feature",
-      ":auf"
+      "preprocessing-random-split",
+      "prs",
+      "glo-pre-rand"
     ],
     "body": [
-      "- name: ${1:outputFeature}",
-      "\ttype: ${2|binary,number,category,bag,set,sequence,text,vector|}",
+      "split:",
+      "\ttype: random",
+      "\tprobabilities:",
+      "\t- ${1:0.7}",
+      "\t- ${2:0.1}",
+      "\t- ${3:0.2}",
       "$0"
     ],
-    "description": "Add an output feature."
+    "description": "Add global preprocessing random split."
+  },
+  "Add Global Preprocessing Fixed Split": {
+    "prefix": [
+      "preprocessing-fixed-split",
+      "pfs",
+      "glo-pre-fixed"
+    ],
+    "body": [
+      "split:",
+      "\ttype: fixed",
+      "\tcolumn: ${1:column_name}",
+      "$0"
+    ],
+    "description": "Add global preprocessing fixed split."
+  },
+  "Add Global Preprocessing Stratified Split": {
+    "prefix": [
+      "preprocessing-stratified-split",
+      "pss",
+      "global-pre-strat"
+    ],
+    "body": [
+      "split:",
+      "\ttype: stratified",
+      "\tcolumn: ${1:column_name}",
+      "\tprobabilities:",
+      "\t- ${2:0.7}",
+      "\t- ${3:0.1}",
+      "\t- ${4:0.2}",
+      "$0"
+    ],
+    "description": "Add global preprocessing stratified split."
+  },
+  "Add Global Preprocessing Datetime Split": {
+    "prefix": [
+      "preprocessing-datetime-split",
+      "pds",
+      "global-pre-dt"
+    ],
+    "body": [
+      "split:",
+      "\ttype: datetime",
+      "\tcolumn: ${1:column_name}",
+      "\tprobabilities:",
+      "\t- ${2:0.7}",
+      "\t- ${3:0.1}",
+      "\t- ${4:0.2}",
+      "$0"
+    ],
+    "description": "Add global preprocessing datetime split."
+  },
+  "Add Global Preprocessing Hash Split": {
+    "prefix": [
+      "preprocessing-hash-split",
+      "phs",
+      "global-pre-hash"
+    ],
+    "body": [
+      "split:",
+      "\ttype: hash",
+      "\tcolumn: ${1:column_name}",
+      "\tprobabilities:",
+      "\t- ${2:0.7}",
+      "\t- ${3:0.1}",
+      "\t- ${4:0.2}",
+      "$0"
+    ],
+    "description": "Add global preprocessing hash split."
   },
   "Add Binary Preprocessing": {
     "prefix": [
       "binary-preprocessing",
-      "bpp"
+      "bpp",
+      "bin-pre"
     ],
     "body": [
       "preprocessing:",
@@ -88,7 +119,8 @@
   "Add Number Preprocessing": {
     "prefix": [
       "number-preprocessing",
-      "npp"
+      "npp",
+      "num-pre"
     ],
     "body": [
       "preprocessing:",
@@ -104,7 +136,8 @@
   "Add Category Preprocessing": {
     "prefix": [
       "category-preprocessing",
-      "cpp"
+      "cpp",
+      "cat-pre"
     ],
     "body": [
       "preprocessing:",
@@ -120,7 +153,8 @@
   "Add Bag Preprocessing": {
     "prefix": [
       "bag-preprocessing",
-      "bgpp"
+      "bgpp",
+      "bag-pre"
     ],
     "body": [
       "preprocessing:",
@@ -136,7 +170,8 @@
   "Add Set Preprocessing": {
     "prefix": [
       "set-preprocessing",
-      "stpp"
+      "stpp",
+      "set-pre"
     ],
     "body": [
       "preprocessing:",
@@ -152,7 +187,8 @@
   "Add Sequence Preprocessing": {
     "prefix": [
       "sequence-preprocessing",
-      "sqpp"
+      "sqpp",
+      "seq-pre"
     ],
     "body": [
       "preprocessing:",
@@ -176,7 +212,8 @@
   "Add Text Preprocessing": {
     "prefix": [
       "text-preprocessing",
-      "txpp"
+      "txpp",
+      "txt-pre"
     ],
     "body": [
       "preprocessing:",
@@ -200,14 +237,15 @@
       "\t\t\ttype${16:null}",
       "\t\t\tindex_name${17:null}",
       "\t\t\tmodel_name${18:null}",
-      "\t\t\tk${19:0}",
+      "\t\t\tk${19:0}"
     ],
     "description": "Add text preprocessing."
   },
   "Add Vector Preprocessing": {
     "prefix": [
       "vector-preprocessing",
-      "vpp"
+      "vpp",
+      "vec-pre"
     ],
     "body": [
       "preprocessing:",
@@ -221,7 +259,8 @@
   "Add Audio Preprocessing": {
     "prefix": [
       "audio-preprocessing",
-      "audpp"
+      "audpp",
+      "aud-pre"
     ],
     "body": [
       "preprocessing:",
@@ -244,7 +283,8 @@
   "Add Date Preprocessing": {
     "prefix": [
       "date-preprocessing",
-      "dpp"
+      "dpp",
+      "dt-pre"
     ],
     "body": [
       "preprocessing:",
@@ -258,7 +298,8 @@
   "Add H3 Preprocessing": {
     "prefix": [
       "h3-preprocessing",
-      "h3pp"
+      "h3pp",
+      "h3-pre"
     ],
     "body": [
       "preprocessing:",
@@ -271,7 +312,8 @@
   "Add Image Preprocessing": {
     "prefix": [
       "image-preprocessing",
-      "imgpp"
+      "imgpp",
+      "img-pre"
     ],
     "body": [
       "preprocessing:",
@@ -292,14 +334,15 @@
       "\tin_memory: ${15|true,false|}",
       "\trequire_equal_dimensions: ${16|false,true|}",
       "\tinfer_image_num_classes: ${17|false,true|}",
-      "$0",
+      "$0"
     ],
     "description": "Add image preprocessing."
   },
   "Add Timeseries Preprocessing": {
     "prefix": [
       "timeseries-preprocessing",
-      "tspp"
+      "tspp",
+      "ts-pre"
     ],
     "body": [
       "preprocessing:",
@@ -313,5 +356,5 @@
       "$0"
     ],
     "description": "Add timeseries preprocessing."
-  },
+  }
 }
