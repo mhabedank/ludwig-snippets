@@ -1,3 +1,7 @@
+## [0.2.1]
+
+- Added support information.
+
 ## [0.2.0]
 
 - Added global preprocessing configuration snippet.
@@ -8,7 +12,7 @@
   - H3
   - Sequence
   - Set
-  - Text (incomplete
+  - Text (incomplete)
 - Added some generic encoders for multiple types.
 - Changed some snippet prefixes to be more consistent.
 
