@@ -1,0 +1,74 @@
+{
+  "Bootstrap Config": {
+    "prefix": [
+      "bootstrap-ecd",
+      "ecd"
+    ],
+    "body": [
+      "model_type: ecd",
+      "\n",
+      "input_features:",
+      "\t- name: ${1:featureName1}",
+      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "\t- name: ${3:featureName2}",
+      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "\t- name: ${5:featureName3}",
+      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "\n",
+      "output_features:",
+      "\t- name: ${7:outputFeature1}",
+      "\t\ttype: ${8|binary,number,category,bag,set,sequence,text,vector|}",
+      "$0"
+    ],
+    "description": "Create a starter YAML file with the ECD model type."
+  },
+  "Input Feature List": {
+    "prefix": "input-feature-list",
+    "body": [
+      "input_features:",
+      "\t- name: ${1:featureName1}",
+      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "\t- name: ${3:featureName2}",
+      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "\t- name: ${5:featureName3}",
+      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "$0"
+    ],
+    "description": "Create the input feature list."
+  },
+  "Output Feature List": {
+    "prefix": "output-feature-list",
+    "body": [
+      "output_features:",
+      "\t- name: ${1:outputFeature1}",
+      "\t\ttype: ${2|binary,number,category,bag,set,sequence,text,vector|}",
+      "\t- name: ${3:outputFeature2}",
+      "\t\ttype: ${4|binary,number,category,bag,set,sequence,text,vector|}",
+      "\t- name: ${5:outputFeature3}",
+      "\t\ttype: ${6|binary,number,category,bag,set,sequence,text,vector|}",
+      "$0"
+    ],
+    "description": "Create the output feature list."
+  },
+  "Add Input Feature": {
+    "prefix": "add-input-feature",
+    "body": [
+      "- name: ${1:featureName}",
+      "\ttype: ${2|binary,number,category,bag,set,sequence,text,vector,audio,date,h3,image,timeseries|}",
+      "$0"
+    ],
+    "description": "Add an input feature."
+  },
+  "Add Output Feature": {
+    "prefix": [
+      "add-output-feature",
+      ":auf"
+    ],
+    "body": [
+      "- name: ${1:outputFeature}",
+      "\ttype: ${2|binary,number,category,bag,set,sequence,text,vector|}",
+      "$0"
+    ],
+    "description": "Add an output feature."
+  }
+}

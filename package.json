@@ -3,7 +3,7 @@
   "displayName": "Ludwig Snippets",
   "description": "Provides snippets for Ludwig, a declarative deep learning framework build for scale and efficiency.",
   "repository": "https://github.com/mhabedank/ludwig-snippets",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.91.0"
   },
@@ -20,7 +20,75 @@
     "snippets": [
       {
         "language": "yaml",
-        "path": "./snippets/snippets.code-snippets"
+        "path": "./snippets/global.code-snippets",
+        "__description": "Snippets for creating Features and for boostraping a Ludwig model."
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/preprocessing.code-snippets",
+        "__description": "Preprocessing snippets for Ludwig."
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/bag.code-snippets",
+        "__description": "Bag encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/bag_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/base.code-snippets",
+        "__description": "Base encoders snippets for Ludwig."
+
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/category.code-snippets",
+        "__description": "Category encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/category_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/date.code-snippets",
+        "__description": "Date encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/date_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/h3.code-snippets",
+        "__description": "H3 encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/h3_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/sequence.code-snippets",
+        "__description": "Sequence encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/sequence_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/set.code-snippets",
+        "__description": "Set encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/set_features/#encoders"
+        ]
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/encoders/text.code-snippets",
+        "__description": "Text encoders snippets for Ludwig.",
+        "__sources": [
+          "https://ludwig.ai/latest/configuration/features/text_features/#encoders"
+        ]
       }
     ]
   }

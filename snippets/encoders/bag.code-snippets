@@ -1,0 +1,16 @@
+{
+  "Add Bag Embeded Weight Encoder": {
+    "prefix": ["bemb", "bag-enc-embed"],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tdropout: ${1:0.0}",
+      "\tembedding_size: ${2:50}",
+      "\toutput_size: ${3:10}",
+      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
+      "\tnorm: ${5|batch,layer,null|}",
+      "$0"
+    ],
+    "description": "Adds a bag encoder which applies for bag features."
+  }
+}

@@ -2,7 +2,8 @@
   "Add Global Preprocessing": {
     "prefix": [
       "global-preprocessing",
-      "gpp"
+      "gpp",
+      "glo-pre"
     ],
     "body": [
       "preprocessing:",
@@ -18,7 +19,8 @@
   "Add Global Preprocessing Random Split": {
     "prefix": [
       "preprocessing-random-split",
-      "prs"
+      "prs",
+      "glo-pre-rand"
     ],
     "body": [
       "split:",
@@ -34,7 +36,8 @@
   "Add Global Preprocessing Fixed Split": {
     "prefix": [
       "preprocessing-fixed-split",
-      "pfs"
+      "pfs",
+      "glo-pre-fixed"
     ],
     "body": [
       "split:",
@@ -47,7 +50,8 @@
   "Add Global Preprocessing Stratified Split": {
     "prefix": [
       "preprocessing-stratified-split",
-      "pss"
+      "pss",
+      "global-pre-strat"
     ],
     "body": [
       "split:",
@@ -64,7 +68,8 @@
   "Add Global Preprocessing Datetime Split": {
     "prefix": [
       "preprocessing-datetime-split",
-      "pds"
+      "pds",
+      "global-pre-dt"
     ],
     "body": [
       "split:",
@@ -81,7 +86,8 @@
   "Add Global Preprocessing Hash Split": {
     "prefix": [
       "preprocessing-hash-split",
-      "phs"
+      "phs",
+      "global-pre-hash"
     ],
     "body": [
       "split:",
@@ -113,7 +119,8 @@
   "Add Number Preprocessing": {
     "prefix": [
       "number-preprocessing",
-      "npp"
+      "npp",
+      "num-pre"
     ],
     "body": [
       "preprocessing:",
@@ -129,7 +136,8 @@
   "Add Category Preprocessing": {
     "prefix": [
       "category-preprocessing",
-      "cpp"
+      "cpp",
+      "cat-pre"
     ],
     "body": [
       "preprocessing:",
@@ -145,7 +153,8 @@
   "Add Bag Preprocessing": {
     "prefix": [
       "bag-preprocessing",
-      "bgpp"
+      "bgpp",
+      "bag-pre"
     ],
     "body": [
       "preprocessing:",
@@ -161,7 +170,8 @@
   "Add Set Preprocessing": {
     "prefix": [
       "set-preprocessing",
-      "stpp"
+      "stpp",
+      "set-pre"
     ],
     "body": [
       "preprocessing:",
@@ -177,7 +187,8 @@
   "Add Sequence Preprocessing": {
     "prefix": [
       "sequence-preprocessing",
-      "sqpp"
+      "sqpp",
+      "seq-pre"
     ],
     "body": [
       "preprocessing:",
@@ -201,7 +212,8 @@
   "Add Text Preprocessing": {
     "prefix": [
       "text-preprocessing",
-      "txpp"
+      "txpp",
+      "txt-pre"
     ],
     "body": [
       "preprocessing:",
@@ -232,7 +244,8 @@
   "Add Vector Preprocessing": {
     "prefix": [
       "vector-preprocessing",
-      "vpp"
+      "vpp",
+      "vec-pre"
     ],
     "body": [
       "preprocessing:",
@@ -246,7 +259,8 @@
   "Add Audio Preprocessing": {
     "prefix": [
       "audio-preprocessing",
-      "audpp"
+      "audpp",
+      "aud-pre"
     ],
     "body": [
       "preprocessing:",
@@ -269,7 +283,8 @@
   "Add Date Preprocessing": {
     "prefix": [
       "date-preprocessing",
-      "dpp"
+      "dpp",
+      "dt-pre"
     ],
     "body": [
       "preprocessing:",
@@ -283,7 +298,8 @@
   "Add H3 Preprocessing": {
     "prefix": [
       "h3-preprocessing",
-      "h3pp"
+      "h3pp",
+      "h3-pre"
     ],
     "body": [
       "preprocessing:",
@@ -296,7 +312,8 @@
   "Add Image Preprocessing": {
     "prefix": [
       "image-preprocessing",
-      "imgpp"
+      "imgpp",
+      "img-pre"
     ],
     "body": [
       "preprocessing:",
@@ -324,7 +341,8 @@
   "Add Timeseries Preprocessing": {
     "prefix": [
       "timeseries-preprocessing",
-      "tspp"
+      "tspp",
+      "ts-pre"
     ],
     "body": [
       "preprocessing:",
