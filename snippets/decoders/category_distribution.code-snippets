@@ -1,0 +1,81 @@
+{
+  "category_distribution decoder: classifier": {
+    "prefix": [
+      "catdist-dec-classifier"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: classifier",
+      "$0"
+    ],
+    "description": "`classifier` decoder for category_distribution output features."
+  },
+  "category_distribution decoder: classifier (all parameters)": {
+    "prefix": [
+      "catdist-dec-classifier-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: classifier",
+      "\tbias_initializer: ${1|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tcalibration: ${2|null,temperature_scaling|}",
+      "\tfc_activation: ${3:relu}",
+      "\tfc_bias_initializer: ${4:zeros}",
+      "\tfc_dropout: ${5:0}",
+      "\tfc_norm: ${6:null}",
+      "\tfc_norm_params: ${7:null}",
+      "\tfc_output_size: ${8:256}",
+      "\tfc_use_bias: ${9|true,false|}",
+      "\tfc_weights_initializer: ${10:xavier_uniform}",
+      "\tinput_size: ${11:null}",
+      "\tmc_dropout_samples: ${12:0}",
+      "\tnum_classes: ${13:null}",
+      "\tnum_fc_layers: ${14:0}",
+      "\tuse_bias: ${15|true,false|}",
+      "\tweights_initializer: ${16|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`classifier` decoder for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution decoder: mlp_classifier": {
+    "prefix": [
+      "catdist-dec-mlp-classifier"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: mlp_classifier",
+      "$0"
+    ],
+    "description": "`mlp_classifier` decoder for category_distribution output features."
+  },
+  "category_distribution decoder: mlp_classifier (all parameters)": {
+    "prefix": [
+      "catdist-dec-mlp-classifier-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: mlp_classifier",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tcalibration: ${3|null,temperature_scaling|}",
+      "\tdropout: ${4:0}",
+      "\tfc_activation: ${5:relu}",
+      "\tfc_bias_initializer: ${6:zeros}",
+      "\tfc_dropout: ${7:0}",
+      "\tfc_norm: ${8:null}",
+      "\tfc_norm_params: ${9:null}",
+      "\tfc_output_size: ${10:256}",
+      "\tfc_use_bias: ${11|true,false|}",
+      "\tfc_weights_initializer: ${12:xavier_uniform}",
+      "\tinput_size: ${13:null}",
+      "\tmc_dropout_samples: ${14:0}",
+      "\tnum_classes: ${15:null}",
+      "\tnum_fc_layers: ${16:1}",
+      "\toutput_size: ${17:256}",
+      "\tuse_bias: ${18|true,false|}",
+      "\tweights_initializer: ${19|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`mlp_classifier` decoder for category_distribution output features. Includes every parameter with its Ludwig default."
+  }
+}

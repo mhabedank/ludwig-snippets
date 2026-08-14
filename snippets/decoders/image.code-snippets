@@ -1,0 +1,115 @@
+{
+  "image decoder: fpn": {
+    "prefix": [
+      "img-dec-fpn"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: fpn",
+      "$0"
+    ],
+    "description": "`fpn` decoder for image output features."
+  },
+  "image decoder: fpn (all parameters)": {
+    "prefix": [
+      "img-dec-fpn-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: fpn",
+      "\tfc_activation: ${1:relu}",
+      "\tfc_bias_initializer: ${2:zeros}",
+      "\tfc_dropout: ${3:0}",
+      "\tfc_norm: ${4:null}",
+      "\tfc_norm_params: ${5:null}",
+      "\tfc_output_size: ${6:256}",
+      "\tfc_use_bias: ${7|true,false|}",
+      "\tfc_weights_initializer: ${8:xavier_uniform}",
+      "\theight: ${9:null}",
+      "\tinput_size: ${10:null}",
+      "\tnum_channels: ${11:256}",
+      "\tnum_classes: ${12:null}",
+      "\tnum_fc_layers: ${13:0}",
+      "\tnum_levels: ${14:4}",
+      "\twidth: ${15:null}",
+      "$0"
+    ],
+    "description": "`fpn` decoder for image output features. Includes every parameter with its Ludwig default."
+  },
+  "image decoder: segformer": {
+    "prefix": [
+      "img-dec-segformer"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: segformer",
+      "$0"
+    ],
+    "description": "`segformer` decoder for image output features."
+  },
+  "image decoder: segformer (all parameters)": {
+    "prefix": [
+      "img-dec-segformer-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: segformer",
+      "\tdropout: ${1:0.1}",
+      "\tfc_activation: ${2:relu}",
+      "\tfc_bias_initializer: ${3:zeros}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_norm: ${5:null}",
+      "\tfc_norm_params: ${6:null}",
+      "\tfc_output_size: ${7:256}",
+      "\tfc_use_bias: ${8|true,false|}",
+      "\tfc_weights_initializer: ${9:xavier_uniform}",
+      "\theight: ${10:null}",
+      "\thidden_size: ${11:256}",
+      "\tinput_size: ${12:null}",
+      "\tnum_channels: ${13:null}",
+      "\tnum_classes: ${14:null}",
+      "\tnum_fc_layers: ${15:0}",
+      "\twidth: ${16:null}",
+      "$0"
+    ],
+    "description": "`segformer` decoder for image output features. Includes every parameter with its Ludwig default."
+  },
+  "image decoder: unet": {
+    "prefix": [
+      "img-dec-unet"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: unet",
+      "$0"
+    ],
+    "description": "`unet` decoder for image output features."
+  },
+  "image decoder: unet (all parameters)": {
+    "prefix": [
+      "img-dec-unet-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: unet",
+      "\tconv_norm: ${1|batch,null|}",
+      "\tfc_activation: ${2:relu}",
+      "\tfc_bias_initializer: ${3:zeros}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_norm: ${5:null}",
+      "\tfc_norm_params: ${6:null}",
+      "\tfc_output_size: ${7:256}",
+      "\tfc_use_bias: ${8|true,false|}",
+      "\tfc_weights_initializer: ${9:xavier_uniform}",
+      "\theight: ${10:null}",
+      "\tinput_size: ${11:1024}",
+      "\tnum_channels: ${12:null}",
+      "\tnum_classes: ${13:null}",
+      "\tnum_fc_layers: ${14:0}",
+      "\tnum_stages: ${15:4}",
+      "\twidth: ${16:null}",
+      "$0"
+    ],
+    "description": "`unet` decoder for image output features. Includes every parameter with its Ludwig default."
+  }
+}

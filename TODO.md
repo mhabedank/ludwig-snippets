@@ -1,149 +1,31 @@
-# Encoders
+# TODO
 
-## Docs
+The per-encoder checklist that used to live here is obsolete: coverage is no
+longer tracked by hand. `tools/ludwig-surface.json` is extracted from Ludwig's
+schema and every block in it is generated, so anything Ludwig supports is
+covered by construction. `npm test` fails if that stops being true.
 
-### Binary
+## Open
 
-- [x] Passthrough -> passenc
-- [x] Dense -> denc
+- [ ] Ship a bundled JSON Schema and register it via the `yamlValidation`
+      contribution point, so users get validation and hover docs without
+      running `ludwig export_schema` themselves. Ludwig's own published schema
+      URLs (`https://ludwig-ai.github.io/schema/…`) currently 404.
+- [ ] Decide whether 644 YAML-scoped snippets are too intrusive. They are
+      contributed to every `.yaml` file, so Compose / k8s / CI files now see
+      Ludwig completions too. The prefixes are distinctive (`txt-enc-bert`,
+      `comb-tabnet`), but a shared leading token (`trainer`, `hyperopt`) can
+      still surface. Options: a dedicated `ludwig-yaml` language that activates
+      on `*.ludwig.yaml`, or a setting that gates the library.
+- [ ] Decide how to handle Ludwig version drift. Options: ship one snippet set
+      per major Ludwig version, or add a setting that scopes prefixes.
+- [ ] `tools/verify-against-ludwig.py` re-derives the schema per config and
+      takes ~15 minutes for the full library. Cache the compiled validator so
+      it can run in CI.
+- [ ] The longest `-full` snippets are the LLM trainers at ~50 lines. That is
+      still tab-through-able, but worth revisiting if users report it.
 
-### Numbers
+## Nice to have
 
-- [x] Passthrough
-- [x] Dense
-
-### Categorical
-
-- [x] Passthrough
-- [x] Sparse
-
-### Bag
-
-- [x] EmbedWeighted
-
-### Set
-
-- [x] Embed
-
-### Sequence
-
-- [x] Embed
-- [x] Parallel CNN
-- [x] Stacked CNN
-- [x] Stacked Parallel CNN
-- [x] RNN
-- [x] CNN RNN
-- [x] Transformer
-
-### Text
-
-- [x] Embed
-- [ ] Parallel CNN
-- [ ] Stacked CNN
-- [ ] Stacked Parallel CNN
-- [ ] RNN
-- [ ] CNN RNN
-- [ ] Transformer
-- [ ] Huggingface
-
-### Vector
-
-- [x] PassThrough -> passenc
-- [x] Dense -> denc
-
-### Audio
-
-(Same like in Sequence)
-
-- [ ] Embed
-- [ ] Parallel CNN
-- [ ] Stacked CNN
-- [ ] Stacked Parallel CNN
-- [ ] RNN
-- [ ] CNN RNN
-- [ ] Transformer
-
-### Date
-
-- [x] Embed
-- [x] Wave
-
-### H3
-
-- [x] Embed
-- [x] Weighted Sum Embed
-- [x] RNN
-
-### Image
-
-- [ ] Convolutional Stack
-- [ ] MLP-Mixer
-- [ ] Torchvision
-- [ ] U-Net
-
-### Time Series
-
-(Same like in Sequence)
-
-- [ ] Embed
-- [ ] Parallel CNN
-- [ ] Stacked CNN
-- [ ] Stacked Parallel CNN
-- [ ] RNN
-- [ ] CNN RNN
-- [ ] Transformer
-
-Hat tatsächlich Inhalt.
-
-- [ ] Passthrough -> tspassenc
-
-## Files
-
-### encoders/base.py
-
-- [x] PassthroughEncoder -> passenc
-- [x] DenseEncoder -> denc
-
-### encoders/bag_encoders
-
-- [x] BagEmbedWeightedEncoder
-
-### encoders/category_encoders
-
-- [x] CategoricalEmbedEncoder
-- [ ] ~CategoricalOneHotEncoder~ (Seems not being used)
-- [x] CategoricalPassthroughEncoder (in base.py)
-- [x] CategoricalSparseEncoder (Dense)
-
-### encoders/date_encoders
-
-- [x] DateEmbed
-- [x] DateWave
-
-### encoders/h3_encoders
-
-- [x] H3EmbedConfig
-- [x] H3RNNConfig
-- [x] H3WeightedSumConfig
-
-### encoders/sequence_encoders
-
-- [x] SequenceEmbedConfig
-- [x] SequenceParallelCNNConfig
-- [x] SequenceStackedCNNConfig
-- [x] SequenceStackedParallelCNNConfig
-- [x] SequenceRNNConfig
-- [x] SequenceCNNRNNConfig
-- [x] SequenceTransformerConfig
-
-### encoders/set_encoders
-
-- [x] SetSparseEncoderConfig
-
-### encoders/image/base
-
-- [ ] ImageEncoderConfig
-
-### encoders/image/torchvision
-
-- [ ] TVBaseEncoderConfig
+- [ ] Snippets for `ludwig` CLI invocations in shell files.
+- [ ] A command that scaffolds a config from the columns of an open CSV.

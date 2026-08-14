@@ -1,0 +1,251 @@
+{
+  "Defaults: audio": {
+    "prefix": [
+      "defaults-aud"
+    ],
+    "body": [
+      "defaults:",
+      "\taudio:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|cnnrnn,hubert,jamba,mamba,mamba2,parallel_cnn,rnn,stacked_cnn,stacked_parallel_cnn,wav2vec2,whisper|}",
+      "\t\tpreprocessing:",
+      "\t\t\taudio_file_length_limit_in_s: ${2:7.5}",
+      "\t\t\tcomputed_fill_value: ${3:null}",
+      "\t\t\tfill_value: ${4:null}",
+      "\t\t\tin_memory: ${5|true,false|}",
+      "\t\t\tlazy_cache_dir: ${6:null}",
+      "\t\t\tmissing_value_strategy: ${7|bfill,fill_with_const,fill_with_mode,ffill,drop_row|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every audio feature."
+  },
+  "Defaults: bag": {
+    "prefix": [
+      "defaults-bag"
+    ],
+    "body": [
+      "defaults:",
+      "\tbag:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|embed|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:'<UNK>'}",
+      "\t\t\tfill_value: ${3:'<UNK>'}",
+      "\t\t\tlowercase: ${4|false,true|}",
+      "\t\t\tmissing_value_strategy: ${5|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "\t\t\tmost_common: ${6:10000}",
+      "\t\t\ttokenizer: ${7|space,space_punct,characters,underscore,comma,untokenized,stripped,english_tokenize,english_tokenize_filter,english_tokenize_remove_stopwords,english_lemmatize,english_lemmatize_filter,english_lemmatize_remove_stopwords,italian_tokenize,italian_tokenize_filter,italian_tokenize_remove_stopwords,italian_lemmatize,italian_lemmatize_filter,italian_lemmatize_remove_stopwords,spanish_tokenize,spanish_tokenize_filter,spanish_tokenize_remove_stopwords,spanish_lemmatize,spanish_lemmatize_filter,spanish_lemmatize_remove_stopwords,german_tokenize,german_tokenize_filter,german_tokenize_remove_stopwords,german_lemmatize,german_lemmatize_filter,german_lemmatize_remove_stopwords,french_tokenize,french_tokenize_filter,french_tokenize_remove_stopwords,french_lemmatize,french_lemmatize_filter,french_lemmatize_remove_stopwords,portuguese_tokenize,portuguese_tokenize_filter,portuguese_tokenize_remove_stopwords,portuguese_lemmatize,portuguese_lemmatize_filter,portuguese_lemmatize_remove_stopwords,dutch_tokenize,dutch_tokenize_filter,dutch_tokenize_remove_stopwords,dutch_lemmatize,dutch_lemmatize_filter,dutch_lemmatize_remove_stopwords,greek_tokenize,greek_tokenize_filter,greek_tokenize_remove_stopwords,greek_lemmatize,greek_lemmatize_filter,greek_lemmatize_remove_stopwords,norwegian_tokenize,norwegian_tokenize_filter,norwegian_tokenize_remove_stopwords,norwegian_lemmatize,norwegian_lemmatize_filter,norwegian_lemmatize_remove_stopwords,lithuanian_tokenize,lithuanian_tokenize_filter,lithuanian_tokenize_remove_stopwords,lithuanian_lemmatize,lithuanian_lemmatize_filter,lithuanian_lemmatize_remove_stopwords,danish_tokenize,danish_tokenize_filter,danish_tokenize_remove_stopwords,danish_lemmatize,danish_lemmatize_filter,danish_lemmatize_remove_stopwords,polish_tokenize,polish_tokenize_filter,polish_tokenize_remove_stopwords,polish_lemmatize,polish_lemmatize_filter,polish_lemmatize_remove_stopwords,romanian_tokenize,romanian_tokenize_filter,romanian_tokenize_remove_stopwords,romanian_lemmatize,romanian_lemmatize_filter,romanian_lemmatize_remove_stopwords,japanese_tokenize,japanese_tokenize_filter,japanese_tokenize_remove_stopwords,japanese_lemmatize,japanese_lemmatize_filter,japanese_lemmatize_remove_stopwords,chinese_tokenize,chinese_tokenize_filter,chinese_tokenize_remove_stopwords,chinese_lemmatize,chinese_lemmatize_filter,chinese_lemmatize_remove_stopwords,multi_tokenize,multi_tokenize_filter,multi_tokenize_remove_stopwords,multi_lemmatize,multi_lemmatize_filter,multi_lemmatize_remove_stopwords,sentencepiece,clip,gpt2bpe,bert,hf_tokenizer|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every bag feature."
+  },
+  "Defaults: binary": {
+    "prefix": [
+      "defaults-bin"
+    ],
+    "body": [
+      "defaults:",
+      "\tbinary:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|dense,passthrough|}",
+      "\t\tpreprocessing:",
+      "\t\t\tfallback_true_label: ${2:null}",
+      "\t\t\tmissing_value_strategy: ${3|fill_with_false,fill_with_mode,bfill,ffill,drop_row,fill_with_true|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every binary feature."
+  },
+  "Defaults: category": {
+    "prefix": [
+      "defaults-cat"
+    ],
+    "body": [
+      "defaults:",
+      "\tcategory:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|dense,hash,onehot,passthrough,sparse,target|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcache_encoder_embeddings: ${2|false,true|}",
+      "\t\t\tcomputed_fill_value: ${3:'<UNK>'}",
+      "\t\t\tfill_value: ${4:'<UNK>'}",
+      "\t\t\tlowercase: ${5|false,true|}",
+      "\t\t\tmissing_value_strategy: ${6|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "\t\t\tmost_common: ${7:10000}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every category feature."
+  },
+  "Defaults: date": {
+    "prefix": [
+      "defaults-dt"
+    ],
+    "body": [
+      "defaults:",
+      "\tdate:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|embed,wave|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:''}",
+      "\t\t\tdatetime_format: ${3:null}",
+      "\t\t\tfill_value: ${4:''}",
+      "\t\t\tmissing_value_strategy: ${5|fill_with_const,bfill,ffill,drop_row|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every date feature."
+  },
+  "Defaults: h3": {
+    "prefix": [
+      "defaults-h3"
+    ],
+    "body": [
+      "defaults:",
+      "\th3:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|embed,rnn,weighted_sum|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:576495936675512300}",
+      "\t\t\tfill_value: ${3:576495936675512300}",
+      "\t\t\tmissing_value_strategy: ${4|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every h3 feature."
+  },
+  "Defaults: image": {
+    "prefix": [
+      "defaults-img"
+    ],
+    "body": [
+      "defaults:",
+      "\timage:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|alexnet,caformer,clip,convformer,convnext,convnextv2,densenet,dinov2,efficientnet,googlenet,inceptionv3,maxvit,mlp_mixer,mnasnet,mobilenetv2,mobilenetv3,poolformer,regnet,resnet,resnext,shufflenet_v2,siglip,squeezenet,stacked_cnn,swin_transformer,timm,unet,vgg,vit,wide_resnet|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:null}",
+      "\t\t\tfill_value: ${3:null}",
+      "\t\t\theight: ${4:null}",
+      "\t\t\tin_memory: ${5|true,false|}",
+      "\t\t\tinfer_image_dimensions: ${6|true,false|}",
+      "\t\t\tinfer_image_max_height: ${7:256}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every image feature."
+  },
+  "Defaults: number": {
+    "prefix": [
+      "defaults-num"
+    ],
+    "body": [
+      "defaults:",
+      "\tnumber:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|bins,dense,passthrough,periodic,ple|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:0}",
+      "\t\t\tcomputed_outlier_fill_value: ${3:0}",
+      "\t\t\tfill_value: ${4:0}",
+      "\t\t\tmissing_value_strategy: ${5|fill_with_const,fill_with_mode,bfill,ffill,drop_row,fill_with_mean|}",
+      "\t\t\tnormalization: ${6|zscore,minmax,log1p,iq,null|}",
+      "\t\t\toutlier_strategy: ${7|null,fill_with_const,fill_with_mode,bfill,ffill,drop_row,fill_with_mean|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every number feature."
+  },
+  "Defaults: sequence": {
+    "prefix": [
+      "defaults-seq"
+    ],
+    "body": [
+      "defaults:",
+      "\tsequence:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|cnnrnn,embed,jamba,mamba,mamba2,parallel_cnn,rnn,stacked_cnn,stacked_parallel_cnn,transformer|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcache_encoder_embeddings: ${2|false,true|}",
+      "\t\t\tcomputed_fill_value: ${3:'<UNK>'}",
+      "\t\t\tfill_value: ${4:'<UNK>'}",
+      "\t\t\tlowercase: ${5|false,true|}",
+      "\t\t\tmax_sequence_length: ${6:256}",
+      "\t\t\tmissing_value_strategy: ${7|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every sequence feature."
+  },
+  "Defaults: set": {
+    "prefix": [
+      "defaults-set"
+    ],
+    "body": [
+      "defaults:",
+      "\tset:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|embed|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:'<UNK>'}",
+      "\t\t\tfill_value: ${3:'<UNK>'}",
+      "\t\t\tlowercase: ${4|false,true|}",
+      "\t\t\tmissing_value_strategy: ${5|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "\t\t\tmost_common: ${6:10000}",
+      "\t\t\ttokenizer: ${7:space}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every set feature."
+  },
+  "Defaults: text": {
+    "prefix": [
+      "defaults-txt"
+    ],
+    "body": [
+      "defaults:",
+      "\ttext:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|albert,auto_transformer,bert,camembert,cnnrnn,deberta,distilbert,electra,embed,gpt,gpt2,jamba,llm,longformer,mamba,mamba2,modernbert,parallel_cnn,rnn,roberta,stacked_cnn,stacked_parallel_cnn,t5,tf_idf,transformer,xlmroberta,xlnet|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcache_encoder_embeddings: ${2|false,true|}",
+      "\t\t\tcompute_idf: ${3|false,true|}",
+      "\t\t\tcomputed_fill_value: ${4:'<UNK>'}",
+      "\t\t\tfill_value: ${5:'<UNK>'}",
+      "\t\t\tlowercase: ${6|false,true|}",
+      "\t\t\tmax_sequence_length: ${7:256}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every text feature."
+  },
+  "Defaults: timeseries": {
+    "prefix": [
+      "defaults-ts"
+    ],
+    "body": [
+      "defaults:",
+      "\ttimeseries:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|cnnrnn,dense,jamba,mamba,mamba2,nbeats,parallel_cnn,passthrough,patchtst,rnn,stacked_cnn,stacked_parallel_cnn,transformer|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:''}",
+      "\t\t\tfill_value: ${3:''}",
+      "\t\t\tmissing_value_strategy: ${4|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "\t\t\tpadding: ${5:right}",
+      "\t\t\tpadding_value: ${6:0}",
+      "\t\t\ttimeseries_length_limit: ${7:256}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every timeseries feature."
+  },
+  "Defaults: vector": {
+    "prefix": [
+      "defaults-vec"
+    ],
+    "body": [
+      "defaults:",
+      "\tvector:",
+      "\t\tencoder:",
+      "\t\t\ttype: ${1|dense,passthrough|}",
+      "\t\tpreprocessing:",
+      "\t\t\tcomputed_fill_value: ${2:''}",
+      "\t\t\tfill_value: ${3:''}",
+      "\t\t\tmissing_value_strategy: ${4|fill_with_const,fill_with_mode,bfill,ffill,drop_row|}",
+      "\t\t\tvector_size: ${5:null}",
+      "$0"
+    ],
+    "description": "Type-wide defaults applied to every vector feature."
+  }
+}

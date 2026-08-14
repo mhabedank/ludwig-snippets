@@ -1,0 +1,1351 @@
+{
+  "Gradient clipping": {
+    "prefix": [
+      "gradient-clipping"
+    ],
+    "body": [
+      "gradient_clipping:",
+      "\tclipglobalnorm: ${1:0.5}",
+      "\tclipnorm: ${2:null}",
+      "\tclipvalue: ${3:null}",
+      "$0"
+    ],
+    "description": "Gradient clipping settings inside `trainer`."
+  },
+  "Learning rate scheduler": {
+    "prefix": [
+      "lr-scheduler"
+    ],
+    "body": [
+      "learning_rate_scheduler:",
+      "\tdecay: ${1|null,linear,exponential,cosine,one_cycle,inverse_sqrt,polynomial,wsd|}",
+      "\tdecay_rate: ${2:0.96}",
+      "\tdecay_steps: ${3:10000}",
+      "\tdiv_factor: ${4:25}",
+      "\teta_min: ${5:0}",
+      "\tfinal_div_factor: ${6:10000}",
+      "\tinverse_sqrt_warmup_steps: ${7:4000}",
+      "\tmax_lr: ${8:null}",
+      "\tpct_start: ${9:0.3}",
+      "\tpolynomial_end_lr: ${10:0}",
+      "\tpolynomial_power: ${11:1}",
+      "\treduce_eval_metric: ${12:loss}",
+      "\treduce_eval_split: ${13:training}",
+      "\treduce_on_plateau: ${14:0}",
+      "\treduce_on_plateau_patience: ${15:10}",
+      "\treduce_on_plateau_rate: ${16:0.1}",
+      "\tstaircase: ${17|false,true|}",
+      "\tt_0: ${18:null}",
+      "\tt_mult: ${19:1}",
+      "\twarmup_evaluations: ${20:0}",
+      "\twarmup_fraction: ${21:0}",
+      "\twsd_decay_fraction: ${22:0.1}",
+      "\twsd_stable_fraction: ${23:0.8}",
+      "\twsd_warmup_fraction: ${24:0.1}",
+      "$0"
+    ],
+    "description": "Learning rate scheduler settings inside `trainer`."
+  },
+  "LLM trainer: dpo": {
+    "prefix": [
+      "llm-trainer-dpo"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: dpo",
+      "$0"
+    ],
+    "description": "LLM `dpo` trainer."
+  },
+  "LLM trainer: dpo (all parameters)": {
+    "prefix": [
+      "llm-trainer-dpo-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: dpo",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tbucketing_field: ${3:null}",
+      "\tcheckpoints_per_epoch: ${4:0}",
+      "\tcompile: ${5|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${6:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${7|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${8:128}",
+      "\tcontrastive_pretrain_temperature: ${9:0.07}",
+      "\tdpo_beta: ${10:0.1}",
+      "\tdpo_label_smoothing: ${11:0}",
+      "\tdpo_loss_type: ${12|sigmoid,ipo|}",
+      "\tearly_stop: ${13:5}",
+      "\teffective_batch_size: ${14:auto}",
+      "\tenable_gradient_checkpointing: ${15|false,true|}",
+      "\tenable_profiling: ${16|false,true|}",
+      "\tepochs: ${17:100}",
+      "\teval_batch_size: ${18:2}",
+      "\teval_steps: ${19:null}",
+      "\tevaluate_training_set: ${20|false,true|}",
+      "\tgradient_accumulation_steps: ${21:auto}",
+      "\tincrease_batch_size_eval_metric: ${22:loss}",
+      "\tincrease_batch_size_eval_split: ${23:training}",
+      "\tincrease_batch_size_on_plateau: ${24:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${25:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${26:2}",
+      "\tlayers_to_freeze_regex: ${27:null}",
+      "\tlearning_rate: ${28:0.001}",
+      "\tlearning_rate_scaling: ${29:linear}",
+      "\tloss_balancing: ${30:none}",
+      "\tloss_balancing_alpha: ${31:1.5}",
+      "\tloss_balancing_lr: ${32:0.01}",
+      "\tloss_balancing_preference_vector: ${33:null}",
+      "\tloss_balancing_tchebycheff_weight: ${34:0.5}",
+      "\tmax_batch_size: ${35:1099511627776}",
+      "\tmodality_dropout: ${36:0}",
+      "\tmodel_soup: ${37:null}",
+      "\tmodel_soup_top_k: ${38:5}",
+      "\tregularization_lambda: ${39:0}",
+      "\tregularization_type: ${40:l2}",
+      "\trejected_column: ${41:rejected}",
+      "\tshould_shuffle: ${42|true,false|}",
+      "\tskip_all_evaluation: ${43|false,true|}",
+      "\tsteps_per_checkpoint: ${44:0}",
+      "\ttrain_steps: ${45:null}",
+      "\tuse_mixed_precision: ${46|false,true|}",
+      "\tvalidation_field: ${47:null}",
+      "\tvalidation_metric: ${48:null}",
+      "$0"
+    ],
+    "description": "LLM `dpo` trainer. Includes every parameter with its Ludwig default."
+  },
+  "LLM trainer: finetune": {
+    "prefix": [
+      "llm-trainer-finetune"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: finetune",
+      "$0"
+    ],
+    "description": "LLM `finetune` trainer."
+  },
+  "LLM trainer: finetune (all parameters)": {
+    "prefix": [
+      "llm-trainer-finetune-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: finetune",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tbucketing_field: ${3:null}",
+      "\tcheckpoints_per_epoch: ${4:0}",
+      "\tcompile: ${5|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${6:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${7|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${8:128}",
+      "\tcontrastive_pretrain_temperature: ${9:0.07}",
+      "\tearly_stop: ${10:5}",
+      "\teffective_batch_size: ${11:auto}",
+      "\tenable_gradient_checkpointing: ${12|false,true|}",
+      "\tenable_profiling: ${13|false,true|}",
+      "\tepochs: ${14:100}",
+      "\teval_batch_size: ${15:2}",
+      "\teval_steps: ${16:null}",
+      "\tevaluate_training_set: ${17|false,true|}",
+      "\tgradient_accumulation_steps: ${18:auto}",
+      "\tincrease_batch_size_eval_metric: ${19:loss}",
+      "\tincrease_batch_size_eval_split: ${20:training}",
+      "\tincrease_batch_size_on_plateau: ${21:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${22:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${23:2}",
+      "\tlayers_to_freeze_regex: ${24:null}",
+      "\tlearning_rate: ${25:0.001}",
+      "\tlearning_rate_scaling: ${26:linear}",
+      "\tloss_balancing: ${27:none}",
+      "\tloss_balancing_alpha: ${28:1.5}",
+      "\tloss_balancing_lr: ${29:0.01}",
+      "\tloss_balancing_preference_vector: ${30:null}",
+      "\tloss_balancing_tchebycheff_weight: ${31:0.5}",
+      "\tmax_batch_size: ${32:1099511627776}",
+      "\tmodality_dropout: ${33:0}",
+      "\tmodel_soup: ${34:null}",
+      "\tmodel_soup_top_k: ${35:5}",
+      "\tregularization_lambda: ${36:0}",
+      "\tregularization_type: ${37:l2}",
+      "\tshould_shuffle: ${38|true,false|}",
+      "\tskip_all_evaluation: ${39|false,true|}",
+      "\tsteps_per_checkpoint: ${40:0}",
+      "\ttrain_steps: ${41:null}",
+      "\tuse_mixed_precision: ${42|false,true|}",
+      "\tvalidation_field: ${43:null}",
+      "\tvalidation_metric: ${44:null}",
+      "$0"
+    ],
+    "description": "LLM `finetune` trainer. Includes every parameter with its Ludwig default."
+  },
+  "LLM trainer: grpo": {
+    "prefix": [
+      "llm-trainer-grpo"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: grpo",
+      "$0"
+    ],
+    "description": "LLM `grpo` trainer."
+  },
+  "LLM trainer: grpo (all parameters)": {
+    "prefix": [
+      "llm-trainer-grpo-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: grpo",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tbucketing_field: ${3:null}",
+      "\tcheckpoints_per_epoch: ${4:0}",
+      "\tcompile: ${5|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${6:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${7|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${8:128}",
+      "\tcontrastive_pretrain_temperature: ${9:0.07}",
+      "\tearly_stop: ${10:5}",
+      "\teffective_batch_size: ${11:auto}",
+      "\tenable_gradient_checkpointing: ${12|false,true|}",
+      "\tenable_profiling: ${13|false,true|}",
+      "\tepochs: ${14:100}",
+      "\teval_batch_size: ${15:2}",
+      "\teval_steps: ${16:null}",
+      "\tevaluate_training_set: ${17|false,true|}",
+      "\tgradient_accumulation_steps: ${18:auto}",
+      "\tgrpo_beta: ${19:0.04}",
+      "\tgrpo_epsilon: ${20:0.2}",
+      "\tgrpo_num_generations: ${21:4}",
+      "\tincrease_batch_size_eval_metric: ${22:loss}",
+      "\tincrease_batch_size_eval_split: ${23:training}",
+      "\tincrease_batch_size_on_plateau: ${24:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${25:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${26:2}",
+      "\tlayers_to_freeze_regex: ${27:null}",
+      "\tlearning_rate: ${28:0.001}",
+      "\tlearning_rate_scaling: ${29:linear}",
+      "\tloss_balancing: ${30:none}",
+      "\tloss_balancing_alpha: ${31:1.5}",
+      "\tloss_balancing_lr: ${32:0.01}",
+      "\tloss_balancing_preference_vector: ${33:null}",
+      "\tloss_balancing_tchebycheff_weight: ${34:0.5}",
+      "\tmax_batch_size: ${35:1099511627776}",
+      "\tmodality_dropout: ${36:0}",
+      "\tmodel_soup: ${37:null}",
+      "\tmodel_soup_top_k: ${38:5}",
+      "\tregularization_lambda: ${39:0}",
+      "\tregularization_type: ${40:l2}",
+      "\tshould_shuffle: ${41|true,false|}",
+      "\tskip_all_evaluation: ${42|false,true|}",
+      "\tsteps_per_checkpoint: ${43:0}",
+      "\ttrain_steps: ${44:null}",
+      "\tuse_mixed_precision: ${45|false,true|}",
+      "\tvalidation_field: ${46:null}",
+      "\tvalidation_metric: ${47:null}",
+      "$0"
+    ],
+    "description": "LLM `grpo` trainer. Includes every parameter with its Ludwig default."
+  },
+  "LLM trainer: kto": {
+    "prefix": [
+      "llm-trainer-kto"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: kto",
+      "$0"
+    ],
+    "description": "LLM `kto` trainer."
+  },
+  "LLM trainer: kto (all parameters)": {
+    "prefix": [
+      "llm-trainer-kto-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: kto",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tbucketing_field: ${3:null}",
+      "\tcheckpoints_per_epoch: ${4:0}",
+      "\tcompile: ${5|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${6:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${7|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${8:128}",
+      "\tcontrastive_pretrain_temperature: ${9:0.07}",
+      "\tearly_stop: ${10:5}",
+      "\teffective_batch_size: ${11:auto}",
+      "\tenable_gradient_checkpointing: ${12|false,true|}",
+      "\tenable_profiling: ${13|false,true|}",
+      "\tepochs: ${14:100}",
+      "\teval_batch_size: ${15:2}",
+      "\teval_steps: ${16:null}",
+      "\tevaluate_training_set: ${17|false,true|}",
+      "\tgradient_accumulation_steps: ${18:auto}",
+      "\tincrease_batch_size_eval_metric: ${19:loss}",
+      "\tincrease_batch_size_eval_split: ${20:training}",
+      "\tincrease_batch_size_on_plateau: ${21:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${22:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${23:2}",
+      "\tkto_beta: ${24:0.1}",
+      "\tlayers_to_freeze_regex: ${25:null}",
+      "\tlearning_rate: ${26:0.001}",
+      "\tlearning_rate_scaling: ${27:linear}",
+      "\tloss_balancing: ${28:none}",
+      "\tloss_balancing_alpha: ${29:1.5}",
+      "\tloss_balancing_lr: ${30:0.01}",
+      "\tloss_balancing_preference_vector: ${31:null}",
+      "\tloss_balancing_tchebycheff_weight: ${32:0.5}",
+      "\tmax_batch_size: ${33:1099511627776}",
+      "\tmodality_dropout: ${34:0}",
+      "\tmodel_soup: ${35:null}",
+      "\tmodel_soup_top_k: ${36:5}",
+      "\tregularization_lambda: ${37:0}",
+      "\tregularization_type: ${38:l2}",
+      "\trejected_column: ${39:rejected}",
+      "\tshould_shuffle: ${40|true,false|}",
+      "\tskip_all_evaluation: ${41|false,true|}",
+      "\tsteps_per_checkpoint: ${42:0}",
+      "\ttrain_steps: ${43:null}",
+      "\tuse_mixed_precision: ${44|false,true|}",
+      "\tvalidation_field: ${45:null}",
+      "\tvalidation_metric: ${46:null}",
+      "$0"
+    ],
+    "description": "LLM `kto` trainer. Includes every parameter with its Ludwig default."
+  },
+  "LLM trainer: none": {
+    "prefix": [
+      "llm-trainer-none"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: none",
+      "$0"
+    ],
+    "description": "LLM `none` trainer."
+  },
+  "LLM trainer: none (all parameters)": {
+    "prefix": [
+      "llm-trainer-none-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: none",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tcheckpoints_per_epoch: ${3:0}",
+      "\tearly_stop: ${4:-1}",
+      "\tenable_profiling: ${5|false,true|}",
+      "\tepochs: ${6:3}",
+      "\teval_batch_size: ${7:2}",
+      "\teval_steps: ${8:null}",
+      "\tevaluate_training_set: ${9|false,true|}",
+      "\tlearning_rate: ${10:0.0002}",
+      "\tpacking: ${11|false,true|}",
+      "\tpacking_max_sequences_per_pack: ${12:8}",
+      "\tshould_shuffle: ${13|true,false|}",
+      "\tskip_all_evaluation: ${14|false,true|}",
+      "\tsteps_per_checkpoint: ${15:0}",
+      "\ttrain_steps: ${16:null}",
+      "\tvalidation_field: ${17:null}",
+      "\tvalidation_metric: ${18:null}",
+      "$0"
+    ],
+    "description": "LLM `none` trainer. Includes every parameter with its Ludwig default."
+  },
+  "LLM trainer: orpo": {
+    "prefix": [
+      "llm-trainer-orpo"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: orpo",
+      "$0"
+    ],
+    "description": "LLM `orpo` trainer."
+  },
+  "LLM trainer: orpo (all parameters)": {
+    "prefix": [
+      "llm-trainer-orpo-full"
+    ],
+    "body": [
+      "trainer:",
+      "\ttype: orpo",
+      "\tbase_learning_rate: ${1:0}",
+      "\tbatch_size: ${2:1}",
+      "\tbucketing_field: ${3:null}",
+      "\tcheckpoints_per_epoch: ${4:0}",
+      "\tcompile: ${5|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${6:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${7|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${8:128}",
+      "\tcontrastive_pretrain_temperature: ${9:0.07}",
+      "\tearly_stop: ${10:5}",
+      "\teffective_batch_size: ${11:auto}",
+      "\tenable_gradient_checkpointing: ${12|false,true|}",
+      "\tenable_profiling: ${13|false,true|}",
+      "\tepochs: ${14:100}",
+      "\teval_batch_size: ${15:2}",
+      "\teval_steps: ${16:null}",
+      "\tevaluate_training_set: ${17|false,true|}",
+      "\tgradient_accumulation_steps: ${18:auto}",
+      "\tincrease_batch_size_eval_metric: ${19:loss}",
+      "\tincrease_batch_size_eval_split: ${20:training}",
+      "\tincrease_batch_size_on_plateau: ${21:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${22:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${23:2}",
+      "\tlayers_to_freeze_regex: ${24:null}",
+      "\tlearning_rate: ${25:0.001}",
+      "\tlearning_rate_scaling: ${26:linear}",
+      "\tloss_balancing: ${27:none}",
+      "\tloss_balancing_alpha: ${28:1.5}",
+      "\tloss_balancing_lr: ${29:0.01}",
+      "\tloss_balancing_preference_vector: ${30:null}",
+      "\tloss_balancing_tchebycheff_weight: ${31:0.5}",
+      "\tmax_batch_size: ${32:1099511627776}",
+      "\tmodality_dropout: ${33:0}",
+      "\tmodel_soup: ${34:null}",
+      "\tmodel_soup_top_k: ${35:5}",
+      "\torpo_beta: ${36:0.1}",
+      "\tregularization_lambda: ${37:0}",
+      "\tregularization_type: ${38:l2}",
+      "\trejected_column: ${39:rejected}",
+      "\tshould_shuffle: ${40|true,false|}",
+      "\tskip_all_evaluation: ${41|false,true|}",
+      "\tsteps_per_checkpoint: ${42:0}",
+      "\ttrain_steps: ${43:null}",
+      "\tuse_mixed_precision: ${44|false,true|}",
+      "\tvalidation_field: ${45:null}",
+      "\tvalidation_metric: ${46:null}",
+      "$0"
+    ],
+    "description": "LLM `orpo` trainer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adadelta": {
+    "prefix": [
+      "opt-adadelta"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adadelta",
+      "$0"
+    ],
+    "description": "`adadelta` optimizer."
+  },
+  "Optimizer: adadelta (all parameters)": {
+    "prefix": [
+      "opt-adadelta-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adadelta",
+      "\teps: ${1:0.000001}",
+      "\trho: ${2:0.9}",
+      "\tweight_decay: ${3:0}",
+      "$0"
+    ],
+    "description": "`adadelta` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adafactor": {
+    "prefix": [
+      "opt-adafactor"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adafactor",
+      "$0"
+    ],
+    "description": "`adafactor` optimizer."
+  },
+  "Optimizer: adafactor (all parameters)": {
+    "prefix": [
+      "opt-adafactor-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adafactor",
+      "\tlr: ${1:null}",
+      "\trelative_step: ${2|true,false|}",
+      "\tscale_parameter: ${3|true,false|}",
+      "\twarmup_init: ${4|false,true|}",
+      "$0"
+    ],
+    "description": "`adafactor` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adagrad": {
+    "prefix": [
+      "opt-adagrad"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adagrad",
+      "$0"
+    ],
+    "description": "`adagrad` optimizer."
+  },
+  "Optimizer: adagrad (all parameters)": {
+    "prefix": [
+      "opt-adagrad-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adagrad",
+      "\teps: ${1:1.0e-10}",
+      "\tinitial_accumulator_value: ${2:0}",
+      "\tlr_decay: ${3:0}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`adagrad` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adagrad_8bit": {
+    "prefix": [
+      "opt-adagrad-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adagrad_8bit",
+      "$0"
+    ],
+    "description": "`adagrad_8bit` optimizer."
+  },
+  "Optimizer: adagrad_8bit (all parameters)": {
+    "prefix": [
+      "opt-adagrad-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adagrad_8bit",
+      "\tblock_wise: ${1|true,false|}",
+      "\teps: ${2:1.0e-10}",
+      "\tinitial_accumulator_value: ${3:0}",
+      "\tlr_decay: ${4:0}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`adagrad_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adam": {
+    "prefix": [
+      "opt-adam"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adam",
+      "$0"
+    ],
+    "description": "`adam` optimizer."
+  },
+  "Optimizer: adam (all parameters)": {
+    "prefix": [
+      "opt-adam-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adam",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\teps: ${3:1.0e-8}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`adam` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adam_8bit": {
+    "prefix": [
+      "opt-adam-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adam_8bit",
+      "$0"
+    ],
+    "description": "`adam_8bit` optimizer."
+  },
+  "Optimizer: adam_8bit (all parameters)": {
+    "prefix": [
+      "opt-adam-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adam_8bit",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`adam_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adamax": {
+    "prefix": [
+      "opt-adamax"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamax",
+      "$0"
+    ],
+    "description": "`adamax` optimizer."
+  },
+  "Optimizer: adamax (all parameters)": {
+    "prefix": [
+      "opt-adamax-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamax",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\teps: ${2:1.0e-8}",
+      "\tweight_decay: ${3:0}",
+      "$0"
+    ],
+    "description": "`adamax` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adamw": {
+    "prefix": [
+      "opt-adamw"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamw",
+      "$0"
+    ],
+    "description": "`adamw` optimizer."
+  },
+  "Optimizer: adamw (all parameters)": {
+    "prefix": [
+      "opt-adamw-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamw",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\teps: ${3:1.0e-8}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`adamw` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: adamw_8bit": {
+    "prefix": [
+      "opt-adamw-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamw_8bit",
+      "$0"
+    ],
+    "description": "`adamw_8bit` optimizer."
+  },
+  "Optimizer: adamw_8bit (all parameters)": {
+    "prefix": [
+      "opt-adamw-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: adamw_8bit",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`adamw_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lamb": {
+    "prefix": [
+      "opt-lamb"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lamb",
+      "$0"
+    ],
+    "description": "`lamb` optimizer."
+  },
+  "Optimizer: lamb (all parameters)": {
+    "prefix": [
+      "opt-lamb-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lamb",
+      "\tadam_w_mode: ${1|true,false|}",
+      "\tamsgrad: ${2|false,true|}",
+      "\tbetas: ${3:[0.9, 0.999]}",
+      "\tbias_correction: ${4|true,false|}",
+      "\tblock_wise: ${5|false,true|}",
+      "\teps: ${6:1.0e-8}",
+      "\tmax_unorm: ${7:1}",
+      "\tpercentile_clipping: ${8:100}",
+      "\tweight_decay: ${9:0}",
+      "$0"
+    ],
+    "description": "`lamb` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lamb_8bit": {
+    "prefix": [
+      "opt-lamb-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lamb_8bit",
+      "$0"
+    ],
+    "description": "`lamb_8bit` optimizer."
+  },
+  "Optimizer: lamb_8bit (all parameters)": {
+    "prefix": [
+      "opt-lamb-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lamb_8bit",
+      "\tadam_w_mode: ${1|true,false|}",
+      "\tamsgrad: ${2|false,true|}",
+      "\tbetas: ${3:[0.9, 0.999]}",
+      "\tbias_correction: ${4|true,false|}",
+      "\tblock_wise: ${5|false,true|}",
+      "\teps: ${6:1.0e-8}",
+      "\tmax_unorm: ${7:1}",
+      "\tpercentile_clipping: ${8:100}",
+      "\tweight_decay: ${9:0}",
+      "$0"
+    ],
+    "description": "`lamb_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lars": {
+    "prefix": [
+      "opt-lars"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lars",
+      "$0"
+    ],
+    "description": "`lars` optimizer."
+  },
+  "Optimizer: lars (all parameters)": {
+    "prefix": [
+      "opt-lars-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lars",
+      "\tdampening: ${1:0}",
+      "\tmax_unorm: ${2:1}",
+      "\tmomentum: ${3:0.9}",
+      "\tnesterov: ${4|false,true|}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`lars` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lars_8bit": {
+    "prefix": [
+      "opt-lars-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lars_8bit",
+      "$0"
+    ],
+    "description": "`lars_8bit` optimizer."
+  },
+  "Optimizer: lars_8bit (all parameters)": {
+    "prefix": [
+      "opt-lars-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lars_8bit",
+      "\tdampening: ${1:0}",
+      "\tmax_unorm: ${2:1}",
+      "\tmomentum: ${3:0.9}",
+      "\tnesterov: ${4|false,true|}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`lars_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lbfgs": {
+    "prefix": [
+      "opt-lbfgs"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lbfgs",
+      "$0"
+    ],
+    "description": "`lbfgs` optimizer."
+  },
+  "Optimizer: lbfgs (all parameters)": {
+    "prefix": [
+      "opt-lbfgs-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lbfgs",
+      "\thistory_size: ${1:100}",
+      "\tline_search_fn: ${2|null,strong_wolfe|}",
+      "\tmax_eval: ${3:null}",
+      "\tmax_iter: ${4:20}",
+      "\ttolerance_change: ${5:1.0e-9}",
+      "\ttolerance_grad: ${6:1.0e-7}",
+      "$0"
+    ],
+    "description": "`lbfgs` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lion": {
+    "prefix": [
+      "opt-lion"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lion",
+      "$0"
+    ],
+    "description": "`lion` optimizer."
+  },
+  "Optimizer: lion (all parameters)": {
+    "prefix": [
+      "opt-lion-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lion",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\tblock_wise: ${2|true,false|}",
+      "\tpercentile_clipping: ${3:100}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`lion` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: lion_8bit": {
+    "prefix": [
+      "opt-lion-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lion_8bit",
+      "$0"
+    ],
+    "description": "`lion_8bit` optimizer."
+  },
+  "Optimizer: lion_8bit (all parameters)": {
+    "prefix": [
+      "opt-lion-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: lion_8bit",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\tblock_wise: ${2|true,false|}",
+      "\tpercentile_clipping: ${3:100}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`lion_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: muon": {
+    "prefix": [
+      "opt-muon"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: muon",
+      "$0"
+    ],
+    "description": "`muon` optimizer."
+  },
+  "Optimizer: muon (all parameters)": {
+    "prefix": [
+      "opt-muon-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: muon",
+      "\tmomentum: ${1:0.95}",
+      "\tnesterov: ${2|true,false|}",
+      "$0"
+    ],
+    "description": "`muon` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: nadam": {
+    "prefix": [
+      "opt-nadam"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: nadam",
+      "$0"
+    ],
+    "description": "`nadam` optimizer."
+  },
+  "Optimizer: nadam (all parameters)": {
+    "prefix": [
+      "opt-nadam-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: nadam",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\teps: ${2:1.0e-8}",
+      "\tmomentum_decay: ${3:0.004}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`nadam` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_adam": {
+    "prefix": [
+      "opt-paged-adam"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adam",
+      "$0"
+    ],
+    "description": "`paged_adam` optimizer."
+  },
+  "Optimizer: paged_adam (all parameters)": {
+    "prefix": [
+      "opt-paged-adam-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adam",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`paged_adam` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_adam_8bit": {
+    "prefix": [
+      "opt-paged-adam-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adam_8bit",
+      "$0"
+    ],
+    "description": "`paged_adam_8bit` optimizer."
+  },
+  "Optimizer: paged_adam_8bit (all parameters)": {
+    "prefix": [
+      "opt-paged-adam-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adam_8bit",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`paged_adam_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_adamw": {
+    "prefix": [
+      "opt-paged-adamw"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adamw",
+      "$0"
+    ],
+    "description": "`paged_adamw` optimizer."
+  },
+  "Optimizer: paged_adamw (all parameters)": {
+    "prefix": [
+      "opt-paged-adamw-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adamw",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`paged_adamw` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_adamw_8bit": {
+    "prefix": [
+      "opt-paged-adamw-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adamw_8bit",
+      "$0"
+    ],
+    "description": "`paged_adamw_8bit` optimizer."
+  },
+  "Optimizer: paged_adamw_8bit (all parameters)": {
+    "prefix": [
+      "opt-paged-adamw-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_adamw_8bit",
+      "\tamsgrad: ${1|false,true|}",
+      "\tbetas: ${2:[0.9, 0.999]}",
+      "\tblock_wise: ${3|true,false|}",
+      "\teps: ${4:1.0e-8}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`paged_adamw_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_lion": {
+    "prefix": [
+      "opt-paged-lion"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_lion",
+      "$0"
+    ],
+    "description": "`paged_lion` optimizer."
+  },
+  "Optimizer: paged_lion (all parameters)": {
+    "prefix": [
+      "opt-paged-lion-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_lion",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\tblock_wise: ${2|true,false|}",
+      "\tpercentile_clipping: ${3:100}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`paged_lion` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: paged_lion_8bit": {
+    "prefix": [
+      "opt-paged-lion-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_lion_8bit",
+      "$0"
+    ],
+    "description": "`paged_lion_8bit` optimizer."
+  },
+  "Optimizer: paged_lion_8bit (all parameters)": {
+    "prefix": [
+      "opt-paged-lion-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: paged_lion_8bit",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\tblock_wise: ${2|true,false|}",
+      "\tpercentile_clipping: ${3:100}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`paged_lion_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: radam": {
+    "prefix": [
+      "opt-radam"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: radam",
+      "$0"
+    ],
+    "description": "`radam` optimizer."
+  },
+  "Optimizer: radam (all parameters)": {
+    "prefix": [
+      "opt-radam-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: radam",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\teps: ${2:1.0e-8}",
+      "\tweight_decay: ${3:0}",
+      "$0"
+    ],
+    "description": "`radam` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: rmsprop": {
+    "prefix": [
+      "opt-rmsprop"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: rmsprop",
+      "$0"
+    ],
+    "description": "`rmsprop` optimizer."
+  },
+  "Optimizer: rmsprop (all parameters)": {
+    "prefix": [
+      "opt-rmsprop-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: rmsprop",
+      "\talpha: ${1:0.99}",
+      "\tcentered: ${2|false,true|}",
+      "\teps: ${3:1.0e-8}",
+      "\tmomentum: ${4:0}",
+      "\tweight_decay: ${5:0}",
+      "$0"
+    ],
+    "description": "`rmsprop` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: rmsprop_8bit": {
+    "prefix": [
+      "opt-rmsprop-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: rmsprop_8bit",
+      "$0"
+    ],
+    "description": "`rmsprop_8bit` optimizer."
+  },
+  "Optimizer: rmsprop_8bit (all parameters)": {
+    "prefix": [
+      "opt-rmsprop-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: rmsprop_8bit",
+      "\talpha: ${1:0.99}",
+      "\tblock_wise: ${2|true,false|}",
+      "\tcentered: ${3|false,true|}",
+      "\teps: ${4:1.0e-8}",
+      "\tmomentum: ${5:0}",
+      "\tpercentile_clipping: ${6:100}",
+      "\tweight_decay: ${7:0}",
+      "$0"
+    ],
+    "description": "`rmsprop_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: schedule_free_adamw": {
+    "prefix": [
+      "opt-schedule-free-adamw"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: schedule_free_adamw",
+      "$0"
+    ],
+    "description": "`schedule_free_adamw` optimizer."
+  },
+  "Optimizer: schedule_free_adamw (all parameters)": {
+    "prefix": [
+      "opt-schedule-free-adamw-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: schedule_free_adamw",
+      "\tbetas: ${1:[0.9, 0.999]}",
+      "\twarmup_steps: ${2:0}",
+      "\tweight_decay: ${3:0}",
+      "$0"
+    ],
+    "description": "`schedule_free_adamw` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: sgd": {
+    "prefix": [
+      "opt-sgd"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: sgd",
+      "$0"
+    ],
+    "description": "`sgd` optimizer."
+  },
+  "Optimizer: sgd (all parameters)": {
+    "prefix": [
+      "opt-sgd-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: sgd",
+      "\tdampening: ${1:0}",
+      "\tmomentum: ${2:0}",
+      "\tnesterov: ${3|false,true|}",
+      "\tweight_decay: ${4:0}",
+      "$0"
+    ],
+    "description": "`sgd` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: sgd_8bit": {
+    "prefix": [
+      "opt-sgd-8bit"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: sgd_8bit",
+      "$0"
+    ],
+    "description": "`sgd_8bit` optimizer."
+  },
+  "Optimizer: sgd_8bit (all parameters)": {
+    "prefix": [
+      "opt-sgd-8bit-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: sgd_8bit",
+      "\tblock_wise: ${1|false,true|}",
+      "\tdampening: ${2:0}",
+      "\tmomentum: ${3:0}",
+      "\tnesterov: ${4|false,true|}",
+      "\tpercentile_clipping: ${5:100}",
+      "\tweight_decay: ${6:0}",
+      "$0"
+    ],
+    "description": "`sgd_8bit` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Optimizer: soap": {
+    "prefix": [
+      "opt-soap"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: soap",
+      "$0"
+    ],
+    "description": "`soap` optimizer."
+  },
+  "Optimizer: soap (all parameters)": {
+    "prefix": [
+      "opt-soap-full"
+    ],
+    "body": [
+      "optimizer:",
+      "\ttype: soap",
+      "\tbetas: ${1:[0.95, 0.95]}",
+      "\tweight_decay: ${2:0.01}",
+      "$0"
+    ],
+    "description": "`soap` optimizer. Includes every parameter with its Ludwig default."
+  },
+  "Profiler": {
+    "prefix": [
+      "profiler"
+    ],
+    "body": [
+      "profiler:",
+      "\tactive: ${1:3}",
+      "\trepeat: ${2:5}",
+      "\tskip_first: ${3:0}",
+      "\twait: ${4:1}",
+      "\twarmup: ${5:1}",
+      "$0"
+    ],
+    "description": "Profiler settings inside `trainer`."
+  },
+  "Trainer (ECD, all parameters)": {
+    "prefix": [
+      "trainer-ecd-full"
+    ],
+    "body": [
+      "trainer:",
+      "\tbatch_size: ${1:auto}",
+      "\tbucketing_field: ${2:null}",
+      "\tcheckpoints_per_epoch: ${3:0}",
+      "\tcompile: ${4|false,true|}",
+      "\tcontrastive_pretrain_epochs: ${5:0}",
+      "\tcontrastive_pretrain_learnable_temperature: ${6|true,false|}",
+      "\tcontrastive_pretrain_projection_dim: ${7:128}",
+      "\tcontrastive_pretrain_temperature: ${8:0.07}",
+      "\tearly_stop: ${9:5}",
+      "\teffective_batch_size: ${10:auto}",
+      "\tenable_gradient_checkpointing: ${11|false,true|}",
+      "\tenable_profiling: ${12|false,true|}",
+      "\tepochs: ${13:100}",
+      "\teval_steps: ${14:null}",
+      "\tevaluate_training_set: ${15|false,true|}",
+      "\tgradient_accumulation_steps: ${16:auto}",
+      "\tincrease_batch_size_eval_metric: ${17:loss}",
+      "\tincrease_batch_size_eval_split: ${18:training}",
+      "\tincrease_batch_size_on_plateau: ${19:0}",
+      "\tincrease_batch_size_on_plateau_patience: ${20:5}",
+      "\tincrease_batch_size_on_plateau_rate: ${21:2}",
+      "\tlayers_to_freeze_regex: ${22:null}",
+      "\tlearning_rate: ${23:0.001}",
+      "\tlearning_rate_scaling: ${24|linear,constant,sqrt|}",
+      "\tloss_balancing: ${25|none,log_transform,uncertainty,famo,gradnorm,nash_mtl,pareto_mtl|}",
+      "\tloss_balancing_alpha: ${26:1.5}",
+      "\tloss_balancing_lr: ${27:0.01}",
+      "\tloss_balancing_preference_vector: ${28:null}",
+      "\tloss_balancing_tchebycheff_weight: ${29:0.5}",
+      "\tmax_batch_size: ${30:1099511627776}",
+      "\tmodality_dropout: ${31:0}",
+      "\tmodel_soup: ${32|null,uniform,greedy|}",
+      "\tmodel_soup_top_k: ${33:5}",
+      "\tregularization_lambda: ${34:0}",
+      "\tregularization_type: ${35|l2,l1,l1_l2,null|}",
+      "\tshould_shuffle: ${36|true,false|}",
+      "\tskip_all_evaluation: ${37|false,true|}",
+      "\tsteps_per_checkpoint: ${38:0}",
+      "\ttrain_steps: ${39:null}",
+      "\tuse_mixed_precision: ${40|false,true|}",
+      "\tvalidation_field: ${41:null}",
+      "\tvalidation_metric: ${42:null}",
+      "$0"
+    ],
+    "description": "ECD trainer with every parameter and its Ludwig default."
+  },
+  "Trainer (ECD)": {
+    "prefix": [
+      "trainer",
+      "trainer-ecd"
+    ],
+    "body": [
+      "trainer:",
+      "\tbatch_size: ${1:auto}",
+      "\tearly_stop: ${2:5}",
+      "\tepochs: ${3:100}",
+      "\tlearning_rate: ${4:0.001}",
+      "\ttrain_steps: ${5:null}",
+      "\tvalidation_field: ${6:null}",
+      "\tvalidation_metric: ${7:null}",
+      "\toptimizer:",
+      "\t\ttype: ${8|adam,adadelta,adafactor,adagrad,adagrad_8bit,adam_8bit,adamax,adamw,adamw_8bit,lamb,lamb_8bit,lars,lars_8bit,lbfgs,lion,lion_8bit,muon,nadam,paged_adam,paged_adam_8bit,paged_adamw,paged_adamw_8bit,paged_lion,paged_lion_8bit,radam,rmsprop,rmsprop_8bit,schedule_free_adamw,sgd,sgd_8bit,soap|}",
+      "$0"
+    ],
+    "description": "ECD trainer with the most commonly tuned parameters."
+  }
+}

@@ -1,18 +1,18 @@
 {
-  "sequence encoder: cnnrnn": {
+  "timeseries encoder: cnnrnn": {
     "prefix": [
-      "seq-enc-cnnrnn"
+      "ts-enc-cnnrnn"
     ],
     "body": [
       "encoder:",
       "\ttype: cnnrnn",
       "$0"
     ],
-    "description": "`cnnrnn` encoder for sequence input features."
+    "description": "`cnnrnn` encoder for timeseries input features."
   },
-  "sequence encoder: cnnrnn (all parameters)": {
+  "timeseries encoder: cnnrnn (all parameters)": {
     "prefix": [
-      "seq-enc-cnnrnn-full"
+      "ts-enc-cnnrnn-full"
     ],
     "body": [
       "encoder:",
@@ -59,54 +59,56 @@
       "\tweights_initializer: ${40:xavier_uniform}",
       "$0"
     ],
-    "description": "`cnnrnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`cnnrnn` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: embed": {
+  "timeseries encoder: dense": {
     "prefix": [
-      "seq-enc-embed"
+      "ts-enc-dense"
     ],
     "body": [
       "encoder:",
-      "\ttype: embed",
+      "\ttype: dense",
       "$0"
     ],
-    "description": "`embed` encoder for sequence input features."
+    "description": "`dense` encoder for timeseries input features."
   },
-  "sequence encoder: embed (all parameters)": {
+  "timeseries encoder: dense (all parameters)": {
     "prefix": [
-      "seq-enc-embed-full"
+      "ts-enc-dense-full"
     ],
     "body": [
       "encoder:",
-      "\ttype: embed",
-      "\tadapter: ${1:null}",
-      "\tdropout: ${2:0}",
-      "\tembedding_size: ${3:256}",
-      "\tembeddings_on_cpu: ${4|false,true|}",
-      "\tembeddings_trainable: ${5|true,false|}",
-      "\tpretrained_embeddings: ${6:null}",
-      "\treduce_output: ${7|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
-      "\trepresentation: ${8|dense,sparse|}",
-      "\tskip: ${9|false,true|}",
-      "\tweights_initializer: ${10:uniform}",
+      "\ttype: dense",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tinput_size: ${5:null}",
+      "\tnorm: ${6|null,batch,layer,ghost|}",
+      "\tnorm_params: ${7:null}",
+      "\tnum_layers: ${8:1}",
+      "\toutput_size: ${9:256}",
+      "\tskip: ${10|false,true|}",
+      "\tuse_bias: ${11|true,false|}",
+      "\tweights_initializer: ${12:xavier_uniform}",
       "$0"
     ],
-    "description": "`embed` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`dense` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: jamba": {
+  "timeseries encoder: jamba": {
     "prefix": [
-      "seq-enc-jamba"
+      "ts-enc-jamba"
     ],
     "body": [
       "encoder:",
       "\ttype: jamba",
       "$0"
     ],
-    "description": "`jamba` encoder for sequence input features."
+    "description": "`jamba` encoder for timeseries input features."
   },
-  "sequence encoder: jamba (all parameters)": {
+  "timeseries encoder: jamba (all parameters)": {
     "prefix": [
-      "seq-enc-jamba-full"
+      "ts-enc-jamba-full"
     ],
     "body": [
       "encoder:",
@@ -130,22 +132,22 @@
       "\tskip: ${17|false,true|}",
       "$0"
     ],
-    "description": "`jamba` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`jamba` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: mamba": {
+  "timeseries encoder: mamba": {
     "prefix": [
-      "seq-enc-mamba"
+      "ts-enc-mamba"
     ],
     "body": [
       "encoder:",
       "\ttype: mamba",
       "$0"
     ],
-    "description": "`mamba` encoder for sequence input features."
+    "description": "`mamba` encoder for timeseries input features."
   },
-  "sequence encoder: mamba (all parameters)": {
+  "timeseries encoder: mamba (all parameters)": {
     "prefix": [
-      "seq-enc-mamba-full"
+      "ts-enc-mamba-full"
     ],
     "body": [
       "encoder:",
@@ -175,22 +177,22 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`mamba` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`mamba` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: mamba2": {
+  "timeseries encoder: mamba2": {
     "prefix": [
-      "seq-enc-mamba2"
+      "ts-enc-mamba2"
     ],
     "body": [
       "encoder:",
       "\ttype: mamba2",
       "$0"
     ],
-    "description": "`mamba2` encoder for sequence input features."
+    "description": "`mamba2` encoder for timeseries input features."
   },
-  "sequence encoder: mamba2 (all parameters)": {
+  "timeseries encoder: mamba2 (all parameters)": {
     "prefix": [
-      "seq-enc-mamba2-full"
+      "ts-enc-mamba2-full"
     ],
     "body": [
       "encoder:",
@@ -212,22 +214,52 @@
       "\tskip: ${15|false,true|}",
       "$0"
     ],
-    "description": "`mamba2` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`mamba2` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: parallel_cnn": {
+  "timeseries encoder: nbeats": {
     "prefix": [
-      "seq-enc-parallel-cnn"
+      "ts-enc-nbeats"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: nbeats",
+      "$0"
+    ],
+    "description": "`nbeats` encoder for timeseries input features."
+  },
+  "timeseries encoder: nbeats (all parameters)": {
+    "prefix": [
+      "ts-enc-nbeats-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: nbeats",
+      "\tadapter: ${1:null}",
+      "\tdropout: ${2:0}",
+      "\tlayer_size: ${3:256}",
+      "\tnum_blocks: ${4:3}",
+      "\tnum_layers: ${5:4}",
+      "\tnum_stacks: ${6:2}",
+      "\toutput_size: ${7:256}",
+      "\tskip: ${8|false,true|}",
+      "$0"
+    ],
+    "description": "`nbeats` encoder for timeseries input features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries encoder: parallel_cnn": {
+    "prefix": [
+      "ts-enc-parallel-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: parallel_cnn",
       "$0"
     ],
-    "description": "`parallel_cnn` encoder for sequence input features."
+    "description": "`parallel_cnn` encoder for timeseries input features."
   },
-  "sequence encoder: parallel_cnn (all parameters)": {
+  "timeseries encoder: parallel_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-parallel-cnn-full"
+      "ts-enc-parallel-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -257,22 +289,81 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`parallel_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`parallel_cnn` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: rnn": {
+  "timeseries encoder: passthrough": {
     "prefix": [
-      "seq-enc-rnn"
+      "ts-enc-passthrough"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for timeseries input features."
+  },
+  "timeseries encoder: passthrough (all parameters)": {
+    "prefix": [
+      "ts-enc-passthrough-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "\tadapter: ${1:null}",
+      "\tencoding_size: ${2:null}",
+      "\treduce_output: ${3|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "\tskip: ${4|false,true|}",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for timeseries input features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries encoder: patchtst": {
+    "prefix": [
+      "ts-enc-patchtst"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: patchtst",
+      "$0"
+    ],
+    "description": "`patchtst` encoder for timeseries input features."
+  },
+  "timeseries encoder: patchtst (all parameters)": {
+    "prefix": [
+      "ts-enc-patchtst-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: patchtst",
+      "\tadapter: ${1:null}",
+      "\td_model: ${2:128}",
+      "\tdropout: ${3:0.1}",
+      "\tffn_dim: ${4:256}",
+      "\tnum_heads: ${5:8}",
+      "\tnum_layers: ${6:3}",
+      "\toutput_size: ${7:256}",
+      "\tpatch_size: ${8:16}",
+      "\tpatch_stride: ${9:8}",
+      "\treduce_output: ${10|mean,last,first|}",
+      "\tskip: ${11|false,true|}",
+      "$0"
+    ],
+    "description": "`patchtst` encoder for timeseries input features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries encoder: rnn": {
+    "prefix": [
+      "ts-enc-rnn"
     ],
     "body": [
       "encoder:",
       "\ttype: rnn",
       "$0"
     ],
-    "description": "`rnn` encoder for sequence input features."
+    "description": "`rnn` encoder for timeseries input features."
   },
-  "sequence encoder: rnn (all parameters)": {
+  "timeseries encoder: rnn (all parameters)": {
     "prefix": [
-      "seq-enc-rnn-full"
+      "ts-enc-rnn-full"
     ],
     "body": [
       "encoder:",
@@ -307,22 +398,22 @@
       "\tweights_initializer: ${28:xavier_uniform}",
       "$0"
     ],
-    "description": "`rnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`rnn` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: stacked_cnn": {
+  "timeseries encoder: stacked_cnn": {
     "prefix": [
-      "seq-enc-stacked-cnn"
+      "ts-enc-stacked-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: stacked_cnn",
       "$0"
     ],
-    "description": "`stacked_cnn` encoder for sequence input features."
+    "description": "`stacked_cnn` encoder for timeseries input features."
   },
-  "sequence encoder: stacked_cnn (all parameters)": {
+  "timeseries encoder: stacked_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-stacked-cnn-full"
+      "ts-enc-stacked-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -357,22 +448,22 @@
       "\tweights_initializer: ${28:xavier_uniform}",
       "$0"
     ],
-    "description": "`stacked_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`stacked_cnn` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: stacked_parallel_cnn": {
+  "timeseries encoder: stacked_parallel_cnn": {
     "prefix": [
-      "seq-enc-stacked-parallel-cnn"
+      "ts-enc-stacked-parallel-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: stacked_parallel_cnn",
       "$0"
     ],
-    "description": "`stacked_parallel_cnn` encoder for sequence input features."
+    "description": "`stacked_parallel_cnn` encoder for timeseries input features."
   },
-  "sequence encoder: stacked_parallel_cnn (all parameters)": {
+  "timeseries encoder: stacked_parallel_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-stacked-parallel-cnn-full"
+      "ts-enc-stacked-parallel-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -402,22 +493,22 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`stacked_parallel_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`stacked_parallel_cnn` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: transformer": {
+  "timeseries encoder: transformer": {
     "prefix": [
-      "seq-enc-transformer"
+      "ts-enc-transformer"
     ],
     "body": [
       "encoder:",
       "\ttype: transformer",
       "$0"
     ],
-    "description": "`transformer` encoder for sequence input features."
+    "description": "`transformer` encoder for timeseries input features."
   },
-  "sequence encoder: transformer (all parameters)": {
+  "timeseries encoder: transformer (all parameters)": {
     "prefix": [
-      "seq-enc-transformer-full"
+      "ts-enc-transformer-full"
     ],
     "body": [
       "encoder:",
@@ -448,6 +539,6 @@
       "\tweights_initializer: ${24:xavier_uniform}",
       "$0"
     ],
-    "description": "`transformer` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`transformer` encoder for timeseries input features. Includes every parameter with its Ludwig default."
   }
 }

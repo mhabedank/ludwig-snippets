@@ -1,17 +1,1163 @@
 {
-    "Add Text Embed Encoder": {
-        "prefix": "txt-enc-embed",
-        "body": [
-            "encoder:",
-            "\ttype: embed",
-            "\tdropout: ${1:0.0}",
-            "\tembedding_size: ${2:256}",
-            "\trepresentation: ${3|dense,sparse|}",
-            "\tweight_initializer: ${4|uniform,xavier_uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-            "\treduce_output: ${5|sum,last,mean,avg,max,concat,attention,none,None,null|}",
-            "\tembeddings_on_cpu: ${6|false,true|}",
-            "\tembeddings_trainable: ${7|true,false|}",
-            "\tpretrained_embeddings: ${8:null}",
-        ]
-    }
+  "text encoder: albert": {
+    "prefix": [
+      "txt-enc-albert"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: albert",
+      "$0"
+    ],
+    "description": "`albert` encoder for text input features."
+  },
+  "text encoder: albert (all parameters)": {
+    "prefix": [
+      "txt-enc-albert-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: albert",
+      "\tattention_probs_dropout_prob: ${1:0}",
+      "\tbos_token_id: ${2:2}",
+      "\tclassifier_dropout_prob: ${3:0.1}",
+      "\tembedding_size: ${4:128}",
+      "\teos_token_id: ${5:3}",
+      "\thidden_act: ${6|gelu_new,gelu,relu,silu|}",
+      "\thidden_dropout_prob: ${7:0}",
+      "\thidden_size: ${8:768}",
+      "\tinitializer_range: ${9:0.02}",
+      "\tinner_group_num: ${10:1}",
+      "\tintermediate_size: ${11:3072}",
+      "\tlayer_norm_eps: ${12:1.0e-12}",
+      "\tmax_position_embeddings: ${13:512}",
+      "\tmax_sequence_length: ${14:null}",
+      "\tnum_attention_heads: ${15:12}",
+      "\tnum_hidden_groups: ${16:1}",
+      "\tnum_hidden_layers: ${17:12}",
+      "\tpad_token_id: ${18:0}",
+      "\tposition_embedding_type: ${19|absolute,relative_key,relative_key_query|}",
+      "\tpretrained_kwargs: ${20:null}",
+      "\tpretrained_model_name_or_path: ${21:albert-base-v2}",
+      "\treduce_output: ${22:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${23|false,true|}",
+      "\tskip: ${24|false,true|}",
+      "\ttrainable: ${25|false,true|}",
+      "\ttype_vocab_size: ${26:2}",
+      "\tuse_pretrained: ${27|true,false|}",
+      "\tvocab: ${28:null}",
+      "\tvocab_size: ${29:30000}",
+      "$0"
+    ],
+    "description": "`albert` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: auto_transformer": {
+    "prefix": [
+      "txt-enc-auto-transformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: auto_transformer",
+      "$0"
+    ],
+    "description": "`auto_transformer` encoder for text input features."
+  },
+  "text encoder: auto_transformer (all parameters)": {
+    "prefix": [
+      "txt-enc-auto-transformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: auto_transformer",
+      "\tmax_sequence_length: ${1:null}",
+      "\tpretrained_kwargs: ${2:null}",
+      "\tpretrained_model_name_or_path: ${3:null}",
+      "\treduce_output: ${4|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|false,true|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "\tvocab: ${8:null}",
+      "\tvocab_size: ${9:null}",
+      "$0"
+    ],
+    "description": "`auto_transformer` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: bert": {
+    "prefix": [
+      "txt-enc-bert"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: bert",
+      "$0"
+    ],
+    "description": "`bert` encoder for text input features."
+  },
+  "text encoder: bert (all parameters)": {
+    "prefix": [
+      "txt-enc-bert-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: bert",
+      "\tattention_probs_dropout_prob: ${1:0.1}",
+      "\tclassifier_dropout: ${2:null}",
+      "\tgradient_checkpointing: ${3|false,true|}",
+      "\thidden_act: ${4|gelu,relu,silu,gelu_new|}",
+      "\thidden_dropout_prob: ${5:0.1}",
+      "\thidden_size: ${6:768}",
+      "\tinitializer_range: ${7:0.02}",
+      "\tintermediate_size: ${8:3072}",
+      "\tlayer_norm_eps: ${9:1.0e-12}",
+      "\tmax_position_embeddings: ${10:512}",
+      "\tmax_sequence_length: ${11:null}",
+      "\tnum_attention_heads: ${12:12}",
+      "\tnum_hidden_layers: ${13:12}",
+      "\tpad_token_id: ${14:0}",
+      "\tposition_embedding_type: ${15|absolute,relative_key,relative_key_query|}",
+      "\tpretrained_kwargs: ${16:null}",
+      "\tpretrained_model_name_or_path: ${17:bert-base-uncased}",
+      "\treduce_output: ${18:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${19|false,true|}",
+      "\tskip: ${20|false,true|}",
+      "\ttrainable: ${21|false,true|}",
+      "\ttype_vocab_size: ${22:2}",
+      "\tuse_pretrained: ${23|true,false|}",
+      "\tvocab: ${24:null}",
+      "\tvocab_size: ${25:30522}",
+      "$0"
+    ],
+    "description": "`bert` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: camembert": {
+    "prefix": [
+      "txt-enc-camembert"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: camembert",
+      "$0"
+    ],
+    "description": "`camembert` encoder for text input features."
+  },
+  "text encoder: camembert (all parameters)": {
+    "prefix": [
+      "txt-enc-camembert-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: camembert",
+      "\tattention_probs_dropout_prob: ${1:0.1}",
+      "\tclassifier_dropout: ${2:null}",
+      "\tgradient_checkpointing: ${3|false,true|}",
+      "\thidden_act: ${4|gelu,relu,silu,gelu_new|}",
+      "\thidden_dropout_prob: ${5:0.1}",
+      "\thidden_size: ${6:768}",
+      "\tinitializer_range: ${7:0.02}",
+      "\tintermediate_size: ${8:3072}",
+      "\tlayer_norm_eps: ${9:0.00001}",
+      "\tmax_position_embeddings: ${10:514}",
+      "\tmax_sequence_length: ${11:null}",
+      "\tnum_attention_heads: ${12:12}",
+      "\tnum_hidden_layers: ${13:12}",
+      "\tpad_token_id: ${14:1}",
+      "\tposition_embedding_type: ${15|absolute,relative_key,relative_key_query|}",
+      "\tpretrained_kwargs: ${16:null}",
+      "\tpretrained_model_name_or_path: ${17:camembert-base}",
+      "\treduce_output: ${18:sum}",
+      "\tsaved_weights_in_checkpoint: ${19|false,true|}",
+      "\tskip: ${20|false,true|}",
+      "\ttrainable: ${21|false,true|}",
+      "\ttype_vocab_size: ${22:1}",
+      "\tuse_pretrained: ${23|true,false|}",
+      "\tvocab: ${24:null}",
+      "\tvocab_size: ${25:32005}",
+      "$0"
+    ],
+    "description": "`camembert` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: cnnrnn": {
+    "prefix": [
+      "txt-enc-cnnrnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: cnnrnn",
+      "$0"
+    ],
+    "description": "`cnnrnn` encoder for text input features."
+  },
+  "text encoder: cnnrnn (all parameters)": {
+    "prefix": [
+      "txt-enc-cnnrnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: cnnrnn",
+      "\tactivation: ${1|tanh,elu,leakyRelu,logSigmoid,relu,sigmoid,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tbidirectional: ${4|false,true|}",
+      "\tcell_type: ${5|rnn,lstm,gru|}",
+      "\tconv_activation: ${6|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tconv_dropout: ${7:0}",
+      "\tdilation_rate: ${8:1}",
+      "\tdropout: ${9:0}",
+      "\tembedding_size: ${10:256}",
+      "\tembeddings_on_cpu: ${11|false,true|}",
+      "\tembeddings_trainable: ${12|true,false|}",
+      "\tfc_activation: ${13|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${14:0}",
+      "\tfilter_size: ${15:5}",
+      "\tnorm: ${16|null,batch,layer,ghost|}",
+      "\tnorm_params: ${17:null}",
+      "\tnum_conv_layers: ${18:null}",
+      "\tnum_fc_layers: ${19:0}",
+      "\tnum_filters: ${20:256}",
+      "\tnum_rec_layers: ${21:1}",
+      "\toutput_size: ${22:256}",
+      "\tpadding: ${23|same,valid|}",
+      "\tpool_function: ${24|max,last,sum,mean,avg,concat,attention,attention_pooling,none,None,null|}",
+      "\tpool_padding: ${25|same,valid|}",
+      "\tpool_size: ${26:null}",
+      "\tpool_strides: ${27:null}",
+      "\tpretrained_embeddings: ${28:null}",
+      "\trecurrent_activation: ${29|sigmoid,elu,leakyRelu,logSigmoid,relu,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\trecurrent_dropout: ${30:0}",
+      "\trecurrent_initializer: ${31|orthogonal,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,sparse,identity|}",
+      "\treduce_output: ${32|last,sum,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${33|dense,sparse|}",
+      "\tshould_embed: ${34|true,false|}",
+      "\tskip: ${35|false,true|}",
+      "\tstate_size: ${36:256}",
+      "\tstrides: ${37:1}",
+      "\tunit_forget_bias: ${38|true,false|}",
+      "\tuse_bias: ${39|true,false|}",
+      "\tweights_initializer: ${40:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`cnnrnn` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: deberta": {
+    "prefix": [
+      "txt-enc-deberta"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: deberta",
+      "$0"
+    ],
+    "description": "`deberta` encoder for text input features."
+  },
+  "text encoder: deberta (all parameters)": {
+    "prefix": [
+      "txt-enc-deberta-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: deberta",
+      "\tattention_probs_dropout_prob: ${1:0.1}",
+      "\thidden_act: ${2:gelu}",
+      "\thidden_dropout_prob: ${3:0.1}",
+      "\thidden_size: ${4:1536}",
+      "\tinitializer_range: ${5:0.02}",
+      "\tintermediate_size: ${6:6144}",
+      "\tlayer_norm_eps: ${7:1.0e-12}",
+      "\tmax_position_embeddings: ${8:512}",
+      "\tmax_relative_positions: ${9:-1}",
+      "\tmax_sequence_length: ${10:null}",
+      "\tnorm_rel_ebd: ${11:layer_norm}",
+      "\tnum_attention_heads: ${12:24}",
+      "\tnum_hidden_layers: ${13:24}",
+      "\tpad_token_id: ${14:0}",
+      "\tpooler_dropout: ${15:0}",
+      "\tpooler_hidden_act: ${16:gelu}",
+      "\tpooler_hidden_size: ${17:1536}",
+      "\tposition_biased_input: ${18|false,true|}",
+      "\tposition_buckets: ${19:256}",
+      "\tpretrained_kwargs: ${20:null}",
+      "\tpretrained_model_name_or_path: ${21:tasksource/deberta-base-long-nli}",
+      "\treduce_output: ${22|sum,cls_pooled,last,mean,max,concat,attention,null|}",
+      "\trelative_attention: ${23|true,false|}",
+      "\tsaved_weights_in_checkpoint: ${24|false,true|}",
+      "\tshare_att_key: ${25|true,false|}",
+      "\tskip: ${26|false,true|}",
+      "\ttrainable: ${27|false,true|}",
+      "\ttype_vocab_size: ${28:0}",
+      "\tuse_pretrained: ${29|true,false|}",
+      "\tvocab_size: ${30:null}",
+      "$0"
+    ],
+    "description": "`deberta` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: distilbert": {
+    "prefix": [
+      "txt-enc-distilbert"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: distilbert",
+      "$0"
+    ],
+    "description": "`distilbert` encoder for text input features."
+  },
+  "text encoder: distilbert (all parameters)": {
+    "prefix": [
+      "txt-enc-distilbert-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: distilbert",
+      "\tactivation: ${1|gelu,relu,silu,gelu_new|}",
+      "\tattention_dropout: ${2:0.1}",
+      "\tdim: ${3:768}",
+      "\tdropout: ${4:0.1}",
+      "\thidden_dim: ${5:3072}",
+      "\tinitializer_range: ${6:0.02}",
+      "\tmax_position_embeddings: ${7:512}",
+      "\tmax_sequence_length: ${8:null}",
+      "\tn_heads: ${9:12}",
+      "\tn_layers: ${10:6}",
+      "\tpretrained_kwargs: ${11:null}",
+      "\tpretrained_model_name_or_path: ${12:distilbert-base-uncased}",
+      "\tqa_dropout: ${13:0.1}",
+      "\treduce_output: ${14:sum}",
+      "\tsaved_weights_in_checkpoint: ${15|false,true|}",
+      "\tseq_classif_dropout: ${16:0.2}",
+      "\tsinusoidal_pos_embds: ${17|false,true|}",
+      "\tskip: ${18|false,true|}",
+      "\ttrainable: ${19|false,true|}",
+      "\tuse_pretrained: ${20|true,false|}",
+      "\tvocab: ${21:null}",
+      "\tvocab_size: ${22:30522}",
+      "$0"
+    ],
+    "description": "`distilbert` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: electra": {
+    "prefix": [
+      "txt-enc-electra"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: electra",
+      "$0"
+    ],
+    "description": "`electra` encoder for text input features."
+  },
+  "text encoder: electra (all parameters)": {
+    "prefix": [
+      "txt-enc-electra-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: electra",
+      "\tattention_probs_dropout_prob: ${1:0.1}",
+      "\tclassifier_dropout: ${2:null}",
+      "\tembedding_size: ${3:128}",
+      "\thidden_act: ${4|gelu,relu,silu,gelu_new|}",
+      "\thidden_dropout_prob: ${5:0.1}",
+      "\thidden_size: ${6:256}",
+      "\tinitializer_range: ${7:0.02}",
+      "\tintermediate_size: ${8:1024}",
+      "\tlayer_norm_eps: ${9:1.0e-12}",
+      "\tmax_position_embeddings: ${10:512}",
+      "\tmax_sequence_length: ${11:null}",
+      "\tnum_attention_heads: ${12:4}",
+      "\tnum_hidden_layers: ${13:12}",
+      "\tposition_embedding_type: ${14|absolute,relative_key,relative_key_query|}",
+      "\tpretrained_kwargs: ${15:null}",
+      "\tpretrained_model_name_or_path: ${16:google/electra-small-discriminator}",
+      "\treduce_output: ${17:sum}",
+      "\tsaved_weights_in_checkpoint: ${18|false,true|}",
+      "\tskip: ${19|false,true|}",
+      "\ttrainable: ${20|false,true|}",
+      "\ttype_vocab_size: ${21:2}",
+      "\tuse_pretrained: ${22|true,false|}",
+      "\tvocab: ${23:null}",
+      "\tvocab_size: ${24:30522}",
+      "$0"
+    ],
+    "description": "`electra` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: embed": {
+    "prefix": [
+      "txt-enc-embed"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "$0"
+    ],
+    "description": "`embed` encoder for text input features."
+  },
+  "text encoder: embed (all parameters)": {
+    "prefix": [
+      "txt-enc-embed-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tadapter: ${1:null}",
+      "\tdropout: ${2:0}",
+      "\tembedding_size: ${3:256}",
+      "\tembeddings_on_cpu: ${4|false,true|}",
+      "\tembeddings_trainable: ${5|true,false|}",
+      "\tpretrained_embeddings: ${6:null}",
+      "\treduce_output: ${7|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${8|dense,sparse|}",
+      "\tskip: ${9|false,true|}",
+      "\tweights_initializer: ${10:uniform}",
+      "$0"
+    ],
+    "description": "`embed` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: gpt": {
+    "prefix": [
+      "txt-enc-gpt"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: gpt",
+      "$0"
+    ],
+    "description": "`gpt` encoder for text input features."
+  },
+  "text encoder: gpt (all parameters)": {
+    "prefix": [
+      "txt-enc-gpt-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: gpt",
+      "\tafn: ${1|gelu,relu,silu|}",
+      "\tattn_pdrop: ${2:0.1}",
+      "\tembd_pdrop: ${3:0.1}",
+      "\tinitializer_range: ${4:0.02}",
+      "\tlayer_norm_epsilon: ${5:0.00001}",
+      "\tmax_sequence_length: ${6:null}",
+      "\tn_ctx: ${7:512}",
+      "\tn_embd: ${8:768}",
+      "\tn_head: ${9:12}",
+      "\tn_layer: ${10:12}",
+      "\tn_positions: ${11:40478}",
+      "\tpretrained_kwargs: ${12:null}",
+      "\tpretrained_model_name_or_path: ${13:openai-gpt}",
+      "\treduce_output: ${14:sum}",
+      "\tresid_pdrop: ${15:0.1}",
+      "\tsaved_weights_in_checkpoint: ${16|false,true|}",
+      "\tskip: ${17|false,true|}",
+      "\ttrainable: ${18|false,true|}",
+      "\tuse_pretrained: ${19|true,false|}",
+      "\tvocab: ${20:null}",
+      "\tvocab_size: ${21:30522}",
+      "$0"
+    ],
+    "description": "`gpt` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: gpt2": {
+    "prefix": [
+      "txt-enc-gpt2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: gpt2",
+      "$0"
+    ],
+    "description": "`gpt2` encoder for text input features."
+  },
+  "text encoder: gpt2 (all parameters)": {
+    "prefix": [
+      "txt-enc-gpt2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: gpt2",
+      "\tactivation_function: ${1|gelu_new,relu,silu,gelu,tanh|}",
+      "\tattn_pdrop: ${2:0.1}",
+      "\tembd_pdrop: ${3:0.1}",
+      "\tinitializer_range: ${4:0.02}",
+      "\tlayer_norm_epsilon: ${5:0.00001}",
+      "\tmax_sequence_length: ${6:null}",
+      "\tn_ctx: ${7:1024}",
+      "\tn_embd: ${8:768}",
+      "\tn_head: ${9:12}",
+      "\tn_inner: ${10:null}",
+      "\tn_layer: ${11:12}",
+      "\tn_positions: ${12:1024}",
+      "\tpretrained_kwargs: ${13:null}",
+      "\tpretrained_model_name_or_path: ${14:gpt2}",
+      "\treduce_output: ${15:sum}",
+      "\tresid_pdrop: ${16:0.1}",
+      "\tscale_attn_weights: ${17|true,false|}",
+      "\tskip: ${18|false,true|}",
+      "\ttrainable: ${19|false,true|}",
+      "\tuse_pretrained: ${20|true,false|}",
+      "\tvocab: ${21:null}",
+      "\tvocab_size: ${22:50257}",
+      "$0"
+    ],
+    "description": "`gpt2` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: jamba": {
+    "prefix": [
+      "txt-enc-jamba"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: jamba",
+      "$0"
+    ],
+    "description": "`jamba` encoder for text input features."
+  },
+  "text encoder: jamba (all parameters)": {
+    "prefix": [
+      "txt-enc-jamba-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: jamba",
+      "\tadapter: ${1:null}",
+      "\tattention_every_k: ${2:4}",
+      "\td_conv: ${3:4}",
+      "\td_model: ${4:256}",
+      "\tdropout: ${5:0.1}",
+      "\tembedding_size: ${6:256}",
+      "\tembeddings_on_cpu: ${7:false}",
+      "\tembeddings_trainable: ${8:true}",
+      "\texpand_factor: ${9:2}",
+      "\tffn_size: ${10:1024}",
+      "\tn_layers: ${11:8}",
+      "\tnum_heads: ${12:8}",
+      "\toutput_size: ${13:256}",
+      "\treduce_output: ${14|mean,last,sum,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${15|dense,sparse|}",
+      "\tshould_embed: ${16:true}",
+      "\tskip: ${17|false,true|}",
+      "$0"
+    ],
+    "description": "`jamba` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: llm": {
+    "prefix": [
+      "txt-enc-llm"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: llm",
+      "$0"
+    ],
+    "description": "`llm` encoder for text input features."
+  },
+  "text encoder: llm (all parameters)": {
+    "prefix": [
+      "txt-enc-llm-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: llm",
+      "\tmax_sequence_length: ${1:null}",
+      "\tskip: ${2|false,true|}",
+      "$0"
+    ],
+    "description": "`llm` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: longformer": {
+    "prefix": [
+      "txt-enc-longformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: longformer",
+      "$0"
+    ],
+    "description": "`longformer` encoder for text input features."
+  },
+  "text encoder: longformer (all parameters)": {
+    "prefix": [
+      "txt-enc-longformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: longformer",
+      "\tattention_window: ${1:512}",
+      "\tmax_position_embeddings: ${2:4098}",
+      "\tmax_sequence_length: ${3:null}",
+      "\tpretrained_kwargs: ${4:null}",
+      "\tpretrained_model_name_or_path: ${5:allenai/longformer-base-4096}",
+      "\treduce_output: ${6:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${7|false,true|}",
+      "\tsep_token_id: ${8:2}",
+      "\tskip: ${9|false,true|}",
+      "\ttrainable: ${10|false,true|}",
+      "\ttype_vocab_size: ${11:1}",
+      "\tuse_pretrained: ${12|true,false|}",
+      "\tvocab: ${13:null}",
+      "\tvocab_size: ${14:50265}",
+      "$0"
+    ],
+    "description": "`longformer` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: mamba": {
+    "prefix": [
+      "txt-enc-mamba"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mamba",
+      "$0"
+    ],
+    "description": "`mamba` encoder for text input features."
+  },
+  "text encoder: mamba (all parameters)": {
+    "prefix": [
+      "txt-enc-mamba-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mamba",
+      "\tadapter: ${1:null}",
+      "\td_conv: ${2:4}",
+      "\td_model: ${3:256}",
+      "\td_state: ${4:16}",
+      "\tdropout: ${5:0.1}",
+      "\tembedding_size: ${6:256}",
+      "\tembeddings_on_cpu: ${7|false,true|}",
+      "\tembeddings_trainable: ${8|true,false|}",
+      "\texpand_factor: ${9:2}",
+      "\tfc_activation: ${10|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${11:0}",
+      "\tn_layers: ${12:4}",
+      "\tnorm: ${13|null,batch,layer,ghost|}",
+      "\tnorm_params: ${14:null}",
+      "\tnum_fc_layers: ${15:0}",
+      "\toutput_size: ${16:256}",
+      "\tpretrained_embeddings: ${17:null}",
+      "\treduce_output: ${18|mean,last,sum,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${19|dense,sparse|}",
+      "\tshould_embed: ${20|true,false|}",
+      "\tskip: ${21|false,true|}",
+      "\tuse_bias: ${22|true,false|}",
+      "\tweights_initializer: ${23:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`mamba` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: mamba2": {
+    "prefix": [
+      "txt-enc-mamba2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mamba2",
+      "$0"
+    ],
+    "description": "`mamba2` encoder for text input features."
+  },
+  "text encoder: mamba2 (all parameters)": {
+    "prefix": [
+      "txt-enc-mamba2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mamba2",
+      "\tadapter: ${1:null}",
+      "\td_conv: ${2:4}",
+      "\td_model: ${3:256}",
+      "\tdropout: ${4:0.1}",
+      "\tembedding_size: ${5:256}",
+      "\tembeddings_on_cpu: ${6:false}",
+      "\tembeddings_trainable: ${7:true}",
+      "\texpand_factor: ${8:2}",
+      "\tn_layers: ${9:4}",
+      "\tnum_heads: ${10:8}",
+      "\toutput_size: ${11:256}",
+      "\treduce_output: ${12|mean,last,sum,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${13|dense,sparse|}",
+      "\tshould_embed: ${14:true}",
+      "\tskip: ${15|false,true|}",
+      "$0"
+    ],
+    "description": "`mamba2` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: modernbert": {
+    "prefix": [
+      "txt-enc-modernbert"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: modernbert",
+      "$0"
+    ],
+    "description": "`modernbert` encoder for text input features."
+  },
+  "text encoder: modernbert (all parameters)": {
+    "prefix": [
+      "txt-enc-modernbert-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: modernbert",
+      "\thidden_act: ${1|gelu,relu,silu,gelu_new|}",
+      "\thidden_dropout_prob: ${2:0}",
+      "\thidden_size: ${3:768}",
+      "\tinitializer_range: ${4:0.02}",
+      "\tintermediate_size: ${5:1152}",
+      "\tlayer_norm_eps: ${6:0.00001}",
+      "\tmax_position_embeddings: ${7:8192}",
+      "\tmax_sequence_length: ${8:null}",
+      "\tnum_attention_heads: ${9:12}",
+      "\tnum_hidden_layers: ${10:22}",
+      "\tpad_token_id: ${11:50283}",
+      "\tpretrained_kwargs: ${12:null}",
+      "\tpretrained_model_name_or_path: ${13:answerdotai/ModernBERT-base}",
+      "\treduce_output: ${14:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${15|false,true|}",
+      "\tskip: ${16|false,true|}",
+      "\ttrainable: ${17|false,true|}",
+      "\tuse_pretrained: ${18|true,false|}",
+      "\tvocab: ${19:null}",
+      "\tvocab_size: ${20:50368}",
+      "$0"
+    ],
+    "description": "`modernbert` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: parallel_cnn": {
+    "prefix": [
+      "txt-enc-parallel-cnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: parallel_cnn",
+      "$0"
+    ],
+    "description": "`parallel_cnn` encoder for text input features."
+  },
+  "text encoder: parallel_cnn (all parameters)": {
+    "prefix": [
+      "txt-enc-parallel-cnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: parallel_cnn",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:256}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tembeddings_trainable: ${7|true,false|}",
+      "\tfilter_size: ${8:3}",
+      "\tnorm: ${9|null,batch,layer|}",
+      "\tnorm_params: ${10:null}",
+      "\tnum_conv_layers: ${11:null}",
+      "\tnum_fc_layers: ${12:null}",
+      "\tnum_filters: ${13:256}",
+      "\toutput_size: ${14:256}",
+      "\tpool_function: ${15|max,last,sum,mean,avg,concat,attention,attention_pooling,none,None,null|}",
+      "\tpool_size: ${16:null}",
+      "\tpretrained_embeddings: ${17:null}",
+      "\treduce_output: ${18|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${19|dense,sparse|}",
+      "\tshould_embed: ${20|true,false|}",
+      "\tskip: ${21|false,true|}",
+      "\tuse_bias: ${22|true,false|}",
+      "\tweights_initializer: ${23:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`parallel_cnn` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: rnn": {
+    "prefix": [
+      "txt-enc-rnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: rnn",
+      "$0"
+    ],
+    "description": "`rnn` encoder for text input features."
+  },
+  "text encoder: rnn (all parameters)": {
+    "prefix": [
+      "txt-enc-rnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: rnn",
+      "\tactivation: ${1|tanh,elu,leakyRelu,logSigmoid,relu,sigmoid,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tbidirectional: ${4|false,true|}",
+      "\tcell_type: ${5|rnn,lstm,gru|}",
+      "\tdropout: ${6:0}",
+      "\tembedding_size: ${7:256}",
+      "\tembeddings_on_cpu: ${8|false,true|}",
+      "\tembeddings_trainable: ${9|true,false|}",
+      "\tfc_activation: ${10|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${11:0}",
+      "\tnorm: ${12|null,batch,layer,ghost|}",
+      "\tnorm_params: ${13:null}",
+      "\tnum_fc_layers: ${14:0}",
+      "\tnum_layers: ${15:1}",
+      "\toutput_size: ${16:256}",
+      "\tpretrained_embeddings: ${17:null}",
+      "\trecurrent_activation: ${18|sigmoid,elu,leakyRelu,logSigmoid,relu,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\trecurrent_dropout: ${19:0}",
+      "\trecurrent_initializer: ${20|orthogonal,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,sparse,identity|}",
+      "\treduce_output: ${21|last,sum,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${22|dense,sparse|}",
+      "\tshould_embed: ${23|true,false|}",
+      "\tskip: ${24|false,true|}",
+      "\tstate_size: ${25:256}",
+      "\tunit_forget_bias: ${26|true,false|}",
+      "\tuse_bias: ${27|true,false|}",
+      "\tweights_initializer: ${28:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`rnn` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: roberta": {
+    "prefix": [
+      "txt-enc-roberta"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: roberta",
+      "$0"
+    ],
+    "description": "`roberta` encoder for text input features."
+  },
+  "text encoder: roberta (all parameters)": {
+    "prefix": [
+      "txt-enc-roberta-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: roberta",
+      "\tbos_token_id: ${1:0}",
+      "\teos_token_id: ${2:2}",
+      "\tmax_sequence_length: ${3:null}",
+      "\tpad_token_id: ${4:1}",
+      "\tpretrained_kwargs: ${5:null}",
+      "\tpretrained_model_name_or_path: ${6:roberta-base}",
+      "\treduce_output: ${7:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${8|false,true|}",
+      "\tskip: ${9|false,true|}",
+      "\ttrainable: ${10|false,true|}",
+      "\tuse_pretrained: ${11|true,false|}",
+      "\tvocab: ${12:null}",
+      "\tvocab_size: ${13:null}",
+      "$0"
+    ],
+    "description": "`roberta` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: stacked_cnn": {
+    "prefix": [
+      "txt-enc-stacked-cnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_cnn",
+      "$0"
+    ],
+    "description": "`stacked_cnn` encoder for text input features."
+  },
+  "text encoder: stacked_cnn (all parameters)": {
+    "prefix": [
+      "txt-enc-stacked-cnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_cnn",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdilation_rate: ${4:1}",
+      "\tdropout: ${5:0}",
+      "\tembedding_size: ${6:256}",
+      "\tembeddings_on_cpu: ${7|false,true|}",
+      "\tembeddings_trainable: ${8|true,false|}",
+      "\tfilter_size: ${9:3}",
+      "\tnorm: ${10|null,batch,layer|}",
+      "\tnorm_params: ${11:null}",
+      "\tnum_conv_layers: ${12:null}",
+      "\tnum_fc_layers: ${13:null}",
+      "\tnum_filters: ${14:256}",
+      "\toutput_size: ${15:256}",
+      "\tpadding: ${16|same,valid|}",
+      "\tpool_function: ${17|max,last,sum,mean,avg,concat,attention,attention_pooling,none,None,null|}",
+      "\tpool_padding: ${18|same,valid|}",
+      "\tpool_size: ${19:null}",
+      "\tpool_strides: ${20:null}",
+      "\tpretrained_embeddings: ${21:null}",
+      "\treduce_output: ${22|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${23|dense,sparse|}",
+      "\tshould_embed: ${24|true,false|}",
+      "\tskip: ${25|false,true|}",
+      "\tstrides: ${26:1}",
+      "\tuse_bias: ${27|true,false|}",
+      "\tweights_initializer: ${28:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`stacked_cnn` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: stacked_parallel_cnn": {
+    "prefix": [
+      "txt-enc-stacked-parallel-cnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_parallel_cnn",
+      "$0"
+    ],
+    "description": "`stacked_parallel_cnn` encoder for text input features."
+  },
+  "text encoder: stacked_parallel_cnn (all parameters)": {
+    "prefix": [
+      "txt-enc-stacked-parallel-cnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_parallel_cnn",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:256}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tembeddings_trainable: ${7|true,false|}",
+      "\tfilter_size: ${8:3}",
+      "\tnorm: ${9|null,batch,layer|}",
+      "\tnorm_params: ${10:null}",
+      "\tnum_fc_layers: ${11:null}",
+      "\tnum_filters: ${12:256}",
+      "\tnum_stacked_layers: ${13:null}",
+      "\toutput_size: ${14:256}",
+      "\tpool_function: ${15|max,last,sum,mean,avg,concat,attention,attention_pooling,none,None,null|}",
+      "\tpool_size: ${16:null}",
+      "\tpretrained_embeddings: ${17:null}",
+      "\treduce_output: ${18|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${19|dense,sparse|}",
+      "\tshould_embed: ${20|true,false|}",
+      "\tskip: ${21|false,true|}",
+      "\tuse_bias: ${22|true,false|}",
+      "\tweights_initializer: ${23:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`stacked_parallel_cnn` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: t5": {
+    "prefix": [
+      "txt-enc-t5"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: t5",
+      "$0"
+    ],
+    "description": "`t5` encoder for text input features."
+  },
+  "text encoder: t5 (all parameters)": {
+    "prefix": [
+      "txt-enc-t5-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: t5",
+      "\td_ff: ${1:2048}",
+      "\td_kv: ${2:64}",
+      "\td_model: ${3:512}",
+      "\tdropout_rate: ${4:0.1}",
+      "\tfeed_forward_proj: ${5|relu,gated-gelu|}",
+      "\tinitializer_factor: ${6:1}",
+      "\tlayer_norm_eps: ${7:0.000001}",
+      "\tmax_sequence_length: ${8:null}",
+      "\tnum_decoder_layers: ${9:6}",
+      "\tnum_heads: ${10:8}",
+      "\tnum_layers: ${11:6}",
+      "\tpretrained_kwargs: ${12:null}",
+      "\tpretrained_model_name_or_path: ${13:t5-small}",
+      "\treduce_output: ${14:sum}",
+      "\trelative_attention_num_buckets: ${15:32}",
+      "\tsaved_weights_in_checkpoint: ${16|false,true|}",
+      "\tskip: ${17|false,true|}",
+      "\ttrainable: ${18|false,true|}",
+      "\tuse_pretrained: ${19|true,false|}",
+      "\tvocab: ${20:null}",
+      "\tvocab_size: ${21:32128}",
+      "$0"
+    ],
+    "description": "`t5` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: tf_idf": {
+    "prefix": [
+      "txt-enc-tf-idf"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: tf_idf",
+      "$0"
+    ],
+    "description": "`tf_idf` encoder for text input features."
+  },
+  "text encoder: tf_idf (all parameters)": {
+    "prefix": [
+      "txt-enc-tf-idf-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: tf_idf",
+      "\tadapter: ${1:null}",
+      "\tmax_df: ${2:1}",
+      "\tmax_sequence_length: ${3:null}",
+      "\tmin_df: ${4:1}",
+      "\tskip: ${5|false,true|}",
+      "\tvocab: ${6:null}",
+      "\tvocab_size: ${7:null}",
+      "$0"
+    ],
+    "description": "`tf_idf` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: transformer": {
+    "prefix": [
+      "txt-enc-transformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: transformer",
+      "$0"
+    ],
+    "description": "`transformer` encoder for text input features."
+  },
+  "text encoder: transformer (all parameters)": {
+    "prefix": [
+      "txt-enc-transformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: transformer",
+      "\tadapter: ${1:null}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0.1}",
+      "\tembedding_size: ${4:256}",
+      "\tembeddings_on_cpu: ${5|false,true|}",
+      "\tembeddings_trainable: ${6|true,false|}",
+      "\tfc_activation: ${7|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${8:0}",
+      "\thidden_size: ${9:256}",
+      "\tnorm: ${10|null,batch,layer,ghost|}",
+      "\tnorm_params: ${11:null}",
+      "\tnum_fc_layers: ${12:0}",
+      "\tnum_heads: ${13:8}",
+      "\tnum_layers: ${14:1}",
+      "\toutput_size: ${15:256}",
+      "\tpretrained_embeddings: ${16:null}",
+      "\treduce_output: ${17|last,sum,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\trepresentation: ${18|dense,sparse|}",
+      "\tshould_embed: ${19|true,false|}",
+      "\tskip: ${20|false,true|}",
+      "\ttransformer_output_size: ${21:256}",
+      "\tuse_bias: ${22|true,false|}",
+      "\tuse_rope: ${23|false,true|}",
+      "\tweights_initializer: ${24:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`transformer` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: xlmroberta": {
+    "prefix": [
+      "txt-enc-xlmroberta"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: xlmroberta",
+      "$0"
+    ],
+    "description": "`xlmroberta` encoder for text input features."
+  },
+  "text encoder: xlmroberta (all parameters)": {
+    "prefix": [
+      "txt-enc-xlmroberta-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: xlmroberta",
+      "\tadd_pooling_layer: ${1|true,false|}",
+      "\tbos_token_id: ${2:0}",
+      "\teos_token_id: ${3:2}",
+      "\tmax_position_embeddings: ${4:514}",
+      "\tmax_sequence_length: ${5:null}",
+      "\tpad_token_id: ${6:1}",
+      "\tpretrained_kwargs: ${7:null}",
+      "\tpretrained_model_name_or_path: ${8:xlm-roberta-base}",
+      "\treduce_output: ${9:cls_pooled}",
+      "\tsaved_weights_in_checkpoint: ${10|false,true|}",
+      "\tskip: ${11|false,true|}",
+      "\ttrainable: ${12|false,true|}",
+      "\ttype_vocab_size: ${13:1}",
+      "\tuse_pretrained: ${14|true,false|}",
+      "\tvocab: ${15:null}",
+      "\tvocab_size: ${16:null}",
+      "$0"
+    ],
+    "description": "`xlmroberta` encoder for text input features. Includes every parameter with its Ludwig default."
+  },
+  "text encoder: xlnet": {
+    "prefix": [
+      "txt-enc-xlnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: xlnet",
+      "$0"
+    ],
+    "description": "`xlnet` encoder for text input features."
+  },
+  "text encoder: xlnet (all parameters)": {
+    "prefix": [
+      "txt-enc-xlnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: xlnet",
+      "\tattn_type: ${1|bi|}",
+      "\tbi_data: ${2|false,true|}",
+      "\tbos_token_id: ${3:1}",
+      "\tclamp_len: ${4:-1}",
+      "\td_inner: ${5:3072}",
+      "\td_model: ${6:768}",
+      "\tdropout: ${7:0.1}",
+      "\tend_n_top: ${8:5}",
+      "\teos_token_id: ${9:2}",
+      "\tff_activation: ${10|gelu,relu,silu,gelu_new|}",
+      "\tinitializer_range: ${11:0.02}",
+      "\tlayer_norm_eps: ${12:1.0e-12}",
+      "\tmax_sequence_length: ${13:null}",
+      "\tmem_len: ${14:null}",
+      "\tn_head: ${15:12}",
+      "\tn_layer: ${16:12}",
+      "\tpad_token_id: ${17:5}",
+      "\tpretrained_kwargs: ${18:null}",
+      "\tpretrained_model_name_or_path: ${19:xlnet-base-cased}",
+      "\treduce_output: ${20:sum}",
+      "\treuse_len: ${21:null}",
+      "\tsame_length: ${22|false,true|}",
+      "\tsaved_weights_in_checkpoint: ${23|false,true|}",
+      "\tskip: ${24|false,true|}",
+      "\tstart_n_top: ${25:5}",
+      "\tsummary_activation: ${26:tanh}",
+      "\tsummary_last_dropout: ${27:0.1}",
+      "\tsummary_type: ${28|last,first,mean,cls_index,attn|}",
+      "\tsummary_use_proj: ${29|true,false|}",
+      "\ttrainable: ${30|false,true|}",
+      "\tuntie_r: ${31|true,false|}",
+      "\tuse_mems_eval: ${32|true,false|}",
+      "\tuse_mems_train: ${33|false,true|}",
+      "\tuse_pretrained: ${34|true,false|}",
+      "\tvocab: ${35:null}",
+      "\tvocab_size: ${36:32000}",
+      "$0"
+    ],
+    "description": "`xlnet` encoder for text input features. Includes every parameter with its Ludwig default."
+  }
 }

@@ -1,27 +1,40 @@
 {
-    "Add Set Embed Encoder": {
-        "prefix": [
-            "set-enc-embed"
-        ],
-        "body": [
-            "encoder:",
-            "\ttype: embed",
-            "\tdropout: ${1:0.0}",
-            "\tembedding_size: ${2:50}",
-            "\toutput_size: ${3:10}",
-            "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-            "\tnorm: ${5|null,batch,layer|}",
-            "\trepresentation: ${6|dense,sparse|}",
-            "\tuse_bias: ${7|true,false|}",
-            "\tbias_initializer: ${8|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-            "\tweight_initializer: ${9|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-            "\tembeddings_on_cpu: ${10|false,true|}",
-            "\tembeddings_trainable: ${11|true,false|}",
-            "\tnorm_params: ${12:null}",
-            "\tnum_fc_layers: ${13:0}",
-            "\tfc_layers: ${14:null}",
-            "\tpretrained_embeddings: ${15:null}"
-        ],
-        "description": "Add Set Embed Encoder"
-    },
+  "set encoder: embed": {
+    "prefix": [
+      "set-enc-embed"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "$0"
+    ],
+    "description": "`embed` encoder for set input features."
+  },
+  "set encoder: embed (all parameters)": {
+    "prefix": [
+      "set-enc-embed-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:50}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tembeddings_trainable: ${7|true,false|}",
+      "\tnorm: ${8|null,batch,layer|}",
+      "\tnorm_params: ${9:null}",
+      "\tnum_fc_layers: ${10:0}",
+      "\toutput_size: ${11:10}",
+      "\tpretrained_embeddings: ${12:null}",
+      "\trepresentation: ${13|dense,sparse|}",
+      "\tskip: ${14|false,true|}",
+      "\tuse_bias: ${15|true,false|}",
+      "\tweights_initializer: ${16|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`embed` encoder for set input features. Includes every parameter with its Ludwig default."
+  }
 }

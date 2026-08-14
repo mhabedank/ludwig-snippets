@@ -1,0 +1,40 @@
+{
+  "vector decoder: projector": {
+    "prefix": [
+      "vec-dec-projector"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: projector",
+      "$0"
+    ],
+    "description": "`projector` decoder for vector output features."
+  },
+  "vector decoder: projector (all parameters)": {
+    "prefix": [
+      "vec-dec-projector-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: projector",
+      "\tactivation: ${1|null,elu,leakyRelu,logSigmoid,relu,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15|}",
+      "\tbias_initializer: ${2|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tfc_activation: ${3:relu}",
+      "\tfc_bias_initializer: ${4:zeros}",
+      "\tfc_dropout: ${5:0}",
+      "\tfc_norm: ${6:null}",
+      "\tfc_norm_params: ${7:null}",
+      "\tfc_output_size: ${8:256}",
+      "\tfc_use_bias: ${9|true,false|}",
+      "\tfc_weights_initializer: ${10:xavier_uniform}",
+      "\tinput_size: ${11:null}",
+      "\tmultiplier: ${12:1}",
+      "\tnum_fc_layers: ${13:0}",
+      "\toutput_size: ${14:null}",
+      "\tuse_bias: ${15|true,false|}",
+      "\tweights_initializer: ${16|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`projector` decoder for vector output features. Includes every parameter with its Ludwig default."
+  }
+}

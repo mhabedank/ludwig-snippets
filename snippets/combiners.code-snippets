@@ -1,0 +1,453 @@
+{
+  "Combiner: comparator": {
+    "prefix": [
+      "comb-comparator"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: comparator",
+      "$0"
+    ],
+    "description": "`comparator` combiner."
+  },
+  "Combiner: comparator (all parameters)": {
+    "prefix": [
+      "comb-comparator-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: comparator",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0}",
+      "\tnorm: ${4|null,batch,layer,ghost|}",
+      "\tnorm_params: ${5:null}",
+      "\tnum_fc_layers: ${6:1}",
+      "\toutput_size: ${7:256}",
+      "\tuse_bias: ${8|true,false|}",
+      "\tweights_initializer: ${9:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`comparator` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: concat": {
+    "prefix": [
+      "comb-concat"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: concat",
+      "$0"
+    ],
+    "description": "`concat` combiner."
+  },
+  "Combiner: concat (all parameters)": {
+    "prefix": [
+      "comb-concat-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: concat",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbatch_ensemble: ${2|false,true|}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tflatten_inputs: ${5|false,true|}",
+      "\tnorm: ${6|null,batch,layer,ghost|}",
+      "\tnorm_params: ${7:null}",
+      "\tnum_ensemble_members: ${8:4}",
+      "\tnum_fc_layers: ${9:0}",
+      "\toutput_size: ${10:256}",
+      "\tresidual: ${11|false,true|}",
+      "\tuse_bias: ${12|true,false|}",
+      "\tweights_initializer: ${13:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`concat` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: cross_attention": {
+    "prefix": [
+      "comb-cross-attention"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: cross_attention",
+      "$0"
+    ],
+    "description": "`cross_attention` combiner."
+  },
+  "Combiner: cross_attention (all parameters)": {
+    "prefix": [
+      "comb-cross-attention-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: cross_attention",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0.1}",
+      "\thidden_size: ${4:256}",
+      "\tnorm: ${5|null,batch,layer,ghost|}",
+      "\tnorm_params: ${6:null}",
+      "\tnum_fc_layers: ${7:0}",
+      "\tnum_heads: ${8:8}",
+      "\tnum_layers: ${9:1}",
+      "\toutput_size: ${10:256}",
+      "\tuse_bias: ${11|true,false|}",
+      "\tweights_initializer: ${12:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`cross_attention` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: ft_transformer": {
+    "prefix": [
+      "comb-ft-transformer"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: ft_transformer",
+      "$0"
+    ],
+    "description": "`ft_transformer` combiner."
+  },
+  "Combiner: ft_transformer (all parameters)": {
+    "prefix": [
+      "comb-ft-transformer-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: ft_transformer",
+      "\tbias_initializer: ${1:zeros}",
+      "\tdropout: ${2:0.1}",
+      "\tfc_activation: ${3|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_residual: ${5|false,true|}",
+      "\thidden_size: ${6:256}",
+      "\tnorm: ${7|null,batch,layer,ghost|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\tnum_heads: ${10:8}",
+      "\tnum_layers: ${11:1}",
+      "\toutput_size: ${12:256}",
+      "\ttransformer_output_size: ${13:256}",
+      "\tuse_bias: ${14|true,false|}",
+      "\tweights_initializer: ${15:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`ft_transformer` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: gated_fusion": {
+    "prefix": [
+      "comb-gated-fusion"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: gated_fusion",
+      "$0"
+    ],
+    "description": "`gated_fusion` combiner."
+  },
+  "Combiner: gated_fusion (all parameters)": {
+    "prefix": [
+      "comb-gated-fusion-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: gated_fusion",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0.1}",
+      "\thidden_size: ${4:256}",
+      "\tnorm: ${5|null,batch,layer,ghost|}",
+      "\tnorm_params: ${6:null}",
+      "\tnum_fc_layers: ${7:0}",
+      "\toutput_size: ${8:256}",
+      "\tuse_bias: ${9|true,false|}",
+      "\tweights_initializer: ${10:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`gated_fusion` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: hypernetwork": {
+    "prefix": [
+      "comb-hypernetwork"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: hypernetwork",
+      "$0"
+    ],
+    "description": "`hypernetwork` combiner."
+  },
+  "Combiner: hypernetwork (all parameters)": {
+    "prefix": [
+      "comb-hypernetwork-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: hypernetwork",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tdropout: ${2:0.1}",
+      "\thidden_size: ${3:128}",
+      "\thyper_hidden_size: ${4:64}",
+      "\tnum_fc_layers: ${5:0}",
+      "\toutput_size: ${6:128}",
+      "$0"
+    ],
+    "description": "`hypernetwork` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: perceiver": {
+    "prefix": [
+      "comb-perceiver"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: perceiver",
+      "$0"
+    ],
+    "description": "`perceiver` combiner."
+  },
+  "Combiner: perceiver (all parameters)": {
+    "prefix": [
+      "comb-perceiver-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: perceiver",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0.1}",
+      "\tlatent_dim: ${4:256}",
+      "\tnorm: ${5|null,batch,layer,ghost|}",
+      "\tnorm_params: ${6:null}",
+      "\tnum_fc_layers: ${7:0}",
+      "\tnum_heads: ${8:8}",
+      "\tnum_latents: ${9:32}",
+      "\tnum_self_attention_layers: ${10:2}",
+      "\toutput_size: ${11:256}",
+      "\treduce_output: ${12|mean,last,sum,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\tuse_bias: ${13|true,false|}",
+      "\tweights_initializer: ${14:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`perceiver` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: project_aggregate": {
+    "prefix": [
+      "comb-project-aggregate"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: project_aggregate",
+      "$0"
+    ],
+    "description": "`project_aggregate` combiner."
+  },
+  "Combiner: project_aggregate (all parameters)": {
+    "prefix": [
+      "comb-project-aggregate-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: project_aggregate",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2:zeros}",
+      "\tdropout: ${3:0}",
+      "\tnorm: ${4|layer,batch|}",
+      "\tnorm_params: ${5:null}",
+      "\tnum_fc_layers: ${6:2}",
+      "\toutput_size: ${7:128}",
+      "\tprojection_size: ${8:128}",
+      "\tresidual: ${9|true,false|}",
+      "\tuse_bias: ${10|true,false|}",
+      "\tweights_initializer: ${11:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`project_aggregate` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: sequence": {
+    "prefix": [
+      "comb-sequence"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: sequence",
+      "$0"
+    ],
+    "description": "`sequence` combiner."
+  },
+  "Combiner: sequence (all parameters)": {
+    "prefix": [
+      "comb-sequence-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: sequence",
+      "\tmain_sequence_feature: ${1:null}",
+      "\treduce_output: ${2|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "$0"
+    ],
+    "description": "`sequence` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: sequence_concat": {
+    "prefix": [
+      "comb-sequence-concat"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: sequence_concat",
+      "$0"
+    ],
+    "description": "`sequence_concat` combiner."
+  },
+  "Combiner: sequence_concat (all parameters)": {
+    "prefix": [
+      "comb-sequence-concat-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: sequence_concat",
+      "\tmain_sequence_feature: ${1:null}",
+      "\treduce_output: ${2|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "$0"
+    ],
+    "description": "`sequence_concat` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: tabnet": {
+    "prefix": [
+      "comb-tabnet"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabnet",
+      "$0"
+    ],
+    "description": "`tabnet` combiner."
+  },
+  "Combiner: tabnet (all parameters)": {
+    "prefix": [
+      "comb-tabnet-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabnet",
+      "\tbn_epsilon: ${1:0.001}",
+      "\tbn_momentum: ${2:0.05}",
+      "\tbn_virtual_bs: ${3:1024}",
+      "\tdropout: ${4:0.05}",
+      "\tentmax_alpha: ${5:1.5}",
+      "\tentmax_mode: ${6|sparsemax,entmax15,constant,adaptive|}",
+      "\tnum_shared_blocks: ${7:2}",
+      "\tnum_steps: ${8:3}",
+      "\tnum_total_blocks: ${9:4}",
+      "\toutput_size: ${10:128}",
+      "\trelaxation_factor: ${11:1.5}",
+      "\tsize: ${12:32}",
+      "\tsparsity: ${13:0.0001}",
+      "$0"
+    ],
+    "description": "`tabnet` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: tabpfn_v2": {
+    "prefix": [
+      "comb-tabpfn-v2"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabpfn_v2",
+      "$0"
+    ],
+    "description": "`tabpfn_v2` combiner."
+  },
+  "Combiner: tabpfn_v2 (all parameters)": {
+    "prefix": [
+      "comb-tabpfn-v2-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabpfn_v2",
+      "\tdevice: ${1|auto,cpu,cuda|}",
+      "\tn_estimators: ${2:4}",
+      "\toutput_size: ${3:128}",
+      "\ttabpfn_hidden_size: ${4:512}",
+      "$0"
+    ],
+    "description": "`tabpfn_v2` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: tabtransformer": {
+    "prefix": [
+      "comb-tabtransformer"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabtransformer",
+      "$0"
+    ],
+    "description": "`tabtransformer` combiner."
+  },
+  "Combiner: tabtransformer (all parameters)": {
+    "prefix": [
+      "comb-tabtransformer-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: tabtransformer",
+      "\tbias_initializer: ${1:zeros}",
+      "\tdropout: ${2:0.1}",
+      "\tfc_activation: ${3|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_residual: ${5|false,true|}",
+      "\thidden_size: ${6:256}",
+      "\tnorm: ${7|null,batch,layer,ghost|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\tnum_heads: ${10:8}",
+      "\tnum_layers: ${11:1}",
+      "\toutput_size: ${12:256}",
+      "\treduce_output: ${13|concat,last,sum,mean,avg,max,attention,attention_pooling,none,None,null|}",
+      "\ttransformer_output_size: ${14:256}",
+      "\tuse_bias: ${15|true,false|}",
+      "\tweights_initializer: ${16:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`tabtransformer` combiner. Includes every parameter with its Ludwig default."
+  },
+  "Combiner: transformer": {
+    "prefix": [
+      "comb-transformer"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: transformer",
+      "$0"
+    ],
+    "description": "`transformer` combiner."
+  },
+  "Combiner: transformer (all parameters)": {
+    "prefix": [
+      "comb-transformer-full"
+    ],
+    "body": [
+      "combiner:",
+      "\ttype: transformer",
+      "\tbias_initializer: ${1:zeros}",
+      "\tdropout: ${2:0.1}",
+      "\tfc_activation: ${3|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_residual: ${5|false,true|}",
+      "\thidden_size: ${6:256}",
+      "\tnorm: ${7|null,batch,layer,ghost|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\tnum_heads: ${10:8}",
+      "\tnum_layers: ${11:1}",
+      "\toutput_size: ${12:256}",
+      "\treduce_output: ${13|mean,last,sum,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\ttransformer_output_size: ${14:256}",
+      "\tuse_bias: ${15|true,false|}",
+      "\tweights_initializer: ${16:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`transformer` combiner. Includes every parameter with its Ludwig default."
+  }
+}

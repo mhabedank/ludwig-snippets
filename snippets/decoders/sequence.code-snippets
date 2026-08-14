@@ -1,0 +1,117 @@
+{
+  "sequence decoder: generator": {
+    "prefix": [
+      "seq-dec-generator"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: generator",
+      "$0"
+    ],
+    "description": "`generator` decoder for sequence output features."
+  },
+  "sequence decoder: generator (all parameters)": {
+    "prefix": [
+      "seq-dec-generator-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: generator",
+      "\tbeam_length_penalty: ${1:1}",
+      "\tbeam_width: ${2:1}",
+      "\tcell_type: ${3|gru,rnn,lstm|}",
+      "\tfc_activation: ${4:relu}",
+      "\tfc_bias_initializer: ${5:zeros}",
+      "\tfc_dropout: ${6:0}",
+      "\tfc_norm: ${7:null}",
+      "\tfc_norm_params: ${8:null}",
+      "\tfc_output_size: ${9:256}",
+      "\tfc_use_bias: ${10|true,false|}",
+      "\tfc_weights_initializer: ${11:xavier_uniform}",
+      "\tinput_size: ${12:256}",
+      "\tnum_fc_layers: ${13:0}",
+      "\tnum_layers: ${14:1}",
+      "\treduce_input: ${15|sum,mean,avg,max,concat,last|}",
+      "\tteacher_forcing_decay: ${16|none,linear,exponential|}",
+      "\tteacher_forcing_decay_rate: ${17:0.01}",
+      "$0"
+    ],
+    "description": "`generator` decoder for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence decoder: tagger": {
+    "prefix": [
+      "seq-dec-tagger"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: tagger",
+      "$0"
+    ],
+    "description": "`tagger` decoder for sequence output features."
+  },
+  "sequence decoder: tagger (all parameters)": {
+    "prefix": [
+      "seq-dec-tagger-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: tagger",
+      "\tattention_embedding_size: ${1:256}",
+      "\tattention_num_heads: ${2:8}",
+      "\tfc_activation: ${3:relu}",
+      "\tfc_bias_initializer: ${4:zeros}",
+      "\tfc_dropout: ${5:0}",
+      "\tfc_norm: ${6:null}",
+      "\tfc_norm_params: ${7:null}",
+      "\tfc_output_size: ${8:256}",
+      "\tfc_use_bias: ${9|true,false|}",
+      "\tfc_weights_initializer: ${10:xavier_uniform}",
+      "\tinput_size: ${11:256}",
+      "\tnum_fc_layers: ${12:0}",
+      "\tuse_attention: ${13|false,true|}",
+      "\tuse_bias: ${14|true,false|}",
+      "$0"
+    ],
+    "description": "`tagger` decoder for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence decoder: transformer_generator": {
+    "prefix": [
+      "seq-dec-transformer-generator"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: transformer_generator",
+      "$0"
+    ],
+    "description": "`transformer_generator` decoder for sequence output features."
+  },
+  "sequence decoder: transformer_generator (all parameters)": {
+    "prefix": [
+      "seq-dec-transformer-generator-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: transformer_generator",
+      "\tbeam_length_penalty: ${1:1}",
+      "\tbeam_width: ${2:1}",
+      "\td_model: ${3:256}",
+      "\tdropout: ${4:0.1}",
+      "\tfc_activation: ${5:relu}",
+      "\tfc_bias_initializer: ${6:zeros}",
+      "\tfc_dropout: ${7:0}",
+      "\tfc_norm: ${8:null}",
+      "\tfc_norm_params: ${9:null}",
+      "\tfc_output_size: ${10:256}",
+      "\tfc_use_bias: ${11|true,false|}",
+      "\tfc_weights_initializer: ${12:xavier_uniform}",
+      "\tffn_size: ${13:1024}",
+      "\tinput_size: ${14:256}",
+      "\tnum_fc_layers: ${15:0}",
+      "\tnum_heads: ${16:8}",
+      "\tnum_layers: ${17:2}",
+      "\treduce_input: ${18|sum,mean,avg,max,concat,last|}",
+      "$0"
+    ],
+    "description": "`transformer_generator` decoder for sequence output features. Includes every parameter with its Ludwig default."
+  }
+}

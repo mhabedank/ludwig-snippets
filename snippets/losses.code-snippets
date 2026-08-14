@@ -1,0 +1,1268 @@
+{
+  "anomaly loss: deep_sad": {
+    "prefix": [
+      "anom-loss-deep-sad"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: deep_sad",
+      "$0"
+    ],
+    "description": "`deep_sad` loss for anomaly output features."
+  },
+  "anomaly loss: deep_sad (all parameters)": {
+    "prefix": [
+      "anom-loss-deep-sad-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: deep_sad",
+      "\teta: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`deep_sad` loss for anomaly output features. Includes every parameter with its Ludwig default."
+  },
+  "anomaly loss: deep_svdd": {
+    "prefix": [
+      "anom-loss-deep-svdd"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: deep_svdd",
+      "$0"
+    ],
+    "description": "`deep_svdd` loss for anomaly output features."
+  },
+  "anomaly loss: deep_svdd (all parameters)": {
+    "prefix": [
+      "anom-loss-deep-svdd-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: deep_svdd",
+      "\tnu: ${1:0.1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`deep_svdd` loss for anomaly output features. Includes every parameter with its Ludwig default."
+  },
+  "anomaly loss: drocc": {
+    "prefix": [
+      "anom-loss-drocc"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: drocc",
+      "$0"
+    ],
+    "description": "`drocc` loss for anomaly output features."
+  },
+  "anomaly loss: drocc (all parameters)": {
+    "prefix": [
+      "anom-loss-drocc-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: drocc",
+      "\tnum_perturbation_steps: ${1:5}",
+      "\tperturbation_strength: ${2:0.1}",
+      "\tweight: ${3:1}",
+      "$0"
+    ],
+    "description": "`drocc` loss for anomaly output features. Includes every parameter with its Ludwig default."
+  },
+  "binary loss: binary_weighted_cross_entropy": {
+    "prefix": [
+      "bin-loss-binary-weighted-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: binary_weighted_cross_entropy",
+      "$0"
+    ],
+    "description": "`binary_weighted_cross_entropy` loss for binary output features."
+  },
+  "binary loss: binary_weighted_cross_entropy (all parameters)": {
+    "prefix": [
+      "bin-loss-binary-weighted-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: binary_weighted_cross_entropy",
+      "\tconfidence_penalty: ${1:0}",
+      "\tpositive_class_weight: ${2:null}",
+      "\trobust_lambda: ${3:0}",
+      "\tweight: ${4:1}",
+      "$0"
+    ],
+    "description": "`binary_weighted_cross_entropy` loss for binary output features. Includes every parameter with its Ludwig default."
+  },
+  "binary loss: entropic_open_set": {
+    "prefix": [
+      "bin-loss-entropic-open-set"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for binary output features."
+  },
+  "binary loss: entropic_open_set (all parameters)": {
+    "prefix": [
+      "bin-loss-entropic-open-set-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for binary output features. Includes every parameter with its Ludwig default."
+  },
+  "binary loss: focal": {
+    "prefix": [
+      "bin-loss-focal"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "$0"
+    ],
+    "description": "`focal` loss for binary output features."
+  },
+  "binary loss: focal (all parameters)": {
+    "prefix": [
+      "bin-loss-focal-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "\talpha: ${1:0.25}",
+      "\tgamma: ${2:2}",
+      "\tweight: ${3:1}",
+      "$0"
+    ],
+    "description": "`focal` loss for binary output features. Includes every parameter with its Ludwig default."
+  },
+  "binary loss: objectosphere": {
+    "prefix": [
+      "bin-loss-objectosphere"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for binary output features."
+  },
+  "binary loss: objectosphere (all parameters)": {
+    "prefix": [
+      "bin-loss-objectosphere-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "\txi: ${3:10}",
+      "\tzeta: ${4:0.1}",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for binary output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: corn": {
+    "prefix": [
+      "cat-loss-corn"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: corn",
+      "$0"
+    ],
+    "description": "`corn` loss for category output features."
+  },
+  "category loss: corn (all parameters)": {
+    "prefix": [
+      "cat-loss-corn-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: corn",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`corn` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: entmax15": {
+    "prefix": [
+      "cat-loss-entmax15"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "$0"
+    ],
+    "description": "`entmax15` loss for category output features."
+  },
+  "category loss: entmax15 (all parameters)": {
+    "prefix": [
+      "cat-loss-entmax15-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`entmax15` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: entropic_open_set": {
+    "prefix": [
+      "cat-loss-entropic-open-set"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for category output features."
+  },
+  "category loss: entropic_open_set (all parameters)": {
+    "prefix": [
+      "cat-loss-entropic-open-set-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: focal": {
+    "prefix": [
+      "cat-loss-focal"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "$0"
+    ],
+    "description": "`focal` loss for category output features."
+  },
+  "category loss: focal (all parameters)": {
+    "prefix": [
+      "cat-loss-focal-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "\talpha: ${1:0.25}",
+      "\tgamma: ${2:2}",
+      "\tweight: ${3:1}",
+      "$0"
+    ],
+    "description": "`focal` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: objectosphere": {
+    "prefix": [
+      "cat-loss-objectosphere"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for category output features."
+  },
+  "category loss: objectosphere (all parameters)": {
+    "prefix": [
+      "cat-loss-objectosphere-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "\txi: ${3:10}",
+      "\tzeta: ${4:0.1}",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: poly": {
+    "prefix": [
+      "cat-loss-poly"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: poly",
+      "$0"
+    ],
+    "description": "`poly` loss for category output features."
+  },
+  "category loss: poly (all parameters)": {
+    "prefix": [
+      "cat-loss-poly-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: poly",
+      "\tepsilon: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`poly` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: softmax_cross_entropy": {
+    "prefix": [
+      "cat-loss-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for category output features."
+  },
+  "category loss: softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "cat-loss-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tweight: ${5:1}",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category loss: sparsemax": {
+    "prefix": [
+      "cat-loss-sparsemax"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for category output features."
+  },
+  "category loss: sparsemax (all parameters)": {
+    "prefix": [
+      "cat-loss-sparsemax-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for category output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: corn": {
+    "prefix": [
+      "catdist-loss-corn"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: corn",
+      "$0"
+    ],
+    "description": "`corn` loss for category_distribution output features."
+  },
+  "category_distribution loss: corn (all parameters)": {
+    "prefix": [
+      "catdist-loss-corn-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: corn",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`corn` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: entmax15": {
+    "prefix": [
+      "catdist-loss-entmax15"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "$0"
+    ],
+    "description": "`entmax15` loss for category_distribution output features."
+  },
+  "category_distribution loss: entmax15 (all parameters)": {
+    "prefix": [
+      "catdist-loss-entmax15-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`entmax15` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: entropic_open_set": {
+    "prefix": [
+      "catdist-loss-entropic-open-set"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for category_distribution output features."
+  },
+  "category_distribution loss: entropic_open_set (all parameters)": {
+    "prefix": [
+      "catdist-loss-entropic-open-set-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entropic_open_set",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`entropic_open_set` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: focal": {
+    "prefix": [
+      "catdist-loss-focal"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "$0"
+    ],
+    "description": "`focal` loss for category_distribution output features."
+  },
+  "category_distribution loss: focal (all parameters)": {
+    "prefix": [
+      "catdist-loss-focal-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "\talpha: ${1:0.25}",
+      "\tgamma: ${2:2}",
+      "\tweight: ${3:1}",
+      "$0"
+    ],
+    "description": "`focal` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: objectosphere": {
+    "prefix": [
+      "catdist-loss-objectosphere"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for category_distribution output features."
+  },
+  "category_distribution loss: objectosphere (all parameters)": {
+    "prefix": [
+      "catdist-loss-objectosphere-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: objectosphere",
+      "\tbackground_class: ${1:null}",
+      "\tweight: ${2:1}",
+      "\txi: ${3:10}",
+      "\tzeta: ${4:0.1}",
+      "$0"
+    ],
+    "description": "`objectosphere` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: poly": {
+    "prefix": [
+      "catdist-loss-poly"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: poly",
+      "$0"
+    ],
+    "description": "`poly` loss for category_distribution output features."
+  },
+  "category_distribution loss: poly (all parameters)": {
+    "prefix": [
+      "catdist-loss-poly-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: poly",
+      "\tepsilon: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`poly` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: softmax_cross_entropy": {
+    "prefix": [
+      "catdist-loss-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for category_distribution output features."
+  },
+  "category_distribution loss: softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "catdist-loss-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tweight: ${5:1}",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "category_distribution loss: sparsemax": {
+    "prefix": [
+      "catdist-loss-sparsemax"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for category_distribution output features."
+  },
+  "category_distribution loss: sparsemax (all parameters)": {
+    "prefix": [
+      "catdist-loss-sparsemax-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for category_distribution output features. Includes every parameter with its Ludwig default."
+  },
+  "image loss: dice": {
+    "prefix": [
+      "img-loss-dice"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: dice",
+      "$0"
+    ],
+    "description": "`dice` loss for image output features."
+  },
+  "image loss: dice (all parameters)": {
+    "prefix": [
+      "img-loss-dice-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: dice",
+      "\tsmooth: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`dice` loss for image output features. Includes every parameter with its Ludwig default."
+  },
+  "image loss: focal": {
+    "prefix": [
+      "img-loss-focal"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "$0"
+    ],
+    "description": "`focal` loss for image output features."
+  },
+  "image loss: focal (all parameters)": {
+    "prefix": [
+      "img-loss-focal-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: focal",
+      "\talpha: ${1:0.25}",
+      "\tgamma: ${2:2}",
+      "\tweight: ${3:1}",
+      "$0"
+    ],
+    "description": "`focal` loss for image output features. Includes every parameter with its Ludwig default."
+  },
+  "image loss: lovasz_softmax": {
+    "prefix": [
+      "img-loss-lovasz-softmax"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: lovasz_softmax",
+      "$0"
+    ],
+    "description": "`lovasz_softmax` loss for image output features."
+  },
+  "image loss: lovasz_softmax (all parameters)": {
+    "prefix": [
+      "img-loss-lovasz-softmax-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: lovasz_softmax",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`lovasz_softmax` loss for image output features. Includes every parameter with its Ludwig default."
+  },
+  "image loss: softmax_cross_entropy": {
+    "prefix": [
+      "img-loss-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for image output features."
+  },
+  "image loss: softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "img-loss-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tweight: ${5:1}",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for image output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: huber": {
+    "prefix": [
+      "num-loss-huber"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "$0"
+    ],
+    "description": "`huber` loss for number output features."
+  },
+  "number loss: huber (all parameters)": {
+    "prefix": [
+      "num-loss-huber-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "\tdelta: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`huber` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: mean_absolute_error": {
+    "prefix": [
+      "num-loss-mean-absolute-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for number output features."
+  },
+  "number loss: mean_absolute_error (all parameters)": {
+    "prefix": [
+      "num-loss-mean-absolute-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: mean_absolute_percentage_error": {
+    "prefix": [
+      "num-loss-mean-absolute-percentage-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for number output features."
+  },
+  "number loss: mean_absolute_percentage_error (all parameters)": {
+    "prefix": [
+      "num-loss-mean-absolute-percentage-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: mean_squared_error": {
+    "prefix": [
+      "num-loss-mean-squared-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for number output features."
+  },
+  "number loss: mean_squared_error (all parameters)": {
+    "prefix": [
+      "num-loss-mean-squared-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: root_mean_squared_error": {
+    "prefix": [
+      "num-loss-root-mean-squared-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: root_mean_squared_error",
+      "$0"
+    ],
+    "description": "`root_mean_squared_error` loss for number output features."
+  },
+  "number loss: root_mean_squared_error (all parameters)": {
+    "prefix": [
+      "num-loss-root-mean-squared-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: root_mean_squared_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`root_mean_squared_error` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "number loss: root_mean_squared_percentage_error": {
+    "prefix": [
+      "num-loss-root-mean-squared-percentage-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: root_mean_squared_percentage_error",
+      "$0"
+    ],
+    "description": "`root_mean_squared_percentage_error` loss for number output features."
+  },
+  "number loss: root_mean_squared_percentage_error (all parameters)": {
+    "prefix": [
+      "num-loss-root-mean-squared-percentage-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: root_mean_squared_percentage_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`root_mean_squared_percentage_error` loss for number output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence loss: entmax15": {
+    "prefix": [
+      "seq-loss-entmax15"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "$0"
+    ],
+    "description": "`entmax15` loss for sequence output features."
+  },
+  "sequence loss: entmax15 (all parameters)": {
+    "prefix": [
+      "seq-loss-entmax15-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`entmax15` loss for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence loss: next_token_softmax_cross_entropy": {
+    "prefix": [
+      "seq-loss-next-token-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: next_token_softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`next_token_softmax_cross_entropy` loss for sequence output features."
+  },
+  "sequence loss: next_token_softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "seq-loss-next-token-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: next_token_softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tunique: ${5|false,true|}",
+      "\tweight: ${6:1}",
+      "$0"
+    ],
+    "description": "`next_token_softmax_cross_entropy` loss for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence loss: sequence_softmax_cross_entropy": {
+    "prefix": [
+      "seq-loss-sequence-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sequence_softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`sequence_softmax_cross_entropy` loss for sequence output features."
+  },
+  "sequence loss: sequence_softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "seq-loss-sequence-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sequence_softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tunique: ${5|false,true|}",
+      "\tweight: ${6:1}",
+      "$0"
+    ],
+    "description": "`sequence_softmax_cross_entropy` loss for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "sequence loss: sparsemax": {
+    "prefix": [
+      "seq-loss-sparsemax"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for sequence output features."
+  },
+  "sequence loss: sparsemax (all parameters)": {
+    "prefix": [
+      "seq-loss-sparsemax-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for sequence output features. Includes every parameter with its Ludwig default."
+  },
+  "set loss: sigmoid_cross_entropy": {
+    "prefix": [
+      "set-loss-sigmoid-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sigmoid_cross_entropy",
+      "$0"
+    ],
+    "description": "`sigmoid_cross_entropy` loss for set output features."
+  },
+  "set loss: sigmoid_cross_entropy (all parameters)": {
+    "prefix": [
+      "set-loss-sigmoid-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sigmoid_cross_entropy",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`sigmoid_cross_entropy` loss for set output features. Includes every parameter with its Ludwig default."
+  },
+  "text loss: entmax15": {
+    "prefix": [
+      "txt-loss-entmax15"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "$0"
+    ],
+    "description": "`entmax15` loss for text output features."
+  },
+  "text loss: entmax15 (all parameters)": {
+    "prefix": [
+      "txt-loss-entmax15-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: entmax15",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`entmax15` loss for text output features. Includes every parameter with its Ludwig default."
+  },
+  "text loss: next_token_softmax_cross_entropy": {
+    "prefix": [
+      "txt-loss-next-token-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: next_token_softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`next_token_softmax_cross_entropy` loss for text output features."
+  },
+  "text loss: next_token_softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "txt-loss-next-token-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: next_token_softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tunique: ${5|false,true|}",
+      "\tweight: ${6:1}",
+      "$0"
+    ],
+    "description": "`next_token_softmax_cross_entropy` loss for text output features. Includes every parameter with its Ludwig default."
+  },
+  "text loss: sequence_softmax_cross_entropy": {
+    "prefix": [
+      "txt-loss-sequence-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sequence_softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`sequence_softmax_cross_entropy` loss for text output features."
+  },
+  "text loss: sequence_softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "txt-loss-sequence-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sequence_softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tunique: ${5|false,true|}",
+      "\tweight: ${6:1}",
+      "$0"
+    ],
+    "description": "`sequence_softmax_cross_entropy` loss for text output features. Includes every parameter with its Ludwig default."
+  },
+  "text loss: sparsemax": {
+    "prefix": [
+      "txt-loss-sparsemax"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for text output features."
+  },
+  "text loss: sparsemax (all parameters)": {
+    "prefix": [
+      "txt-loss-sparsemax-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: sparsemax",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`sparsemax` loss for text output features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries loss: huber": {
+    "prefix": [
+      "ts-loss-huber"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "$0"
+    ],
+    "description": "`huber` loss for timeseries output features."
+  },
+  "timeseries loss: huber (all parameters)": {
+    "prefix": [
+      "ts-loss-huber-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "\tdelta: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`huber` loss for timeseries output features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries loss: mean_absolute_error": {
+    "prefix": [
+      "ts-loss-mean-absolute-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for timeseries output features."
+  },
+  "timeseries loss: mean_absolute_error (all parameters)": {
+    "prefix": [
+      "ts-loss-mean-absolute-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for timeseries output features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries loss: mean_absolute_percentage_error": {
+    "prefix": [
+      "ts-loss-mean-absolute-percentage-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for timeseries output features."
+  },
+  "timeseries loss: mean_absolute_percentage_error (all parameters)": {
+    "prefix": [
+      "ts-loss-mean-absolute-percentage-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for timeseries output features. Includes every parameter with its Ludwig default."
+  },
+  "timeseries loss: mean_squared_error": {
+    "prefix": [
+      "ts-loss-mean-squared-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for timeseries output features."
+  },
+  "timeseries loss: mean_squared_error (all parameters)": {
+    "prefix": [
+      "ts-loss-mean-squared-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for timeseries output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: huber": {
+    "prefix": [
+      "vec-loss-huber"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "$0"
+    ],
+    "description": "`huber` loss for vector output features."
+  },
+  "vector loss: huber (all parameters)": {
+    "prefix": [
+      "vec-loss-huber-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: huber",
+      "\tdelta: ${1:1}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`huber` loss for vector output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: mean_absolute_error": {
+    "prefix": [
+      "vec-loss-mean-absolute-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for vector output features."
+  },
+  "vector loss: mean_absolute_error (all parameters)": {
+    "prefix": [
+      "vec-loss-mean-absolute-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_error` loss for vector output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: mean_absolute_percentage_error": {
+    "prefix": [
+      "vec-loss-mean-absolute-percentage-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for vector output features."
+  },
+  "vector loss: mean_absolute_percentage_error (all parameters)": {
+    "prefix": [
+      "vec-loss-mean-absolute-percentage-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_absolute_percentage_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_absolute_percentage_error` loss for vector output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: mean_squared_error": {
+    "prefix": [
+      "vec-loss-mean-squared-error"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for vector output features."
+  },
+  "vector loss: mean_squared_error (all parameters)": {
+    "prefix": [
+      "vec-loss-mean-squared-error-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: mean_squared_error",
+      "\tweight: ${1:1}",
+      "$0"
+    ],
+    "description": "`mean_squared_error` loss for vector output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: nt_xent": {
+    "prefix": [
+      "vec-loss-nt-xent"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: nt_xent",
+      "$0"
+    ],
+    "description": "`nt_xent` loss for vector output features."
+  },
+  "vector loss: nt_xent (all parameters)": {
+    "prefix": [
+      "vec-loss-nt-xent-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: nt_xent",
+      "\ttemperature: ${1:0.07}",
+      "\tweight: ${2:1}",
+      "$0"
+    ],
+    "description": "`nt_xent` loss for vector output features. Includes every parameter with its Ludwig default."
+  },
+  "vector loss: softmax_cross_entropy": {
+    "prefix": [
+      "vec-loss-softmax-cross-entropy"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for vector output features."
+  },
+  "vector loss: softmax_cross_entropy (all parameters)": {
+    "prefix": [
+      "vec-loss-softmax-cross-entropy-full"
+    ],
+    "body": [
+      "loss:",
+      "\ttype: softmax_cross_entropy",
+      "\tclass_similarities: ${1:null}",
+      "\tclass_similarities_temperature: ${2:0}",
+      "\tconfidence_penalty: ${3:0}",
+      "\trobust_lambda: ${4:0}",
+      "\tweight: ${5:1}",
+      "$0"
+    ],
+    "description": "`softmax_cross_entropy` loss for vector output features. Includes every parameter with its Ludwig default."
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "Hyperopt block": {
+    "prefix": [
+      "hyperopt"
+    ],
+    "body": [
+      "hyperopt:",
+      "\teval_split: ${1|validation,train,test|}",
+      "\tgoal: ${2|minimize,maximize|}",
+      "\tmetric: ${3|loss,root_mean_squared_error,precision,recall,roc_auc,specificity,root_mean_squared_percentage_error,r2,binary_weighted_cross_entropy,softmax_cross_entropy,sequence_softmax_cross_entropy,next_token_softmax_cross_entropy,sigmoid_cross_entropy,token_accuracy,sequence_accuracy,perplexity,next_token_perplexity,accuracy,accuracy_micro,hits_at_k,mean_absolute_error,mean_squared_error,mean_absolute_percentage_error,mean_absolute_scaled_error,symmetric_mean_absolute_percentage_error,jaccard,huber,corn,anomaly_auroc,f1_max|}",
+      "\toutput_feature: ${4:combined}",
+      "\tsplit: ${5|validation,train,test|}",
+      "\tparameters:",
+      "\t\t${6:trainer.learning_rate}:",
+      "\t\t\tspace: loguniform",
+      "\t\t\tlower: 0.0001",
+      "\t\t\tupper: 0.1",
+      "\texecutor:",
+      "\t\ttype: ray",
+      "\t\tnum_samples: ${7:10}",
+      "\tsearch_alg:",
+      "\t\ttype: ${8|variant_generator,random,hyperopt,optuna,bayesopt|}",
+      "$0"
+    ],
+    "description": "Hyperparameter optimization block."
+  },
+  "Hyperopt executor": {
+    "prefix": [
+      "hyperopt-executor"
+    ],
+    "body": [
+      "executor:",
+      "\tcpu_resources_per_trial: ${1:1}",
+      "\tgpu_resources_per_trial: ${2:0}",
+      "\tkubernetes_namespace: ${3:null}",
+      "\tmax_concurrent_trials: ${4:auto}",
+      "\tnum_samples: ${5:null}",
+      "\ttime_budget_s: ${6:3600}",
+      "$0"
+    ],
+    "description": "Ray Tune executor settings for hyperopt."
+  },
+  "Hyperopt parameter: choice": {
+    "prefix": [
+      "hyperopt-space-choice"
+    ],
+    "body": [
+      "parameters:",
+      "\t${3:trainer.learning_rate}:",
+      "\t\tspace: choice",
+      "\t\tcategories: [${1:a}, ${2:b}]",
+      "$0"
+    ],
+    "description": "`choice` hyperopt search space."
+  },
+  "Hyperopt parameter: grid_search": {
+    "prefix": [
+      "hyperopt-space-grid-search"
+    ],
+    "body": [
+      "parameters:",
+      "\t${3:trainer.learning_rate}:",
+      "\t\tspace: grid_search",
+      "\t\tvalues: [${1:1}, ${2:2}]",
+      "$0"
+    ],
+    "description": "`grid_search` hyperopt search space."
+  },
+  "Hyperopt parameter: loguniform": {
+    "prefix": [
+      "hyperopt-space-loguniform"
+    ],
+    "body": [
+      "parameters:",
+      "\t${3:trainer.learning_rate}:",
+      "\t\tspace: loguniform",
+      "\t\tlower: ${1:0.0001}",
+      "\t\tupper: ${2:0.1}",
+      "$0"
+    ],
+    "description": "`loguniform` hyperopt search space."
+  },
+  "Hyperopt parameter: randint": {
+    "prefix": [
+      "hyperopt-space-randint"
+    ],
+    "body": [
+      "parameters:",
+      "\t${3:trainer.learning_rate}:",
+      "\t\tspace: randint",
+      "\t\tlower: ${1:1}",
+      "\t\tupper: ${2:10}",
+      "$0"
+    ],
+    "description": "`randint` hyperopt search space."
+  },
+  "Hyperopt parameter: uniform": {
+    "prefix": [
+      "hyperopt-space-uniform"
+    ],
+    "body": [
+      "parameters:",
+      "\t${3:trainer.learning_rate}:",
+      "\t\tspace: uniform",
+      "\t\tlower: ${1:0.0}",
+      "\t\tupper: ${2:1.0}",
+      "$0"
+    ],
+    "description": "`uniform` hyperopt search space."
+  },
+  "Hyperopt scheduler: asha": {
+    "prefix": [
+      "hyperopt-sched-asha"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: asha",
+      "$0"
+    ],
+    "description": "`asha` trial scheduler."
+  },
+  "Hyperopt scheduler: asha (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-asha-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: asha",
+      "\tbrackets: ${1:1}",
+      "\tgrace_period: ${2:1}",
+      "\tmax_t: ${3:100}",
+      "\tmetric: ${4:null}",
+      "\tmode: ${5:null}",
+      "\treduction_factor: ${6:4}",
+      "\tstop_last_trials: ${7|true,false|}",
+      "\ttime_attr: ${8:training_iteration}",
+      "$0"
+    ],
+    "description": "`asha` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: async_hyperband": {
+    "prefix": [
+      "hyperopt-sched-async-hyperband"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: async_hyperband",
+      "$0"
+    ],
+    "description": "`async_hyperband` trial scheduler."
+  },
+  "Hyperopt scheduler: async_hyperband (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-async-hyperband-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: async_hyperband",
+      "\tbrackets: ${1:1}",
+      "\tgrace_period: ${2:1}",
+      "\tmax_t: ${3:100}",
+      "\tmetric: ${4:null}",
+      "\tmode: ${5:null}",
+      "\treduction_factor: ${6:4}",
+      "\tstop_last_trials: ${7|true,false|}",
+      "\ttime_attr: ${8:training_iteration}",
+      "$0"
+    ],
+    "description": "`async_hyperband` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: asynchyperband": {
+    "prefix": [
+      "hyperopt-sched-asynchyperband"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: asynchyperband",
+      "$0"
+    ],
+    "description": "`asynchyperband` trial scheduler."
+  },
+  "Hyperopt scheduler: asynchyperband (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-asynchyperband-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: asynchyperband",
+      "\tbrackets: ${1:1}",
+      "\tgrace_period: ${2:1}",
+      "\tmax_t: ${3:100}",
+      "\tmetric: ${4:null}",
+      "\tmode: ${5:null}",
+      "\treduction_factor: ${6:4}",
+      "\tstop_last_trials: ${7|true,false|}",
+      "\ttime_attr: ${8:training_iteration}",
+      "$0"
+    ],
+    "description": "`asynchyperband` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: fifo": {
+    "prefix": [
+      "hyperopt-sched-fifo"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: fifo",
+      "$0"
+    ],
+    "description": "`fifo` trial scheduler."
+  },
+  "Hyperopt scheduler: fifo (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-fifo-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: fifo",
+      "\tmetric: ${1:null}",
+      "\tmode: ${2:null}",
+      "\ttime_attr: ${3:training_iteration}",
+      "$0"
+    ],
+    "description": "`fifo` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: hb_bohb": {
+    "prefix": [
+      "hyperopt-sched-hb-bohb"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: hb_bohb",
+      "$0"
+    ],
+    "description": "`hb_bohb` trial scheduler."
+  },
+  "Hyperopt scheduler: hb_bohb (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-hb-bohb-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: hb_bohb",
+      "\tmax_t: ${1:81}",
+      "\tmetric: ${2:null}",
+      "\tmode: ${3:null}",
+      "\treduction_factor: ${4:3}",
+      "\tstop_last_trials: ${5|true,false|}",
+      "\ttime_attr: ${6:training_iteration}",
+      "$0"
+    ],
+    "description": "`hb_bohb` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: hyperband": {
+    "prefix": [
+      "hyperopt-sched-hyperband"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: hyperband",
+      "$0"
+    ],
+    "description": "`hyperband` trial scheduler."
+  },
+  "Hyperopt scheduler: hyperband (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-hyperband-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: hyperband",
+      "\tmax_t: ${1:81}",
+      "\tmetric: ${2:null}",
+      "\tmode: ${3:null}",
+      "\treduction_factor: ${4:3}",
+      "\tstop_last_trials: ${5|true,false|}",
+      "\ttime_attr: ${6:training_iteration}",
+      "$0"
+    ],
+    "description": "`hyperband` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: median_stopping_rule": {
+    "prefix": [
+      "hyperopt-sched-median-stopping-rule"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: median_stopping_rule",
+      "$0"
+    ],
+    "description": "`median_stopping_rule` trial scheduler."
+  },
+  "Hyperopt scheduler: median_stopping_rule (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-median-stopping-rule-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: median_stopping_rule",
+      "\tgrace_period: ${1:60}",
+      "\thard_stop: ${2|true,false|}",
+      "\tmetric: ${3:null}",
+      "\tmin_samples_required: ${4:3}",
+      "\tmin_time_slice: ${5:0}",
+      "\tmode: ${6:null}",
+      "\ttime_attr: ${7|time_total_s,training_iteration,timesteps_total,mean_accuracy,mean_loss|}",
+      "$0"
+    ],
+    "description": "`median_stopping_rule` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: medianstoppingrule": {
+    "prefix": [
+      "hyperopt-sched-medianstoppingrule"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: medianstoppingrule",
+      "$0"
+    ],
+    "description": "`medianstoppingrule` trial scheduler."
+  },
+  "Hyperopt scheduler: medianstoppingrule (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-medianstoppingrule-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: medianstoppingrule",
+      "\tgrace_period: ${1:60}",
+      "\thard_stop: ${2|true,false|}",
+      "\tmetric: ${3:null}",
+      "\tmin_samples_required: ${4:3}",
+      "\tmin_time_slice: ${5:0}",
+      "\tmode: ${6:null}",
+      "\ttime_attr: ${7|time_total_s,training_iteration,timesteps_total,mean_accuracy,mean_loss|}",
+      "$0"
+    ],
+    "description": "`medianstoppingrule` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: pb2": {
+    "prefix": [
+      "hyperopt-sched-pb2"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pb2",
+      "$0"
+    ],
+    "description": "`pb2` trial scheduler."
+  },
+  "Hyperopt scheduler: pb2 (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-pb2-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pb2",
+      "\thyperparam_bounds: ${1:null}",
+      "\tlog_config: ${2|true,false|}",
+      "\tmetric: ${3:null}",
+      "\tmode: ${4:null}",
+      "\tperturbation_interval: ${5:60}",
+      "\tquantile_fraction: ${6:0.25}",
+      "\trequire_attrs: ${7|true,false|}",
+      "\tsynch: ${8|false,true|}",
+      "\ttime_attr: ${9|time_total_s,training_iteration,timesteps_total,mean_accuracy,mean_loss|}",
+      "$0"
+    ],
+    "description": "`pb2` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: pbt": {
+    "prefix": [
+      "hyperopt-sched-pbt"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pbt",
+      "$0"
+    ],
+    "description": "`pbt` trial scheduler."
+  },
+  "Hyperopt scheduler: pbt (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-pbt-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pbt",
+      "\tburn_in_period: ${1:60}",
+      "\thyperparam_mutations: ${2:null}",
+      "\tlog_config: ${3|true,false|}",
+      "\tmetric: ${4:null}",
+      "\tmode: ${5:null}",
+      "\tperturbation_factors: ${6:[1.2, 0.8]}",
+      "\tperturbation_interval: ${7:60}",
+      "\tquantile_fraction: ${8:0.25}",
+      "\trequire_attrs: ${9|true,false|}",
+      "\tresample_probability: ${10:0.25}",
+      "\tsynch: ${11|false,true|}",
+      "\ttime_attr: ${12|time_total_s,training_iteration,timesteps_total,mean_accuracy,mean_loss|}",
+      "$0"
+    ],
+    "description": "`pbt` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: pbt_replay": {
+    "prefix": [
+      "hyperopt-sched-pbt-replay"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pbt_replay",
+      "$0"
+    ],
+    "description": "`pbt_replay` trial scheduler."
+  },
+  "Hyperopt scheduler: pbt_replay (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-pbt-replay-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: pbt_replay",
+      "\tmetric: ${1:null}",
+      "\tmode: ${2:null}",
+      "\tpolicy_file: ${3:null}",
+      "\ttime_attr: ${4:training_iteration}",
+      "$0"
+    ],
+    "description": "`pbt_replay` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt scheduler: resource_changing": {
+    "prefix": [
+      "hyperopt-sched-resource-changing"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: resource_changing",
+      "$0"
+    ],
+    "description": "`resource_changing` trial scheduler."
+  },
+  "Hyperopt scheduler: resource_changing (all parameters)": {
+    "prefix": [
+      "hyperopt-sched-resource-changing-full"
+    ],
+    "body": [
+      "scheduler:",
+      "\ttype: resource_changing",
+      "\tmetric: ${1:null}",
+      "\tmode: ${2:null}",
+      "\ttime_attr: ${3:training_iteration}",
+      "$0"
+    ],
+    "description": "`resource_changing` trial scheduler. Includes every parameter with its Ludwig default."
+  },
+  "Hyperopt search algorithm": {
+    "prefix": [
+      "hyperopt-search-alg"
+    ],
+    "body": [
+      "search_alg:",
+      "\ttype: ${1|variant_generator,random,ax,bayesopt,blendsearch,bohb,cfo,dragonfly,hebo,hyperopt,nevergrad,optuna,skopt,zoopt|}",
+      "$0"
+    ],
+    "description": "Search algorithm for hyperopt."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "binary decoder: mlp_classifier": {
+    "prefix": [
+      "bin-dec-mlp-classifier"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: mlp_classifier",
+      "$0"
+    ],
+    "description": "`mlp_classifier` decoder for binary output features."
+  },
+  "binary decoder: mlp_classifier (all parameters)": {
+    "prefix": [
+      "bin-dec-mlp-classifier-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: mlp_classifier",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tbias_initializer: ${2|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tcalibration: ${3|null,temperature_scaling|}",
+      "\tdropout: ${4:0}",
+      "\tfc_activation: ${5:relu}",
+      "\tfc_bias_initializer: ${6:zeros}",
+      "\tfc_dropout: ${7:0}",
+      "\tfc_norm: ${8:null}",
+      "\tfc_norm_params: ${9:null}",
+      "\tfc_output_size: ${10:256}",
+      "\tfc_use_bias: ${11|true,false|}",
+      "\tfc_weights_initializer: ${12:xavier_uniform}",
+      "\tinput_size: ${13:null}",
+      "\tmc_dropout_samples: ${14:0}",
+      "\tnum_classes: ${15:null}",
+      "\tnum_fc_layers: ${16:1}",
+      "\toutput_size: ${17:256}",
+      "\tuse_bias: ${18|true,false|}",
+      "\tweights_initializer: ${19|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`mlp_classifier` decoder for binary output features. Includes every parameter with its Ludwig default."
+  },
+  "binary decoder: regressor": {
+    "prefix": [
+      "bin-dec-regressor"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: regressor",
+      "$0"
+    ],
+    "description": "`regressor` decoder for binary output features."
+  },
+  "binary decoder: regressor (all parameters)": {
+    "prefix": [
+      "bin-dec-regressor-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: regressor",
+      "\tbias_initializer: ${1|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tfc_activation: ${2:relu}",
+      "\tfc_bias_initializer: ${3:zeros}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_norm: ${5:null}",
+      "\tfc_norm_params: ${6:null}",
+      "\tfc_output_size: ${7:256}",
+      "\tfc_use_bias: ${8|true,false|}",
+      "\tfc_weights_initializer: ${9:xavier_uniform}",
+      "\tinput_size: ${10:null}",
+      "\tnum_fc_layers: ${11:0}",
+      "\tuse_bias: ${12|true,false|}",
+      "\tweights_initializer: ${13|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`regressor` decoder for binary output features. Includes every parameter with its Ludwig default."
+  }
+}

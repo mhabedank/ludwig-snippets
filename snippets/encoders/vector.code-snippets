@@ -1,0 +1,60 @@
+{
+  "vector encoder: dense": {
+    "prefix": [
+      "vec-enc-dense"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dense",
+      "$0"
+    ],
+    "description": "`dense` encoder for vector input features."
+  },
+  "vector encoder: dense (all parameters)": {
+    "prefix": [
+      "vec-enc-dense-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dense",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tinput_size: ${5:null}",
+      "\tnorm: ${6|null,batch,layer,ghost|}",
+      "\tnorm_params: ${7:null}",
+      "\tnum_layers: ${8:1}",
+      "\toutput_size: ${9:256}",
+      "\tskip: ${10|false,true|}",
+      "\tuse_bias: ${11|true,false|}",
+      "\tweights_initializer: ${12:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`dense` encoder for vector input features. Includes every parameter with its Ludwig default."
+  },
+  "vector encoder: passthrough": {
+    "prefix": [
+      "vec-enc-passthrough"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for vector input features."
+  },
+  "vector encoder: passthrough (all parameters)": {
+    "prefix": [
+      "vec-enc-passthrough-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "\tadapter: ${1:null}",
+      "\tskip: ${2|false,true|}",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for vector input features. Includes every parameter with its Ludwig default."
+  }
+}
