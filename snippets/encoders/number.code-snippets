@@ -1,0 +1,139 @@
+{
+  "number encoder: bins": {
+    "prefix": [
+      "num-enc-bins"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: bins",
+      "$0"
+    ],
+    "description": "`bins` encoder for number input features."
+  },
+  "number encoder: bins (all parameters)": {
+    "prefix": [
+      "num-enc-bins-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: bins",
+      "\tadapter: ${1:null}",
+      "\tnum_bins: ${2:32}",
+      "\toutput_size: ${3:256}",
+      "\tskip: ${4|false,true|}",
+      "$0"
+    ],
+    "description": "`bins` encoder for number input features. Includes every parameter with its Ludwig default."
+  },
+  "number encoder: dense": {
+    "prefix": [
+      "num-enc-dense"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dense",
+      "$0"
+    ],
+    "description": "`dense` encoder for number input features."
+  },
+  "number encoder: dense (all parameters)": {
+    "prefix": [
+      "num-enc-dense-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dense",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3:zeros}",
+      "\tdropout: ${4:0}",
+      "\tinput_size: ${5:null}",
+      "\tnorm: ${6|null,batch,layer,ghost|}",
+      "\tnorm_params: ${7:null}",
+      "\tnum_layers: ${8:1}",
+      "\toutput_size: ${9:256}",
+      "\tskip: ${10|false,true|}",
+      "\tuse_bias: ${11|true,false|}",
+      "\tweights_initializer: ${12:xavier_uniform}",
+      "$0"
+    ],
+    "description": "`dense` encoder for number input features. Includes every parameter with its Ludwig default."
+  },
+  "number encoder: passthrough": {
+    "prefix": [
+      "num-enc-passthrough"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for number input features."
+  },
+  "number encoder: passthrough (all parameters)": {
+    "prefix": [
+      "num-enc-passthrough-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "\tadapter: ${1:null}",
+      "\tskip: ${2|false,true|}",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for number input features. Includes every parameter with its Ludwig default."
+  },
+  "number encoder: periodic": {
+    "prefix": [
+      "num-enc-periodic"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: periodic",
+      "$0"
+    ],
+    "description": "`periodic` encoder for number input features."
+  },
+  "number encoder: periodic (all parameters)": {
+    "prefix": [
+      "num-enc-periodic-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: periodic",
+      "\tadapter: ${1:null}",
+      "\tnum_frequencies: ${2:64}",
+      "\toutput_size: ${3:256}",
+      "\tsigma: ${4:1}",
+      "\tskip: ${5|false,true|}",
+      "$0"
+    ],
+    "description": "`periodic` encoder for number input features. Includes every parameter with its Ludwig default."
+  },
+  "number encoder: ple": {
+    "prefix": [
+      "num-enc-ple"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: ple",
+      "$0"
+    ],
+    "description": "`ple` encoder for number input features."
+  },
+  "number encoder: ple (all parameters)": {
+    "prefix": [
+      "num-enc-ple-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: ple",
+      "\tadapter: ${1:null}",
+      "\tnum_bins: ${2:64}",
+      "\toutput_size: ${3:256}",
+      "\tskip: ${4|false,true|}",
+      "$0"
+    ],
+    "description": "`ple` encoder for number input features. Includes every parameter with its Ludwig default."
+  }
+}

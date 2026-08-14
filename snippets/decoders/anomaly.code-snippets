@@ -1,0 +1,34 @@
+{
+  "anomaly decoder: anomaly": {
+    "prefix": [
+      "anom-dec-anomaly"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: anomaly",
+      "$0"
+    ],
+    "description": "`anomaly` decoder for anomaly output features."
+  },
+  "anomaly decoder: anomaly (all parameters)": {
+    "prefix": [
+      "anom-dec-anomaly-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: anomaly",
+      "\tfc_activation: ${1:relu}",
+      "\tfc_bias_initializer: ${2:zeros}",
+      "\tfc_dropout: ${3:0}",
+      "\tfc_norm: ${4:null}",
+      "\tfc_norm_params: ${5:null}",
+      "\tfc_output_size: ${6:256}",
+      "\tfc_use_bias: ${7|true,false|}",
+      "\tfc_weights_initializer: ${8:xavier_uniform}",
+      "\tinput_size: ${9:null}",
+      "\tnum_fc_layers: ${10:0}",
+      "$0"
+    ],
+    "description": "`anomaly` decoder for anomaly output features. Includes every parameter with its Ludwig default."
+  }
+}

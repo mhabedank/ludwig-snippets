@@ -1,47 +1,70 @@
 {
-  "Add Date Embed Encoder": {
+  "date encoder: embed": {
     "prefix": [
       "dt-enc-embed"
     ],
     "body": [
       "encoder:",
       "\ttype: embed",
-      "\tdropout: ${1:0.0}",
-      "\tembedding_size: ${2:10}",
-      "\toutput_size: ${3:10}",
-      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tnorm: ${5|null,batch,layer|}",
-      "\tuse_bias: ${6|true,false|}",
-      "\tbias_initializer: ${7|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tembeddings_on_cpu: ${9|false,true|}",
-      "\tnorm_params: ${10|null,batch,layer|}",
-      "\tnum_fc_layers: ${11:0}",
-      "\tfc_layer: ${12:null}",
       "$0"
     ],
-    "description": "Add Date Embed Encoder."
+    "description": "`embed` encoder for date input features."
   },
-  "Add Date Wave Encoder": {
+  "date encoder: embed (all parameters)": {
+    "prefix": [
+      "dt-enc-embed-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:10}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tnorm: ${7|null,batch,layer|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\toutput_size: ${10:10}",
+      "\tskip: ${11|false,true|}",
+      "\tuse_bias: ${12|true,false|}",
+      "\tweights_initializer: ${13|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`embed` encoder for date input features. Includes every parameter with its Ludwig default."
+  },
+  "date encoder: wave": {
     "prefix": [
       "dt-enc-wave"
     ],
     "body": [
       "encoder:",
       "\ttype: wave",
-      "\tdropout: ${1:0.0}",
-      "\toutput_size: ${2:10}",
-      "\tactivation: ${3|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tnorm: ${4|null,batch,layer|}",
-      "\tuse_bias: ${5|true,false|}",
-      "\tbias_initializer: {6|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tactivation: ${7|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tnorm_params: ${9|null,batch,layer|}",
-      "\tnum_fc_layers: ${10:1}",
-      "\tfc_layer: ${11:null}",
       "$0"
     ],
-    "description": "Add Date Wave Encoder."
+    "description": "`wave` encoder for date input features."
+  },
+  "date encoder: wave (all parameters)": {
+    "prefix": [
+      "dt-enc-wave-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: wave",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tnorm: ${5|null,batch,layer|}",
+      "\tnorm_params: ${6:null}",
+      "\tnum_fc_layers: ${7:1}",
+      "\toutput_size: ${8:10}",
+      "\tskip: ${9|false,true|}",
+      "\tuse_bias: ${10|true,false|}",
+      "\tweights_initializer: ${11|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`wave` encoder for date input features. Includes every parameter with its Ludwig default."
   }
 }

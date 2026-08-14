@@ -1,18 +1,18 @@
 {
-  "sequence encoder: cnnrnn": {
+  "audio encoder: cnnrnn": {
     "prefix": [
-      "seq-enc-cnnrnn"
+      "aud-enc-cnnrnn"
     ],
     "body": [
       "encoder:",
       "\ttype: cnnrnn",
       "$0"
     ],
-    "description": "`cnnrnn` encoder for sequence input features."
+    "description": "`cnnrnn` encoder for audio input features."
   },
-  "sequence encoder: cnnrnn (all parameters)": {
+  "audio encoder: cnnrnn (all parameters)": {
     "prefix": [
-      "seq-enc-cnnrnn-full"
+      "aud-enc-cnnrnn-full"
     ],
     "body": [
       "encoder:",
@@ -59,54 +59,51 @@
       "\tweights_initializer: ${40:xavier_uniform}",
       "$0"
     ],
-    "description": "`cnnrnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`cnnrnn` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: embed": {
+  "audio encoder: hubert": {
     "prefix": [
-      "seq-enc-embed"
+      "aud-enc-hubert"
     ],
     "body": [
       "encoder:",
-      "\ttype: embed",
+      "\ttype: hubert",
       "$0"
     ],
-    "description": "`embed` encoder for sequence input features."
+    "description": "`hubert` encoder for audio input features."
   },
-  "sequence encoder: embed (all parameters)": {
+  "audio encoder: hubert (all parameters)": {
     "prefix": [
-      "seq-enc-embed-full"
+      "aud-enc-hubert-full"
     ],
     "body": [
       "encoder:",
-      "\ttype: embed",
+      "\ttype: hubert",
       "\tadapter: ${1:null}",
-      "\tdropout: ${2:0}",
-      "\tembedding_size: ${3:256}",
-      "\tembeddings_on_cpu: ${4|false,true|}",
-      "\tembeddings_trainable: ${5|true,false|}",
-      "\tpretrained_embeddings: ${6:null}",
-      "\treduce_output: ${7|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
-      "\trepresentation: ${8|dense,sparse|}",
-      "\tskip: ${9|false,true|}",
-      "\tweights_initializer: ${10:uniform}",
+      "\tpretrained_model_name_or_path: ${2:facebook/hubert-base-ls960}",
+      "\treduce_output: ${3:mean}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
       "$0"
     ],
-    "description": "`embed` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`hubert` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: jamba": {
+  "audio encoder: jamba": {
     "prefix": [
-      "seq-enc-jamba"
+      "aud-enc-jamba"
     ],
     "body": [
       "encoder:",
       "\ttype: jamba",
       "$0"
     ],
-    "description": "`jamba` encoder for sequence input features."
+    "description": "`jamba` encoder for audio input features."
   },
-  "sequence encoder: jamba (all parameters)": {
+  "audio encoder: jamba (all parameters)": {
     "prefix": [
-      "seq-enc-jamba-full"
+      "aud-enc-jamba-full"
     ],
     "body": [
       "encoder:",
@@ -130,22 +127,22 @@
       "\tskip: ${17|false,true|}",
       "$0"
     ],
-    "description": "`jamba` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`jamba` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: mamba": {
+  "audio encoder: mamba": {
     "prefix": [
-      "seq-enc-mamba"
+      "aud-enc-mamba"
     ],
     "body": [
       "encoder:",
       "\ttype: mamba",
       "$0"
     ],
-    "description": "`mamba` encoder for sequence input features."
+    "description": "`mamba` encoder for audio input features."
   },
-  "sequence encoder: mamba (all parameters)": {
+  "audio encoder: mamba (all parameters)": {
     "prefix": [
-      "seq-enc-mamba-full"
+      "aud-enc-mamba-full"
     ],
     "body": [
       "encoder:",
@@ -175,22 +172,22 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`mamba` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`mamba` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: mamba2": {
+  "audio encoder: mamba2": {
     "prefix": [
-      "seq-enc-mamba2"
+      "aud-enc-mamba2"
     ],
     "body": [
       "encoder:",
       "\ttype: mamba2",
       "$0"
     ],
-    "description": "`mamba2` encoder for sequence input features."
+    "description": "`mamba2` encoder for audio input features."
   },
-  "sequence encoder: mamba2 (all parameters)": {
+  "audio encoder: mamba2 (all parameters)": {
     "prefix": [
-      "seq-enc-mamba2-full"
+      "aud-enc-mamba2-full"
     ],
     "body": [
       "encoder:",
@@ -212,22 +209,22 @@
       "\tskip: ${15|false,true|}",
       "$0"
     ],
-    "description": "`mamba2` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`mamba2` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: parallel_cnn": {
+  "audio encoder: parallel_cnn": {
     "prefix": [
-      "seq-enc-parallel-cnn"
+      "aud-enc-parallel-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: parallel_cnn",
       "$0"
     ],
-    "description": "`parallel_cnn` encoder for sequence input features."
+    "description": "`parallel_cnn` encoder for audio input features."
   },
-  "sequence encoder: parallel_cnn (all parameters)": {
+  "audio encoder: parallel_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-parallel-cnn-full"
+      "aud-enc-parallel-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -257,22 +254,22 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`parallel_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`parallel_cnn` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: rnn": {
+  "audio encoder: rnn": {
     "prefix": [
-      "seq-enc-rnn"
+      "aud-enc-rnn"
     ],
     "body": [
       "encoder:",
       "\ttype: rnn",
       "$0"
     ],
-    "description": "`rnn` encoder for sequence input features."
+    "description": "`rnn` encoder for audio input features."
   },
-  "sequence encoder: rnn (all parameters)": {
+  "audio encoder: rnn (all parameters)": {
     "prefix": [
-      "seq-enc-rnn-full"
+      "aud-enc-rnn-full"
     ],
     "body": [
       "encoder:",
@@ -307,22 +304,22 @@
       "\tweights_initializer: ${28:xavier_uniform}",
       "$0"
     ],
-    "description": "`rnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`rnn` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: stacked_cnn": {
+  "audio encoder: stacked_cnn": {
     "prefix": [
-      "seq-enc-stacked-cnn"
+      "aud-enc-stacked-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: stacked_cnn",
       "$0"
     ],
-    "description": "`stacked_cnn` encoder for sequence input features."
+    "description": "`stacked_cnn` encoder for audio input features."
   },
-  "sequence encoder: stacked_cnn (all parameters)": {
+  "audio encoder: stacked_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-stacked-cnn-full"
+      "aud-enc-stacked-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -357,22 +354,22 @@
       "\tweights_initializer: ${28:xavier_uniform}",
       "$0"
     ],
-    "description": "`stacked_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`stacked_cnn` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: stacked_parallel_cnn": {
+  "audio encoder: stacked_parallel_cnn": {
     "prefix": [
-      "seq-enc-stacked-parallel-cnn"
+      "aud-enc-stacked-parallel-cnn"
     ],
     "body": [
       "encoder:",
       "\ttype: stacked_parallel_cnn",
       "$0"
     ],
-    "description": "`stacked_parallel_cnn` encoder for sequence input features."
+    "description": "`stacked_parallel_cnn` encoder for audio input features."
   },
-  "sequence encoder: stacked_parallel_cnn (all parameters)": {
+  "audio encoder: stacked_parallel_cnn (all parameters)": {
     "prefix": [
-      "seq-enc-stacked-parallel-cnn-full"
+      "aud-enc-stacked-parallel-cnn-full"
     ],
     "body": [
       "encoder:",
@@ -402,52 +399,64 @@
       "\tweights_initializer: ${23:xavier_uniform}",
       "$0"
     ],
-    "description": "`stacked_parallel_cnn` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`stacked_parallel_cnn` encoder for audio input features. Includes every parameter with its Ludwig default."
   },
-  "sequence encoder: transformer": {
+  "audio encoder: wav2vec2": {
     "prefix": [
-      "seq-enc-transformer"
+      "aud-enc-wav2vec2"
     ],
     "body": [
       "encoder:",
-      "\ttype: transformer",
+      "\ttype: wav2vec2",
       "$0"
     ],
-    "description": "`transformer` encoder for sequence input features."
+    "description": "`wav2vec2` encoder for audio input features."
   },
-  "sequence encoder: transformer (all parameters)": {
+  "audio encoder: wav2vec2 (all parameters)": {
     "prefix": [
-      "seq-enc-transformer-full"
+      "aud-enc-wav2vec2-full"
     ],
     "body": [
       "encoder:",
-      "\ttype: transformer",
+      "\ttype: wav2vec2",
       "\tadapter: ${1:null}",
-      "\tbias_initializer: ${2:zeros}",
-      "\tdropout: ${3:0.1}",
-      "\tembedding_size: ${4:256}",
-      "\tembeddings_on_cpu: ${5|false,true|}",
-      "\tembeddings_trainable: ${6|true,false|}",
-      "\tfc_activation: ${7|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
-      "\tfc_dropout: ${8:0}",
-      "\thidden_size: ${9:256}",
-      "\tnorm: ${10|null,batch,layer,ghost|}",
-      "\tnorm_params: ${11:null}",
-      "\tnum_fc_layers: ${12:0}",
-      "\tnum_heads: ${13:8}",
-      "\tnum_layers: ${14:1}",
-      "\toutput_size: ${15:256}",
-      "\tpretrained_embeddings: ${16:null}",
-      "\treduce_output: ${17|last,sum,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
-      "\trepresentation: ${18|dense,sparse|}",
-      "\tshould_embed: ${19|true,false|}",
-      "\tskip: ${20|false,true|}",
-      "\ttransformer_output_size: ${21:256}",
-      "\tuse_bias: ${22|true,false|}",
-      "\tuse_rope: ${23|false,true|}",
-      "\tweights_initializer: ${24:xavier_uniform}",
+      "\tpretrained_model_name_or_path: ${2:facebook/wav2vec2-base}",
+      "\treduce_output: ${3:mean}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
       "$0"
     ],
-    "description": "`transformer` encoder for sequence input features. Includes every parameter with its Ludwig default."
+    "description": "`wav2vec2` encoder for audio input features. Includes every parameter with its Ludwig default."
+  },
+  "audio encoder: whisper": {
+    "prefix": [
+      "aud-enc-whisper"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: whisper",
+      "$0"
+    ],
+    "description": "`whisper` encoder for audio input features."
+  },
+  "audio encoder: whisper (all parameters)": {
+    "prefix": [
+      "aud-enc-whisper-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: whisper",
+      "\tadapter: ${1:null}",
+      "\tpretrained_model_name_or_path: ${2:openai/whisper-base}",
+      "\treduce_output: ${3:mean}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`whisper` encoder for audio input features. Includes every parameter with its Ludwig default."
   }
 }

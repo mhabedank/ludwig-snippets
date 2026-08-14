@@ -1,20 +1,42 @@
 {
-  "Add Bag Embeded Weight Encoder": {
-
-    "prefix": ["bemb", "bag-enc-embed"],
-
+  "bag encoder: embed": {
+    "prefix": [
+      "bag-enc-embed",
+      "bemb"
+    ],
     "body": [
       "encoder:",
       "\ttype: embed",
-      "\tdropout: ${1:0.0}",
-      "\tembedding_size: ${2:50}",
-      "\toutput_size: ${3:10}",
-      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tnorm: ${5|batch,layer,null|}",
       "$0"
     ],
-    "description": "Adds a bag encoder which applies for bag features."
+    "description": "`embed` encoder for bag input features."
+  },
+  "bag encoder: embed (all parameters)": {
+    "prefix": [
+      "bag-enc-embed-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: embed",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:50}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tembeddings_trainable: ${7|true,false|}",
+      "\tforce_embedding_size: ${8|false,true|}",
+      "\tnorm: ${9|null,batch,layer|}",
+      "\tnorm_params: ${10:null}",
+      "\tnum_fc_layers: ${11:0}",
+      "\toutput_size: ${12:10}",
+      "\tpretrained_embeddings: ${13:null}",
+      "\trepresentation: ${14|dense,sparse|}",
+      "\tskip: ${15|false,true|}",
+      "\tuse_bias: ${16|true,false|}",
+      "\tweights_initializer: ${17|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`embed` encoder for bag input features. Includes every parameter with its Ludwig default."
   }
-
 }
-

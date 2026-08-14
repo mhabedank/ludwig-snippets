@@ -1,0 +1,691 @@
+{
+  "ECD input feature: audio": {
+    "prefix": [
+      "aud-in"
+    ],
+    "body": [
+      "- name: ${1:audio_column}",
+      "\ttype: audio",
+      "$0"
+    ],
+    "description": "Add an audio input feature."
+  },
+  "ECD input feature: audio (all parameters)": {
+    "prefix": [
+      "aud-in-full"
+    ],
+    "body": [
+      "- name: ${1:audio_column}",
+      "\ttype: audio",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add an audio input feature with every top-level parameter."
+  },
+  "ECD input feature: bag": {
+    "prefix": [
+      "bag-in"
+    ],
+    "body": [
+      "- name: ${1:bag_column}",
+      "\ttype: bag",
+      "$0"
+    ],
+    "description": "Add a bag input feature."
+  },
+  "ECD input feature: bag (all parameters)": {
+    "prefix": [
+      "bag-in-full"
+    ],
+    "body": [
+      "- name: ${1:bag_column}",
+      "\ttype: bag",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a bag input feature with every top-level parameter."
+  },
+  "ECD input feature: binary": {
+    "prefix": [
+      "bin-in"
+    ],
+    "body": [
+      "- name: ${1:binary_column}",
+      "\ttype: binary",
+      "$0"
+    ],
+    "description": "Add a binary input feature."
+  },
+  "ECD input feature: binary (all parameters)": {
+    "prefix": [
+      "bin-in-full"
+    ],
+    "body": [
+      "- name: ${1:binary_column}",
+      "\ttype: binary",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a binary input feature with every top-level parameter."
+  },
+  "ECD input feature: category": {
+    "prefix": [
+      "cat-in"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "$0"
+    ],
+    "description": "Add a category input feature."
+  },
+  "ECD input feature: category (all parameters)": {
+    "prefix": [
+      "cat-in-full"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a category input feature with every top-level parameter."
+  },
+  "ECD input feature: date": {
+    "prefix": [
+      "dt-in"
+    ],
+    "body": [
+      "- name: ${1:date_column}",
+      "\ttype: date",
+      "$0"
+    ],
+    "description": "Add a date input feature."
+  },
+  "ECD input feature: date (all parameters)": {
+    "prefix": [
+      "dt-in-full"
+    ],
+    "body": [
+      "- name: ${1:date_column}",
+      "\ttype: date",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a date input feature with every top-level parameter."
+  },
+  "ECD input feature: h3": {
+    "prefix": [
+      "h3-in"
+    ],
+    "body": [
+      "- name: ${1:h3_column}",
+      "\ttype: h3",
+      "$0"
+    ],
+    "description": "Add a h3 input feature."
+  },
+  "ECD input feature: h3 (all parameters)": {
+    "prefix": [
+      "h3-in-full"
+    ],
+    "body": [
+      "- name: ${1:h3_column}",
+      "\ttype: h3",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a h3 input feature with every top-level parameter."
+  },
+  "ECD input feature: image": {
+    "prefix": [
+      "img-in"
+    ],
+    "body": [
+      "- name: ${1:image_column}",
+      "\ttype: image",
+      "$0"
+    ],
+    "description": "Add an image input feature."
+  },
+  "ECD input feature: image (all parameters)": {
+    "prefix": [
+      "img-in-full"
+    ],
+    "body": [
+      "- name: ${1:image_column}",
+      "\ttype: image",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add an image input feature with every top-level parameter."
+  },
+  "ECD input feature: number": {
+    "prefix": [
+      "num-in"
+    ],
+    "body": [
+      "- name: ${1:number_column}",
+      "\ttype: number",
+      "$0"
+    ],
+    "description": "Add a number input feature."
+  },
+  "ECD input feature: number (all parameters)": {
+    "prefix": [
+      "num-in-full"
+    ],
+    "body": [
+      "- name: ${1:number_column}",
+      "\ttype: number",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a number input feature with every top-level parameter."
+  },
+  "ECD input feature: sequence": {
+    "prefix": [
+      "seq-in"
+    ],
+    "body": [
+      "- name: ${1:sequence_column}",
+      "\ttype: sequence",
+      "$0"
+    ],
+    "description": "Add a sequence input feature."
+  },
+  "ECD input feature: sequence (all parameters)": {
+    "prefix": [
+      "seq-in-full"
+    ],
+    "body": [
+      "- name: ${1:sequence_column}",
+      "\ttype: sequence",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a sequence input feature with every top-level parameter."
+  },
+  "ECD input feature: set": {
+    "prefix": [
+      "set-in"
+    ],
+    "body": [
+      "- name: ${1:set_column}",
+      "\ttype: set",
+      "$0"
+    ],
+    "description": "Add a set input feature."
+  },
+  "ECD input feature: set (all parameters)": {
+    "prefix": [
+      "set-in-full"
+    ],
+    "body": [
+      "- name: ${1:set_column}",
+      "\ttype: set",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a set input feature with every top-level parameter."
+  },
+  "ECD input feature: text": {
+    "prefix": [
+      "txt-in"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "$0"
+    ],
+    "description": "Add a text input feature."
+  },
+  "ECD input feature: text (all parameters)": {
+    "prefix": [
+      "txt-in-full"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a text input feature with every top-level parameter."
+  },
+  "ECD input feature: timeseries": {
+    "prefix": [
+      "ts-in"
+    ],
+    "body": [
+      "- name: ${1:timeseries_column}",
+      "\ttype: timeseries",
+      "$0"
+    ],
+    "description": "Add a timeseries input feature."
+  },
+  "ECD input feature: timeseries (all parameters)": {
+    "prefix": [
+      "ts-in-full"
+    ],
+    "body": [
+      "- name: ${1:timeseries_column}",
+      "\ttype: timeseries",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a timeseries input feature with every top-level parameter."
+  },
+  "ECD input feature: vector": {
+    "prefix": [
+      "vec-in"
+    ],
+    "body": [
+      "- name: ${1:vector_column}",
+      "\ttype: vector",
+      "$0"
+    ],
+    "description": "Add a vector input feature."
+  },
+  "ECD input feature: vector (all parameters)": {
+    "prefix": [
+      "vec-in-full"
+    ],
+    "body": [
+      "- name: ${1:vector_column}",
+      "\ttype: vector",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a vector input feature with every top-level parameter."
+  },
+  "ECD output feature: anomaly": {
+    "prefix": [
+      "anom-out"
+    ],
+    "body": [
+      "- name: ${1:anomaly_column}",
+      "\ttype: anomaly",
+      "$0"
+    ],
+    "description": "Add an anomaly output feature."
+  },
+  "ECD output feature: anomaly (all parameters)": {
+    "prefix": [
+      "anom-out-full"
+    ],
+    "body": [
+      "- name: ${1:anomaly_column}",
+      "\ttype: anomaly",
+      "\tdefault_validation_metric: ${2:anomaly_auroc}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5:sum}",
+      "\treduce_input: ${6:sum}",
+      "\tthreshold: ${7:auto}",
+      "\tthreshold_percentile: ${8:95}",
+      "$0"
+    ],
+    "description": "Add an anomaly output feature with every top-level parameter."
+  },
+  "ECD output feature: binary": {
+    "prefix": [
+      "bin-out"
+    ],
+    "body": [
+      "- name: ${1:binary_column}",
+      "\ttype: binary",
+      "$0"
+    ],
+    "description": "Add a binary output feature."
+  },
+  "ECD output feature: binary (all parameters)": {
+    "prefix": [
+      "bin-out-full"
+    ],
+    "body": [
+      "- name: ${1:binary_column}",
+      "\ttype: binary",
+      "\tcalibration: ${2|false,true|}",
+      "\tdefault_validation_metric: ${3:roc_auc}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "\tthreshold: ${8:0.5}",
+      "$0"
+    ],
+    "description": "Add a binary output feature with every top-level parameter."
+  },
+  "ECD output feature: category": {
+    "prefix": [
+      "cat-out"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "$0"
+    ],
+    "description": "Add a category output feature."
+  },
+  "ECD output feature: category (all parameters)": {
+    "prefix": [
+      "cat-out-full"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "\tcalibration: ${2|false,true|}",
+      "\tdefault_validation_metric: ${3:accuracy}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "\ttop_k: ${8:3}",
+      "$0"
+    ],
+    "description": "Add a category output feature with every top-level parameter."
+  },
+  "ECD output feature: category_distribution": {
+    "prefix": [
+      "catdist-out"
+    ],
+    "body": [
+      "- name: ${1:category_distribution_column}",
+      "\ttype: category_distribution",
+      "$0"
+    ],
+    "description": "Add a category_distribution output feature."
+  },
+  "ECD output feature: category_distribution (all parameters)": {
+    "prefix": [
+      "catdist-out-full"
+    ],
+    "body": [
+      "- name: ${1:category_distribution_column}",
+      "\ttype: category_distribution",
+      "\tcalibration: ${2|false,true|}",
+      "\tdefault_validation_metric: ${3:accuracy}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "\ttop_k: ${8:3}",
+      "$0"
+    ],
+    "description": "Add a category_distribution output feature with every top-level parameter."
+  },
+  "ECD output feature: image": {
+    "prefix": [
+      "img-out"
+    ],
+    "body": [
+      "- name: ${1:image_column}",
+      "\ttype: image",
+      "$0"
+    ],
+    "description": "Add an image output feature."
+  },
+  "ECD output feature: image (all parameters)": {
+    "prefix": [
+      "img-out-full"
+    ],
+    "body": [
+      "- name: ${1:image_column}",
+      "\ttype: image",
+      "\tdefault_validation_metric: ${2|loss|}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "\treduce_input: ${6|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "$0"
+    ],
+    "description": "Add an image output feature with every top-level parameter."
+  },
+  "ECD output feature: number": {
+    "prefix": [
+      "num-out"
+    ],
+    "body": [
+      "- name: ${1:number_column}",
+      "\ttype: number",
+      "$0"
+    ],
+    "description": "Add a number output feature."
+  },
+  "ECD output feature: number (all parameters)": {
+    "prefix": [
+      "num-out-full"
+    ],
+    "body": [
+      "- name: ${1:number_column}",
+      "\ttype: number",
+      "\tdefault_validation_metric: ${2:mean_squared_error}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5:sum}",
+      "\treduce_input: ${6:sum}",
+      "$0"
+    ],
+    "description": "Add a number output feature with every top-level parameter."
+  },
+  "ECD output feature: sequence": {
+    "prefix": [
+      "seq-out"
+    ],
+    "body": [
+      "- name: ${1:sequence_column}",
+      "\ttype: sequence",
+      "$0"
+    ],
+    "description": "Add a sequence output feature."
+  },
+  "ECD output feature: sequence (all parameters)": {
+    "prefix": [
+      "seq-out-full"
+    ],
+    "body": [
+      "- name: ${1:sequence_column}",
+      "\ttype: sequence",
+      "\tdefault_validation_metric: ${2|loss|}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\treduce_input: ${6|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "$0"
+    ],
+    "description": "Add a sequence output feature with every top-level parameter."
+  },
+  "ECD output feature: set": {
+    "prefix": [
+      "set-out"
+    ],
+    "body": [
+      "- name: ${1:set_column}",
+      "\ttype: set",
+      "$0"
+    ],
+    "description": "Add a set output feature."
+  },
+  "ECD output feature: set (all parameters)": {
+    "prefix": [
+      "set-out-full"
+    ],
+    "body": [
+      "- name: ${1:set_column}",
+      "\ttype: set",
+      "\tdefault_validation_metric: ${2|jaccard|}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\treduce_input: ${6|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\tthreshold: ${7:0.5}",
+      "$0"
+    ],
+    "description": "Add a set output feature with every top-level parameter."
+  },
+  "ECD output feature: text": {
+    "prefix": [
+      "txt-out"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "$0"
+    ],
+    "description": "Add a text output feature."
+  },
+  "ECD output feature: text (all parameters)": {
+    "prefix": [
+      "txt-out-full"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "\tclass_similarities: ${2:null}",
+      "\tdefault_validation_metric: ${3:loss}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "$0"
+    ],
+    "description": "Add a text output feature with every top-level parameter."
+  },
+  "ECD output feature: timeseries": {
+    "prefix": [
+      "ts-out"
+    ],
+    "body": [
+      "- name: ${1:timeseries_column}",
+      "\ttype: timeseries",
+      "$0"
+    ],
+    "description": "Add a timeseries output feature."
+  },
+  "ECD output feature: timeseries (all parameters)": {
+    "prefix": [
+      "ts-out-full"
+    ],
+    "body": [
+      "- name: ${1:timeseries_column}",
+      "\ttype: timeseries",
+      "\tdefault_validation_metric: ${2|mean_squared_error|}",
+      "\thorizon: ${3:null}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "\treduce_input: ${7|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "$0"
+    ],
+    "description": "Add a timeseries output feature with every top-level parameter."
+  },
+  "ECD output feature: vector": {
+    "prefix": [
+      "vec-out"
+    ],
+    "body": [
+      "- name: ${1:vector_column}",
+      "\ttype: vector",
+      "$0"
+    ],
+    "description": "Add a vector output feature."
+  },
+  "ECD output feature: vector (all parameters)": {
+    "prefix": [
+      "vec-out-full"
+    ],
+    "body": [
+      "- name: ${1:vector_column}",
+      "\ttype: vector",
+      "\tdefault_validation_metric: ${2|mean_squared_error|}",
+      "\tinput_size: ${3:null}",
+      "\tnum_classes: ${4:null}",
+      "\treduce_dependencies: ${5|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "\treduce_input: ${6|null,last,sum,mean,avg,max,concat,attention,attention_pooling,none,None|}",
+      "\tsoftmax: ${7|false,true|}",
+      "\tvector_size: ${8:null}",
+      "$0"
+    ],
+    "description": "Add a vector output feature with every top-level parameter."
+  },
+  "LLM input feature: text": {
+    "prefix": [
+      "llm-txt-in"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "$0"
+    ],
+    "description": "Add a text input feature."
+  },
+  "LLM input feature: text (all parameters)": {
+    "prefix": [
+      "llm-txt-in-full"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "\ttied: ${2:null}",
+      "$0"
+    ],
+    "description": "Add a text input feature with every top-level parameter."
+  },
+  "LLM output feature: category": {
+    "prefix": [
+      "llm-cat-out"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "$0"
+    ],
+    "description": "Add a category output feature."
+  },
+  "LLM output feature: category (all parameters)": {
+    "prefix": [
+      "llm-cat-out-full"
+    ],
+    "body": [
+      "- name: ${1:category_column}",
+      "\ttype: category",
+      "\tcalibration: ${2|false,true|}",
+      "\tdefault_validation_metric: ${3:accuracy}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "\ttop_k: ${8:3}",
+      "$0"
+    ],
+    "description": "Add a category output feature with every top-level parameter."
+  },
+  "LLM output feature: text": {
+    "prefix": [
+      "llm-txt-out"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "$0"
+    ],
+    "description": "Add a text output feature."
+  },
+  "LLM output feature: text (all parameters)": {
+    "prefix": [
+      "llm-txt-out-full"
+    ],
+    "body": [
+      "- name: ${1:text_column}",
+      "\ttype: text",
+      "\tclass_similarities: ${2:null}",
+      "\tdefault_validation_metric: ${3|loss|}",
+      "\tinput_size: ${4:null}",
+      "\tnum_classes: ${5:null}",
+      "\treduce_dependencies: ${6:sum}",
+      "\treduce_input: ${7:sum}",
+      "$0"
+    ],
+    "description": "Add a text output feature with every top-level parameter."
+  }
+}

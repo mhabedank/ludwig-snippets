@@ -1,0 +1,506 @@
+{
+  "LLM adapter: adalora": {
+    "prefix": [
+      "llm-adapter-adalora"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: adalora",
+      "$0"
+    ],
+    "description": "`adalora` PEFT adapter."
+  },
+  "LLM adapter: adalora (all parameters)": {
+    "prefix": [
+      "llm-adapter-adalora-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: adalora",
+      "\talpha: ${1:null}",
+      "\talpha_pattern: ${2:null}",
+      "\tbeta1: ${3:0.85}",
+      "\tbeta2: ${4:0.85}",
+      "\tbias_type: ${5:none}",
+      "\tdelta_t: ${6:1}",
+      "\tdropout: ${7:0.05}",
+      "\tinit_lora_weights: ${8:default}",
+      "\tinit_r: ${9:12}",
+      "\tlayer_replication: ${10:null}",
+      "\tloraplus_lr_ratio: ${11:null}",
+      "\torth_reg_weight: ${12:0.5}",
+      "\tpretrained_adapter_weights: ${13:null}",
+      "\tr: ${14:8}",
+      "\trank_pattern: ${15:null}",
+      "\ttarget_r: ${16:8}",
+      "\ttfinal: ${17:0}",
+      "\ttinit: ${18:0}",
+      "\ttotal_step: ${19:10000}",
+      "\tuse_dora: ${20|false,true|}",
+      "\tuse_rslora: ${21|false,true|}",
+      "$0"
+    ],
+    "description": "`adalora` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: boft": {
+    "prefix": [
+      "llm-adapter-boft"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: boft",
+      "$0"
+    ],
+    "description": "`boft` PEFT adapter."
+  },
+  "LLM adapter: boft (all parameters)": {
+    "prefix": [
+      "llm-adapter-boft-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: boft",
+      "\tboft_block_size: ${1:4}",
+      "\tboft_dropout: ${2:0.05}",
+      "\tboft_n_butterfly_factor: ${3:1}",
+      "\tpretrained_adapter_weights: ${4:null}",
+      "$0"
+    ],
+    "description": "`boft` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: c3a": {
+    "prefix": [
+      "llm-adapter-c3a"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: c3a",
+      "$0"
+    ],
+    "description": "`c3a` PEFT adapter."
+  },
+  "LLM adapter: c3a (all parameters)": {
+    "prefix": [
+      "llm-adapter-c3a-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: c3a",
+      "\tbias_type: ${1|none,all,c3a_only|}",
+      "\tblock_size: ${2:256}",
+      "\tpretrained_adapter_weights: ${3:null}",
+      "$0"
+    ],
+    "description": "`c3a` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: fourierft": {
+    "prefix": [
+      "llm-adapter-fourierft"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: fourierft",
+      "$0"
+    ],
+    "description": "`fourierft` PEFT adapter."
+  },
+  "LLM adapter: fourierft (all parameters)": {
+    "prefix": [
+      "llm-adapter-fourierft-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: fourierft",
+      "\tn_frequency: ${1:1000}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tscaling: ${3:150}",
+      "$0"
+    ],
+    "description": "`fourierft` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: hra": {
+    "prefix": [
+      "llm-adapter-hra"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: hra",
+      "$0"
+    ],
+    "description": "`hra` PEFT adapter."
+  },
+  "LLM adapter: hra (all parameters)": {
+    "prefix": [
+      "llm-adapter-hra-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: hra",
+      "\tapply_GS: ${1|false,true|}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tr: ${3:8}",
+      "$0"
+    ],
+    "description": "`hra` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: ia3": {
+    "prefix": [
+      "llm-adapter-ia3"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: ia3",
+      "$0"
+    ],
+    "description": "`ia3` PEFT adapter."
+  },
+  "LLM adapter: ia3 (all parameters)": {
+    "prefix": [
+      "llm-adapter-ia3-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: ia3",
+      "\tfan_in_fan_out: ${1|false,true|}",
+      "\tinit_ia3_weights: ${2|true,false|}",
+      "\tpretrained_adapter_weights: ${3:null}",
+      "$0"
+    ],
+    "description": "`ia3` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: ln_tuning": {
+    "prefix": [
+      "llm-adapter-ln-tuning"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: ln_tuning",
+      "$0"
+    ],
+    "description": "`ln_tuning` PEFT adapter."
+  },
+  "LLM adapter: ln_tuning (all parameters)": {
+    "prefix": [
+      "llm-adapter-ln-tuning-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: ln_tuning",
+      "\tpretrained_adapter_weights: ${1:null}",
+      "$0"
+    ],
+    "description": "`ln_tuning` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: loha": {
+    "prefix": [
+      "llm-adapter-loha"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: loha",
+      "$0"
+    ],
+    "description": "`loha` PEFT adapter."
+  },
+  "LLM adapter: loha (all parameters)": {
+    "prefix": [
+      "llm-adapter-loha-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: loha",
+      "\talpha: ${1:8}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tr: ${3:8}",
+      "$0"
+    ],
+    "description": "`loha` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: lokr": {
+    "prefix": [
+      "llm-adapter-lokr"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: lokr",
+      "$0"
+    ],
+    "description": "`lokr` PEFT adapter."
+  },
+  "LLM adapter: lokr (all parameters)": {
+    "prefix": [
+      "llm-adapter-lokr-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: lokr",
+      "\talpha: ${1:8}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tr: ${3:8}",
+      "$0"
+    ],
+    "description": "`lokr` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: lora": {
+    "prefix": [
+      "llm-adapter-lora"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: lora",
+      "$0"
+    ],
+    "description": "`lora` PEFT adapter."
+  },
+  "LLM adapter: lora (all parameters)": {
+    "prefix": [
+      "llm-adapter-lora-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: lora",
+      "\talpha: ${1:null}",
+      "\talpha_pattern: ${2:null}",
+      "\tbias_type: ${3|none,all,lora_only|}",
+      "\tdropout: ${4:0.05}",
+      "\tinit_lora_weights: ${5|default,gaussian,eva,olora,pissa,corda,loftq,orthogonal|}",
+      "\tlayer_replication: ${6:null}",
+      "\tloraplus_lr_ratio: ${7:null}",
+      "\tpretrained_adapter_weights: ${8:null}",
+      "\tr: ${9:8}",
+      "\trank_pattern: ${10:null}",
+      "\tuse_dora: ${11|false,true|}",
+      "\tuse_rslora: ${12|false,true|}",
+      "$0"
+    ],
+    "description": "`lora` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: oft": {
+    "prefix": [
+      "llm-adapter-oft"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: oft",
+      "$0"
+    ],
+    "description": "`oft` PEFT adapter."
+  },
+  "LLM adapter: oft (all parameters)": {
+    "prefix": [
+      "llm-adapter-oft-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: oft",
+      "\tcoft: ${1|false,true|}",
+      "\teps: ${2:0.00006}",
+      "\tmodule_dropout: ${3:0}",
+      "\toft_block_size: ${4:32}",
+      "\tpretrained_adapter_weights: ${5:null}",
+      "\tr: ${6:0}",
+      "$0"
+    ],
+    "description": "`oft` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: tinylora": {
+    "prefix": [
+      "llm-adapter-tinylora"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: tinylora",
+      "$0"
+    ],
+    "description": "`tinylora` PEFT adapter."
+  },
+  "LLM adapter: tinylora (all parameters)": {
+    "prefix": [
+      "llm-adapter-tinylora-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: tinylora",
+      "\tpretrained_adapter_weights: ${1:null}",
+      "\tprojection_seed: ${2:42}",
+      "\tr: ${3:2}",
+      "\tsave_projection: ${4|true,false|}",
+      "\ttinylora_dropout: ${5:0}",
+      "\tu: ${6:64}",
+      "\tweight_tying: ${7:0}",
+      "$0"
+    ],
+    "description": "`tinylora` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: vblora": {
+    "prefix": [
+      "llm-adapter-vblora"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: vblora",
+      "$0"
+    ],
+    "description": "`vblora` PEFT adapter."
+  },
+  "LLM adapter: vblora (all parameters)": {
+    "prefix": [
+      "llm-adapter-vblora-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: vblora",
+      "\tnum_vectors: ${1:256}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tr: ${3:4}",
+      "\tsave_only_topk_weights: ${4|false,true|}",
+      "\ttopk: ${5:2}",
+      "\tvblora_dropout: ${6:0}",
+      "\tvector_length: ${7:256}",
+      "$0"
+    ],
+    "description": "`vblora` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: vera": {
+    "prefix": [
+      "llm-adapter-vera"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: vera",
+      "$0"
+    ],
+    "description": "`vera` PEFT adapter."
+  },
+  "LLM adapter: vera (all parameters)": {
+    "prefix": [
+      "llm-adapter-vera-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: vera",
+      "\tpretrained_adapter_weights: ${1:null}",
+      "\tprojection_prng_key: ${2:0}",
+      "\tr: ${3:256}",
+      "$0"
+    ],
+    "description": "`vera` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM adapter: waveft": {
+    "prefix": [
+      "llm-adapter-waveft"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: waveft",
+      "$0"
+    ],
+    "description": "`waveft` PEFT adapter."
+  },
+  "LLM adapter: waveft (all parameters)": {
+    "prefix": [
+      "llm-adapter-waveft-full"
+    ],
+    "body": [
+      "adapter:",
+      "\ttype: waveft",
+      "\tn_frequency: ${1:2592}",
+      "\tpretrained_adapter_weights: ${2:null}",
+      "\tscaling: ${3:25}",
+      "\twavelet_family: ${4|db1,db2,db3,haar,sym2,coif1|}",
+      "$0"
+    ],
+    "description": "`waveft` PEFT adapter. Includes every parameter with its Ludwig default."
+  },
+  "LLM base model": {
+    "prefix": [
+      "llm-base-model"
+    ],
+    "body": [
+      "base_model: ${1:bloomz-3b}",
+      "$0"
+    ],
+    "description": "Base model to fine-tune. Accepts a Hugging Face model id or a Ludwig preset (32 presets available)."
+  },
+  "LLM generation": {
+    "prefix": [
+      "llm-generation"
+    ],
+    "body": [
+      "generation:",
+      "\tbos_token_id: ${1:null}",
+      "\tdiversity_penalty: ${2:0}",
+      "\tdo_sample: ${3|true,false|}",
+      "\tearly_stopping: ${4:false}",
+      "\tencoder_repetition_penalty: ${5:1}",
+      "\tepsilon_cutoff: ${6:0}",
+      "\teta_cutoff: ${7:0}",
+      "\tforced_bos_token_id: ${8:null}",
+      "\tguidance_scale: ${9:null}",
+      "\tlength_penalty: ${10:1}",
+      "\tmax_length: ${11:32}",
+      "\tmax_new_tokens: ${12:32}",
+      "\tmax_time: ${13:null}",
+      "\tmin_length: ${14:0}",
+      "\tmin_new_tokens: ${15:null}",
+      "\tno_repeat_ngram_size: ${16:0}",
+      "\tnum_beam_groups: ${17:1}",
+      "\tnum_beams: ${18:1}",
+      "\tpad_token_id: ${19:null}",
+      "\tpenalty_alpha: ${20:null}",
+      "\tprompt_lookup_num_tokens: ${21:null}",
+      "\tremove_invalid_values: ${22|false,true|}",
+      "\trenormalize_logits: ${23|false,true|}",
+      "\trepetition_penalty: ${24:1}",
+      "\ttemperature: ${25:0.1}",
+      "\ttop_k: ${26:50}",
+      "\ttop_p: ${27:1}",
+      "\ttypical_p: ${28:1}",
+      "\tuse_cache: ${29|true,false|}",
+      "$0"
+    ],
+    "description": "LLM generation block."
+  },
+  "LLM model parameters": {
+    "prefix": [
+      "llm-model-parameters"
+    ],
+    "body": [
+      "model_parameters:",
+      "\tneftune_noise_alpha: ${1:0}",
+      "$0"
+    ],
+    "description": "LLM model parameters block."
+  },
+  "LLM prompt": {
+    "prefix": [
+      "llm-prompt"
+    ],
+    "body": [
+      "prompt:",
+      "\ttask: ${1:null}",
+      "\ttemplate: ${2:null}",
+      "$0"
+    ],
+    "description": "LLM prompt block."
+  },
+  "LLM quantization": {
+    "prefix": [
+      "llm-quantization"
+    ],
+    "body": [
+      "quantization:",
+      "\tbackend: ${1|bitsandbytes,torchao|}",
+      "\tbits: ${2|4,8|}",
+      "\tbnb_4bit_compute_dtype: ${3|float16,float32,bfloat16|}",
+      "\tbnb_4bit_quant_type: ${4|nf4,fp4|}",
+      "\tbnb_4bit_use_double_quant: ${5|true,false|}",
+      "\tllm_int8_has_fp16_weight: ${6|false,true|}",
+      "\tllm_int8_threshold: ${7:6}",
+      "\tmode: ${8|null,int4_weight_only,int8_weight_only,int8_dynamic,float8|}",
+      "\tqat: ${9|false,true|}",
+      "$0"
+    ],
+    "description": "LLM quantization block."
+  }
+}

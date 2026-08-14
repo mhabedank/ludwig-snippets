@@ -1,0 +1,26 @@
+{
+  "text encoder: passthrough": {
+    "prefix": [
+      "llm-txt-enc-passthrough"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for text input features."
+  },
+  "text encoder: passthrough (all parameters)": {
+    "prefix": [
+      "llm-txt-enc-passthrough-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: passthrough",
+      "\tadapter: ${1:null}",
+      "\tskip: ${2|false,true|}",
+      "$0"
+    ],
+    "description": "`passthrough` encoder for text input features. Includes every parameter with its Ludwig default."
+  }
+}

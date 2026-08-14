@@ -1,0 +1,890 @@
+{
+  "image encoder: alexnet": {
+    "prefix": [
+      "img-enc-alexnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: alexnet",
+      "$0"
+    ],
+    "description": "`alexnet` encoder for image input features."
+  },
+  "image encoder: alexnet (all parameters)": {
+    "prefix": [
+      "img-enc-alexnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: alexnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|base|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`alexnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: caformer": {
+    "prefix": [
+      "img-enc-caformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: caformer",
+      "$0"
+    ],
+    "description": "`caformer` encoder for image input features."
+  },
+  "image encoder: caformer (all parameters)": {
+    "prefix": [
+      "img-enc-caformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: caformer",
+      "\tadapter: ${1:null}",
+      "\tmodel_name: ${2|caformer_s18,caformer_s36,caformer_m36,caformer_b36,caformer_s18.sail_in22k_ft_in1k,caformer_s18.sail_in22k_ft_in1k_384,caformer_s36.sail_in22k_ft_in1k,caformer_s36.sail_in22k_ft_in1k_384,caformer_m36.sail_in22k_ft_in1k,caformer_m36.sail_in22k_ft_in1k_384,caformer_b36.sail_in22k_ft_in1k,caformer_b36.sail_in22k_ft_in1k_384|}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`caformer` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: clip": {
+    "prefix": [
+      "img-enc-clip"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: clip",
+      "$0"
+    ],
+    "description": "`clip` encoder for image input features."
+  },
+  "image encoder: clip (all parameters)": {
+    "prefix": [
+      "img-enc-clip-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: clip",
+      "\tadapter: ${1:null}",
+      "\tpretrained_model_name_or_path: ${2:openai/clip-vit-base-patch32}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`clip` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: convformer": {
+    "prefix": [
+      "img-enc-convformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convformer",
+      "$0"
+    ],
+    "description": "`convformer` encoder for image input features."
+  },
+  "image encoder: convformer (all parameters)": {
+    "prefix": [
+      "img-enc-convformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convformer",
+      "\tadapter: ${1:null}",
+      "\tmodel_name: ${2|convformer_s18,convformer_s36,convformer_m36,convformer_b36,convformer_s18.sail_in22k_ft_in1k,convformer_s18.sail_in22k_ft_in1k_384,convformer_s36.sail_in22k_ft_in1k,convformer_s36.sail_in22k_ft_in1k_384,convformer_m36.sail_in22k_ft_in1k,convformer_m36.sail_in22k_ft_in1k_384,convformer_b36.sail_in22k_ft_in1k,convformer_b36.sail_in22k_ft_in1k_384|}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`convformer` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: convnext": {
+    "prefix": [
+      "img-enc-convnext"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convnext",
+      "$0"
+    ],
+    "description": "`convnext` encoder for image input features."
+  },
+  "image encoder: convnext (all parameters)": {
+    "prefix": [
+      "img-enc-convnext-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convnext",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|base,tiny,small,large|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`convnext` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: convnextv2": {
+    "prefix": [
+      "img-enc-convnextv2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convnextv2",
+      "$0"
+    ],
+    "description": "`convnextv2` encoder for image input features."
+  },
+  "image encoder: convnextv2 (all parameters)": {
+    "prefix": [
+      "img-enc-convnextv2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: convnextv2",
+      "\tadapter: ${1:null}",
+      "\tmodel_name: ${2|convnextv2_base,convnextv2_atto,convnextv2_femto,convnextv2_pico,convnextv2_nano,convnextv2_tiny,convnextv2_large,convnextv2_huge,convnextv2_atto.fcmae_ft_in1k,convnextv2_femto.fcmae_ft_in1k,convnextv2_pico.fcmae_ft_in1k,convnextv2_nano.fcmae_ft_in1k,convnextv2_tiny.fcmae_ft_in1k,convnextv2_base.fcmae_ft_in1k,convnextv2_large.fcmae_ft_in1k,convnextv2_huge.fcmae_ft_in1k,convnextv2_base.fcmae_ft_in22k_in1k,convnextv2_large.fcmae_ft_in22k_in1k,convnextv2_huge.fcmae_ft_in22k_in1k,convnextv2_base.fcmae_ft_in22k_in1k_384,convnextv2_large.fcmae_ft_in22k_in1k_384,convnextv2_huge.fcmae_ft_in22k_in1k_384|}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`convnextv2` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: densenet": {
+    "prefix": [
+      "img-enc-densenet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: densenet",
+      "$0"
+    ],
+    "description": "`densenet` encoder for image input features."
+  },
+  "image encoder: densenet (all parameters)": {
+    "prefix": [
+      "img-enc-densenet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: densenet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|121,161,169,201|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`densenet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: dinov2": {
+    "prefix": [
+      "img-enc-dinov2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dinov2",
+      "$0"
+    ],
+    "description": "`dinov2` encoder for image input features."
+  },
+  "image encoder: dinov2 (all parameters)": {
+    "prefix": [
+      "img-enc-dinov2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: dinov2",
+      "\tadapter: ${1:null}",
+      "\tpretrained_model_name_or_path: ${2:facebook/dinov2-base}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`dinov2` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: efficientnet": {
+    "prefix": [
+      "img-enc-efficientnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: efficientnet",
+      "$0"
+    ],
+    "description": "`efficientnet` encoder for image input features."
+  },
+  "image encoder: efficientnet (all parameters)": {
+    "prefix": [
+      "img-enc-efficientnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: efficientnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|b0,b1,b2,b3,b4,b5,b6,b7,v2_s,v2_m,v2_l|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`efficientnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: googlenet": {
+    "prefix": [
+      "img-enc-googlenet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: googlenet",
+      "$0"
+    ],
+    "description": "`googlenet` encoder for image input features."
+  },
+  "image encoder: googlenet (all parameters)": {
+    "prefix": [
+      "img-enc-googlenet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: googlenet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|base|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`googlenet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: inceptionv3": {
+    "prefix": [
+      "img-enc-inceptionv3"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: inceptionv3",
+      "$0"
+    ],
+    "description": "`inceptionv3` encoder for image input features."
+  },
+  "image encoder: inceptionv3 (all parameters)": {
+    "prefix": [
+      "img-enc-inceptionv3-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: inceptionv3",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|base|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`inceptionv3` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: maxvit": {
+    "prefix": [
+      "img-enc-maxvit"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: maxvit",
+      "$0"
+    ],
+    "description": "`maxvit` encoder for image input features."
+  },
+  "image encoder: maxvit (all parameters)": {
+    "prefix": [
+      "img-enc-maxvit-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: maxvit",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|t|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`maxvit` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: mlp_mixer": {
+    "prefix": [
+      "img-enc-mlp-mixer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mlp_mixer",
+      "$0"
+    ],
+    "description": "`mlp_mixer` encoder for image input features."
+  },
+  "image encoder: mlp_mixer (all parameters)": {
+    "prefix": [
+      "img-enc-mlp-mixer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mlp_mixer",
+      "\tadapter: ${1:null}",
+      "\tavg_pool: ${2|true,false|}",
+      "\tchannel_dim: ${3:256}",
+      "\tdropout: ${4:0}",
+      "\tembed_size: ${5:512}",
+      "\theight: ${6:null}",
+      "\tnum_channels: ${7:null}",
+      "\tnum_layers: ${8:8}",
+      "\tpatch_size: ${9:16}",
+      "\tskip: ${10|false,true|}",
+      "\ttoken_size: ${11:2048}",
+      "\twidth: ${12:null}",
+      "$0"
+    ],
+    "description": "`mlp_mixer` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: mnasnet": {
+    "prefix": [
+      "img-enc-mnasnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mnasnet",
+      "$0"
+    ],
+    "description": "`mnasnet` encoder for image input features."
+  },
+  "image encoder: mnasnet (all parameters)": {
+    "prefix": [
+      "img-enc-mnasnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mnasnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|'0_5','0_75','1_0','1_3'|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`mnasnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: mobilenetv2": {
+    "prefix": [
+      "img-enc-mobilenetv2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mobilenetv2",
+      "$0"
+    ],
+    "description": "`mobilenetv2` encoder for image input features."
+  },
+  "image encoder: mobilenetv2 (all parameters)": {
+    "prefix": [
+      "img-enc-mobilenetv2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mobilenetv2",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|base|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`mobilenetv2` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: mobilenetv3": {
+    "prefix": [
+      "img-enc-mobilenetv3"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mobilenetv3",
+      "$0"
+    ],
+    "description": "`mobilenetv3` encoder for image input features."
+  },
+  "image encoder: mobilenetv3 (all parameters)": {
+    "prefix": [
+      "img-enc-mobilenetv3-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: mobilenetv3",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|small,large|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`mobilenetv3` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: poolformer": {
+    "prefix": [
+      "img-enc-poolformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: poolformer",
+      "$0"
+    ],
+    "description": "`poolformer` encoder for image input features."
+  },
+  "image encoder: poolformer (all parameters)": {
+    "prefix": [
+      "img-enc-poolformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: poolformer",
+      "\tadapter: ${1:null}",
+      "\tmodel_name: ${2|poolformerv2_s12,poolformerv2_s24,poolformerv2_s36,poolformerv2_m36,poolformerv2_m48,poolformer_s12,poolformer_s24,poolformer_s36,poolformer_m36,poolformer_m48|}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`poolformer` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: regnet": {
+    "prefix": [
+      "img-enc-regnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: regnet",
+      "$0"
+    ],
+    "description": "`regnet` encoder for image input features."
+  },
+  "image encoder: regnet (all parameters)": {
+    "prefix": [
+      "img-enc-regnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: regnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|x_1_6gf,x_16gf,x_32gf,x_3_2gf,x_400mf,x_800mf,x_8gf,y_128gf,y_16gf,y_1_6gf,y_32gf,y_3_2gf,y_400mf,y_800mf,y_8gf|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`regnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: resnet": {
+    "prefix": [
+      "img-enc-resnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: resnet",
+      "$0"
+    ],
+    "description": "`resnet` encoder for image input features."
+  },
+  "image encoder: resnet (all parameters)": {
+    "prefix": [
+      "img-enc-resnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: resnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|50,18,34,101,152|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`resnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: resnext": {
+    "prefix": [
+      "img-enc-resnext"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: resnext",
+      "$0"
+    ],
+    "description": "`resnext` encoder for image input features."
+  },
+  "image encoder: resnext (all parameters)": {
+    "prefix": [
+      "img-enc-resnext-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: resnext",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|50_32x4d,101_32x8d,101_64x4d|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`resnext` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: shufflenet_v2": {
+    "prefix": [
+      "img-enc-shufflenet-v2"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: shufflenet_v2",
+      "$0"
+    ],
+    "description": "`shufflenet_v2` encoder for image input features."
+  },
+  "image encoder: shufflenet_v2 (all parameters)": {
+    "prefix": [
+      "img-enc-shufflenet-v2-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: shufflenet_v2",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|x0_5,x1_0,x1_5,x2_0|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`shufflenet_v2` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: siglip": {
+    "prefix": [
+      "img-enc-siglip"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: siglip",
+      "$0"
+    ],
+    "description": "`siglip` encoder for image input features."
+  },
+  "image encoder: siglip (all parameters)": {
+    "prefix": [
+      "img-enc-siglip-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: siglip",
+      "\tadapter: ${1:null}",
+      "\tpretrained_model_name_or_path: ${2:google/siglip-base-patch16-224}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`siglip` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: squeezenet": {
+    "prefix": [
+      "img-enc-squeezenet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: squeezenet",
+      "$0"
+    ],
+    "description": "`squeezenet` encoder for image input features."
+  },
+  "image encoder: squeezenet (all parameters)": {
+    "prefix": [
+      "img-enc-squeezenet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: squeezenet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|'1_0','1_1'|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`squeezenet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: stacked_cnn": {
+    "prefix": [
+      "img-enc-stacked-cnn"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_cnn",
+      "$0"
+    ],
+    "description": "`stacked_cnn` encoder for image input features."
+  },
+  "image encoder: stacked_cnn (all parameters)": {
+    "prefix": [
+      "img-enc-stacked-cnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: stacked_cnn",
+      "\tadapter: ${1:null}",
+      "\tconv_activation: ${2|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tconv_dropout: ${3:0}",
+      "\tconv_norm: ${4|null,batch,layer|}",
+      "\tconv_use_bias: ${5|true,false|}",
+      "\tdilation: ${6:1}",
+      "\tfc_activation: ${7|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tfc_bias_initializer: ${8|zeros,constant,dirac,eye,identity,kaiming_normal,kaiming_uniform,normal,ones,orthogonal,sparse,uniform,xavier_normal,xavier_uniform|}",
+      "\tfc_dropout: ${9:0}",
+      "\tfc_norm: ${10|null,batch,layer|}",
+      "\tfc_use_bias: ${11|true,false|}",
+      "\tfc_weights_initializer: ${12|xavier_uniform,constant,dirac,eye,identity,kaiming_normal,kaiming_uniform,normal,ones,orthogonal,sparse,uniform,xavier_normal,zeros|}",
+      "\tgroups: ${13:1}",
+      "\theight: ${14:null}",
+      "\tkernel_size: ${15:3}",
+      "\tnum_channels: ${16:null}",
+      "\tnum_conv_layers: ${17:null}",
+      "\tnum_fc_layers: ${18:1}",
+      "\tout_channels: ${19:32}",
+      "\toutput_size: ${20:128}",
+      "\tpadding: ${21:valid}",
+      "\tpadding_mode: ${22|zeros,reflect,replicate,circular|}",
+      "\tpool_dilation: ${23:1}",
+      "\tpool_function: ${24|max,average,avg,mean|}",
+      "\tpool_kernel_size: ${25:2}",
+      "\tpool_padding: ${26:0}",
+      "\tskip: ${27|false,true|}",
+      "\tstride: ${28:1}",
+      "\twidth: ${29:null}",
+      "$0"
+    ],
+    "description": "`stacked_cnn` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: swin_transformer": {
+    "prefix": [
+      "img-enc-swin-transformer"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: swin_transformer",
+      "$0"
+    ],
+    "description": "`swin_transformer` encoder for image input features."
+  },
+  "image encoder: swin_transformer (all parameters)": {
+    "prefix": [
+      "img-enc-swin-transformer-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: swin_transformer",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|t,s,b|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`swin_transformer` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: timm": {
+    "prefix": [
+      "img-enc-timm"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: timm",
+      "$0"
+    ],
+    "description": "`timm` encoder for image input features."
+  },
+  "image encoder: timm (all parameters)": {
+    "prefix": [
+      "img-enc-timm-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: timm",
+      "\tadapter: ${1:null}",
+      "\tmodel_name: ${2:caformer_s18}",
+      "\tsaved_weights_in_checkpoint: ${3|false,true|}",
+      "\tskip: ${4|false,true|}",
+      "\ttrainable: ${5|true,false|}",
+      "\tuse_pretrained: ${6|true,false|}",
+      "$0"
+    ],
+    "description": "`timm` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: unet": {
+    "prefix": [
+      "img-enc-unet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: unet",
+      "$0"
+    ],
+    "description": "`unet` encoder for image input features."
+  },
+  "image encoder: unet (all parameters)": {
+    "prefix": [
+      "img-enc-unet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: unet",
+      "\tadapter: ${1:null}",
+      "\tconv_norm: ${2|batch,null|}",
+      "\theight: ${3:null}",
+      "\tnum_channels: ${4:null}",
+      "\tskip: ${5|false,true|}",
+      "\twidth: ${6:null}",
+      "$0"
+    ],
+    "description": "`unet` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: vgg": {
+    "prefix": [
+      "img-enc-vgg"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: vgg",
+      "$0"
+    ],
+    "description": "`vgg` encoder for image input features."
+  },
+  "image encoder: vgg (all parameters)": {
+    "prefix": [
+      "img-enc-vgg-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: vgg",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3:11}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`vgg` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: vit": {
+    "prefix": [
+      "img-enc-vit"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: vit",
+      "$0"
+    ],
+    "description": "`vit` encoder for image input features."
+  },
+  "image encoder: vit (all parameters)": {
+    "prefix": [
+      "img-enc-vit-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: vit",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|b_16,b_32,l_16,l_32,h_14|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`vit` encoder for image input features. Includes every parameter with its Ludwig default."
+  },
+  "image encoder: wide_resnet": {
+    "prefix": [
+      "img-enc-wide-resnet"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: wide_resnet",
+      "$0"
+    ],
+    "description": "`wide_resnet` encoder for image input features."
+  },
+  "image encoder: wide_resnet (all parameters)": {
+    "prefix": [
+      "img-enc-wide-resnet-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: wide_resnet",
+      "\tadapter: ${1:null}",
+      "\tmodel_cache_dir: ${2:null}",
+      "\tmodel_variant: ${3|'50_2','101_2'|}",
+      "\tsaved_weights_in_checkpoint: ${4|false,true|}",
+      "\tskip: ${5|false,true|}",
+      "\ttrainable: ${6|true,false|}",
+      "\tuse_pretrained: ${7|true,false|}",
+      "$0"
+    ],
+    "description": "`wide_resnet` encoder for image input features. Includes every parameter with its Ludwig default."
+  }
+}

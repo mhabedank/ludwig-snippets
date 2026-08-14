@@ -1,119 +1,145 @@
-Ludwig Snippets provides code snippets for writing configuration files for [Ludwig](https://ludwig.ai/latest/).
+# Ludwig Snippets
 
-> **Info:** This extension is still under development and it provides only a small subset of Ludwigs configuration items.
+Snippets for writing [Ludwig](https://ludwig.ai/latest/) configuration files in VS Code.
 
-## Features
+Ludwig configs are plain YAML, which means no autocomplete and a lot of trips to the
+documentation to remember whether it is `weights_initializer` or `weight_initializer`.
+This extension covers the whole config surface — **644 snippets generated directly from
+Ludwig 0.17.8's own schema**, so every parameter name, default and allowed value matches
+what Ludwig actually accepts.
 
-You currently can use about 50 snippets to write Ludwig configuration files. The snippets are divided into three categories: Global, Preprocessing, and Encoders. The global snippets help you to bootstrap an ECD configuration, add input and output feature lists, and add global preprocessors. The preprocessing snippets help you to add preprocessors for different types of features. The encoder snippets help you to add encoders for different types of features.
+## Quick start
 
-- Bootstrap ECD configurations with `ecd`.
-- Add an input feature list with `input-feature-list`.
-- Add an output feature list with `output-feature-list`.
-- Add a single input or output feature with `add-input-feature` or `add-output-feature`.
-- Add a global preprocessor with `glo-pre` and also add a specific split with `pre-<type>`.
-- Add type specific preprocessors by using `<type>-preprocessing` (or an appriviation). For example:
-  - Add binary preprocessor with `bin-pre`
-    The snippets can be constructed from type and functionality abbreviations. For example, `bgpp` stands for "bag preprocessor".
+Open a `.yaml` file and type a prefix:
 
-| Abbreviation | Type       |
-| ------------ | ---------- |
-| glo          | Global     |
-| bin          | Binary     |
-| num          | Number     |
-| cat          | Category   |
-| bag          | Bag        |
-| set          | Set        |
-| seq          | Sequence   |
-| txt          | Text       |
-| vev          | Vector     |
-| aud          | Audio      |
-| dt           | Date       |
-| h3           | H3         |
-| img          | Image      |
-| ts           | Timeseries |
+| Prefix | What you get |
+| ------ | ------------ |
+| `ecd-config` | A complete starter ECD configuration |
+| `llm-config` | A complete starter LLM fine-tuning configuration |
+| `txt-enc-bert` | A BERT encoder on a text feature |
+| `cat-out` | A category output feature |
+| `comb-tabnet` | A TabNet combiner |
+| `trainer` | The trainer block with the parameters you actually tune |
+| `hyperopt` | A ready-to-run hyperopt block |
+| `llm-adapter-lora` | A LoRA adapter block |
 
-| Abbreviation | Functionality |
-| ------------ | ------------- |
-| pre          | Preprocessor  |
-| enc          | Encoder       |
+Every prefix is listed in **[SNIPPETS.md](SNIPPETS.md)**.
 
-Here is the full list of snippets.
+## How the prefixes are built
 
-### Global Snippets
+Prefixes follow `<feature>-<section>-<variant>`:
 
-| Snippets                 | Description                                         |
-| ------------------------ | --------------------------------------------------- |
-| bootstrap-ecd, becd      | Bootstraps a simple ECD configuration.              |
-| input-feature-list, ifl  | Adding a set of three input features.               |
-| output-feature-list, ofl | Adding a set of three output features.              |
-| add-input-feature, aif   | Adding a single input feature.                      |
-| add-output-feature, aof  | Adding a single output feature.                     |
-| glo-pre                  | Adds a global preprocessor.                         |
-| glo-pre-rand             | Adds a random split to the global preprocessor.     |
-| glo-pre-fixed            | Adds a fixed split to the global preprocessor.      |
-| glo-pre-strat            | Adds a stratified split to the global preprocessor. |
-| glo-pre-dt               | Adds a datetime split to the global preprocessor.   |
-| glo-pre-hash             | Adds a hash split to the global preprocessor.       |
+```
+txt-enc-bert          text feature  ->  encoder  ->  bert
+cat-dec-classifier    category      ->  decoder  ->  classifier
+num-loss-mse          number        ->  loss     ->  mean squared error
+img-pre               image         ->  preprocessing
+```
 
-### Preprocessing Snippets
+| Feature | Abbreviation | | Feature | Abbreviation |
+| ------- | ------------ |-| ------- | ------------ |
+| Binary | `bin` | | Audio | `aud` |
+| Number | `num` | | Date | `dt` |
+| Category | `cat` | | H3 | `h3` |
+| Bag | `bag` | | Image | `img` |
+| Set | `set` | | Timeseries | `ts` |
+| Sequence | `seq` | | Vector | `vec` |
+| Text | `txt` | | Anomaly | `anom` |
+| | | | Category distribution | `catdist` |
 
-| Snippets | Description                     |
-| -------- | ------------------------------- |
-| bin-pre  | Adds a binary preprocessor.     |
-| num-pre  | Adds a number preprocessor.     |
-| cat-pre  | Adds a category preprocessor.   |
-| bag-pre  | Adds a bag preprocessor.        |
-| set-pre  | Adds a set preprocessor.        |
-| seq-pre  | Adds a sequence preprocessor.   |
-| txt-pre  | Adds a text preprocessor.       |
-| vec-pre  | Adds a vector preprocessor.     |
-| aud-pre  | Adds an audio preprocessor.     |
-| dt-pre   | Adds a date preprocessor.       |
-| h3-pre   | Adds an h3 preprocessor.        |
-| img-pre  | Adds an image preprocessor.     |
-| ts-pre   | Adds a timeseries preprocessor. |
+| Section | Abbreviation |
+| ------- | ------------ |
+| Encoder | `enc` |
+| Decoder | `dec` |
+| Loss | `loss` |
+| Preprocessing | `pre` |
+| Input / output feature | `in` / `out` |
 
-### Encoder Snippets
+LLM-only blocks are prefixed with `llm-`, for example `llm-adapter-lora` or
+`llm-trainer-dpo`.
 
-| Snippets       | Description                                                |
-| -------------- | ---------------------------------------------------------- |
-| bag-enc-embed  | Adds an embedding encoder for bag features.                |
-| set-enc-embed  | Adds an embedding encoder for set features.                |
-| seq-enc-embed  | Adds an embedding encoder for sequence features.           |
-| seq-enc-pcnn   | Adds a parallel CNN encoder for sequence features.         |
-| seq-enc-scnn   | Adds a stacked CNN encoder for sequence features.          |
-| seq-enc-spcnn  | Adds a stacked parallel CNN encoder for sequence features. |
-| seq-enc-rnn    | Adds an RNN encoder for sequence features.                 |
-| seq-enc-crnn   | Adds a CNN-RNN encoder for sequence features.              |
-| seq-enc-trans  | Adds a transformer encoder for sequence features.          |
-| txt-enc-pass   | Adds a passthrough encoder for text features.              |
-| bin-enc-pass   | Adds a passthrough encoder for binary features.            |
-| bin-enc-dense  | Adds a dense encoder for binary features.                  |
-| num-enc-pass   | Adds a passthrough encoder for number features.            |
-| num-enc-dense  | Adds a dense encoder for number features.                  |
-| cat-enc-pass   | Adds a passthrough encoder for category features.          |
-| cat-enc-dense  | Adds a dense encoder for category features.                |
-| cat-enc-sparse | Adds a sparse encoder for category features.               |
-| vec-enc-pass   | Adds a passthrough encoder for vector features.            |
-| vec-enc-dense  | Adds a dense encoder for vector features.                  |
-| dt-enc-embed   | Adds an embedding encoder for date features.               |
-| dt-enc-wave    | Adds a wave encoder for date features.                     |
-| h3-enc-embed   | Adds an embedding encoder for H3 features.                 |
-| h3-enc-wsum    | Adds a weighted sum encoder for H3 features.               |
-| h3-enc-rnn     | Adds an RNN encoder for H3 features.                       |
-| ts-enc-dense   | Adds a dense encoder for timeseries features.              |
+### Minimal and full variants
 
-## Release Notes
+Most blocks come in two flavours:
 
-### 0.2.0
+- `txt-enc-bert` inserts only what Ludwig cannot fill in for you.
+- `txt-enc-bert-full` inserts **every** parameter with its Ludwig default, as a
+  tab-through checklist. Delete the lines you do not need.
 
-Added snippets for encoders. Now you can add encoders for different types of features.
-Changed the prefix of some snippets for conformity reasons.s
+Choice parameters expand into a dropdown of the values Ludwig accepts, with the
+default listed first, so pressing <kbd>Enter</kbd> keeps Ludwig's behaviour.
 
-### 0.1.1
+## What is covered
 
-Fixed minor typo issues.
+| Area | Snippets |
+| ---- | -------- |
+| Config scaffolds (ECD, LLM, backends) | 6 |
+| Input and output features | 54 |
+| Encoders (all 114 of them) | 228 |
+| Decoders (all 23) | 46 |
+| Losses | 104 |
+| Combiners (all 14) | 28 |
+| Preprocessing (global, splits, per feature type) | 19 |
+| Trainer, 31 optimizers, LR scheduler, profiler | 79 |
+| Hyperopt (search algorithms, schedulers, search spaces) | 32 |
+| LLM prompt, adapters, quantization, generation | 35 |
+| Type-wide defaults | 13 |
 
-### 0.1.0
+## A note on validation
 
-Initial release of the snippe extension. Supports bootstraping ecd configuration, adding input and output lists to it and preprocessing configurations of input features.
+Ludwig **ignores** config keys it does not recognise rather than rejecting them.
+A misspelled parameter is therefore silent: training runs, but your setting is
+quietly dropped. That is the main reason these snippets are generated from the
+schema rather than written by hand.
+
+For live validation and hover documentation while you type, pair this extension
+with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+and point it at a schema exported from your Ludwig install:
+
+```bash
+ludwig export_schema --model-type ecd -o ludwig-schema.json
+```
+
+```jsonc
+// .vscode/settings.json
+{
+  "yaml.schemas": { "./ludwig-schema.json": ["*.ludwig.yaml"] }
+}
+```
+
+## Contributing
+
+Nothing under `snippets/` is written by hand — it is generated. To change the
+library, change the generator.
+
+```bash
+npm install
+npm run generate   # rewrite snippets/, SNIPPETS.md and package.json
+npm test           # validate every snippet
+```
+
+To target a newer Ludwig release, regenerate the schema surface first:
+
+```bash
+pip install "ludwig==<version>"
+python tools/extract-ludwig-surface.py -o tools/ludwig-surface.json
+npm run generate && npm test
+```
+
+A full Ludwig install pulls in torch. If you only want the schema, unpack the
+wheel and let the extractor stub the heavy imports instead:
+
+```bash
+pip download ludwig --no-deps -d /tmp/lw && unzip -q /tmp/lw/ludwig-*.whl -d /tmp/lw/pkg
+pip install pydantic pyyaml packaging python-dateutil
+python tools/extract-ludwig-surface.py --stub-heavy-deps --package-path /tmp/lw/pkg \
+  -o tools/ludwig-surface.json
+```
+
+`tools/verify-against-ludwig.py` goes further and runs every snippet through
+Ludwig's own config validator; see the comments in that file. It needs Ludwig
+installed, so it is not part of `npm test`.
+
+## Release notes
+
+See [CHANGELOG.md](CHANGELOG.md).

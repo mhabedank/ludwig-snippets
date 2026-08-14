@@ -1,0 +1,39 @@
+{
+  "text decoder: text_extractor": {
+    "prefix": [
+      "llm-txt-dec-text-extractor"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: text_extractor",
+      "$0"
+    ],
+    "description": "`text_extractor` decoder for text output features."
+  },
+  "text decoder: text_extractor (all parameters)": {
+    "prefix": [
+      "llm-txt-dec-text-extractor-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: text_extractor",
+      "\tfc_activation: ${1:relu}",
+      "\tfc_bias_initializer: ${2:zeros}",
+      "\tfc_dropout: ${3:0}",
+      "\tfc_norm: ${4:null}",
+      "\tfc_norm_params: ${5:null}",
+      "\tfc_output_size: ${6:256}",
+      "\tfc_use_bias: ${7|true,false|}",
+      "\tfc_weights_initializer: ${8:xavier_uniform}",
+      "\tinput_size: ${9:null}",
+      "\tmatch_strategy: ${10:contains}",
+      "\tmax_new_tokens: ${11:null}",
+      "\tnum_fc_layers: ${12:0}",
+      "\tpretrained_model_name_or_path: ${13:''}",
+      "\ttokenizer: ${14:hf_tokenizer}",
+      "\tvocab_file: ${15:''}",
+      "$0"
+    ],
+    "description": "`text_extractor` decoder for text output features. Includes every parameter with its Ludwig default."
+  }
+}

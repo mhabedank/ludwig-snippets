@@ -1,76 +1,114 @@
 {
-  "Add H3 Embed Encoder": {
+  "h3 encoder: embed": {
     "prefix": [
       "h3-enc-embed"
     ],
     "body": [
       "encoder:",
       "\ttype: embed",
-      "\tdropout: ${1:0.0}",
-      "\tembedding_size: ${2:10}",
-      "\toutput_size: ${3:10}",
-      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tnorm: ${5|null,batch,layer|}",
-      "\tuse_bias: ${6|true,false|}",
-      "\tbias_initializer: ${7|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tembeddings_on_cpu: ${9|false,true|}",
-      "\treduce_output: ${10|sum,last,mean,avg,max,concat,attention,none,None,null|}",
-      "\tnorm_params: ${11|null,batch,layer|}",
-      "\tnum_fc_layers: ${12:0}",
-      "\tfc_layer: ${13:null}",
       "$0"
-    ]
+    ],
+    "description": "`embed` encoder for h3 input features."
   },
-  "Add Weighted Sum Embed Encoder": {
+  "h3 encoder: embed (all parameters)": {
     "prefix": [
-      "h3-enc-wsum"
+      "h3-enc-embed-full"
     ],
     "body": [
       "encoder:",
-      "\ttype: weighted_sum",
-      "\tdropout: ${1:0.0}",
-      "\tembedding_size: ${2:10}",
-      "\toutput_size: ${3:10}",
-      "\tactivation: ${4|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,null|}",
-      "\tnorm: ${5|null,batch,layer|}",
-      "\tuse_bias: ${6|true,false|}",
-      "\tbias_initializer: ${7|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tweight_initializer: ${8|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tembeddings_on_cpu: ${9|false,true|}",
-      "\tshould_softmax: ${10|false,true|}",
-      "\tnorm_params: ${11|null,batch,layer|}",
-      "\tnum_fc_layers: ${12:0}",
-      "\tfc_layer: ${13:null}",
+      "\ttype: embed",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:10}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tnorm: ${7|null,batch,layer|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\toutput_size: ${10:10}",
+      "\treduce_output: ${11|sum,last,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\tskip: ${12|false,true|}",
+      "\tuse_bias: ${13|true,false|}",
+      "\tweights_initializer: ${14|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
       "$0"
     ],
-    "description": "Add Weighted Sum Embed Encoder"
+    "description": "`embed` encoder for h3 input features. Includes every parameter with its Ludwig default."
   },
-  "Add RNN Encoder": {
+  "h3 encoder: rnn": {
     "prefix": [
       "h3-enc-rnn"
     ],
     "body": [
       "encoder:",
       "\ttype: rnn",
-      "\tdropout: ${1:0.0}",
-      "\tcell_type: ${2|rnn,lstm,lstm_block,lstm,ln,lstm_cudnn,gru,gru_block,gru_cudnn|}",
-      "\tnum_layers: ${3:1}",
-      "\tembedding_size: ${4:10}",
-      "\trecurrent_dropout: ${5:0.0}",
-      "\thidden_size: ${6:10}",
-      "\tbias_initializer: ${7|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\tactivation: ${8|tanh,elu,leakyRelu,logSigmoid,relu,sigmoid,softmax,null|}",
-      "\trecurrent_activation: ${9|sigmoid,elu,leakyRelu,logSigmoid,relu,sigmoid,tanh,softmax,null|}",
-      "\tunit_forget_bias: ${10|true,false|}",
-      "\tweights_initializer: ${11|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
-      "\trecurrent_initializer: ${12|orthogonal,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,sparse,identity|}",
-      "\treduce_output: ${13|last,sum,mean,avg,max,concat,attention,none,None,null|}",
-      "\tembeddings_on_cpu: ${14|false,true|}",
-      "\tuse_bias: ${15|true,false|}",
-      "\tbidirectional: ${16|false,true|}",
       "$0"
     ],
-    "description": "Add RNN Encoder"
+    "description": "`rnn` encoder for h3 input features."
+  },
+  "h3 encoder: rnn (all parameters)": {
+    "prefix": [
+      "h3-enc-rnn-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: rnn",
+      "\tactivation: ${1|tanh,elu,leakyRelu,logSigmoid,relu,sigmoid,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tbidirectional: ${4|false,true|}",
+      "\tcell_type: ${5|rnn,lstm,lstm_block,ln,lstm_cudnn,gru,gru_block,gru_cudnn|}",
+      "\tdropout: ${6:0}",
+      "\tembedding_size: ${7:10}",
+      "\tembeddings_on_cpu: ${8|false,true|}",
+      "\thidden_size: ${9:10}",
+      "\tnum_layers: ${10:1}",
+      "\trecurrent_activation: ${11|sigmoid,elu,leakyRelu,logSigmoid,relu,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\trecurrent_dropout: ${12:0}",
+      "\trecurrent_initializer: ${13|orthogonal,uniform,normal,constant,ones,zeros,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,sparse,identity|}",
+      "\treduce_output: ${14|last,sum,mean,avg,max,concat,attention,attention_pooling,none,None,null|}",
+      "\tskip: ${15|false,true|}",
+      "\tunit_forget_bias: ${16|true,false|}",
+      "\tuse_bias: ${17|true,false|}",
+      "\tweights_initializer: ${18|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`rnn` encoder for h3 input features. Includes every parameter with its Ludwig default."
+  },
+  "h3 encoder: weighted_sum": {
+    "prefix": [
+      "h3-enc-weighted-sum"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: weighted_sum",
+      "$0"
+    ],
+    "description": "`weighted_sum` encoder for h3 input features."
+  },
+  "h3 encoder: weighted_sum (all parameters)": {
+    "prefix": [
+      "h3-enc-weighted-sum-full"
+    ],
+    "body": [
+      "encoder:",
+      "\ttype: weighted_sum",
+      "\tactivation: ${1|relu,elu,leakyRelu,logSigmoid,sigmoid,tanh,softmax,gelu,silu,swish,mish,selu,prelu,relu6,hardswish,hardsigmoid,softplus,celu,swiglu,geglu,reglu,sparsemax,entmax15,null|}",
+      "\tadapter: ${2:null}",
+      "\tbias_initializer: ${3|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tdropout: ${4:0}",
+      "\tembedding_size: ${5:10}",
+      "\tembeddings_on_cpu: ${6|false,true|}",
+      "\tnorm: ${7|null,batch,layer|}",
+      "\tnorm_params: ${8:null}",
+      "\tnum_fc_layers: ${9:0}",
+      "\toutput_size: ${10:10}",
+      "\tshould_softmax: ${11|false,true|}",
+      "\tskip: ${12|false,true|}",
+      "\tuse_bias: ${13|true,false|}",
+      "\tweights_initializer: ${14|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`weighted_sum` encoder for h3 input features. Includes every parameter with its Ludwig default."
   }
 }

@@ -1,0 +1,37 @@
+{
+  "number decoder: regressor": {
+    "prefix": [
+      "num-dec-regressor"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: regressor",
+      "$0"
+    ],
+    "description": "`regressor` decoder for number output features."
+  },
+  "number decoder: regressor (all parameters)": {
+    "prefix": [
+      "num-dec-regressor-full"
+    ],
+    "body": [
+      "decoder:",
+      "\ttype: regressor",
+      "\tbias_initializer: ${1|zeros,uniform,normal,constant,ones,eye,dirac,xavier_uniform,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "\tfc_activation: ${2:relu}",
+      "\tfc_bias_initializer: ${3:zeros}",
+      "\tfc_dropout: ${4:0}",
+      "\tfc_norm: ${5:null}",
+      "\tfc_norm_params: ${6:null}",
+      "\tfc_output_size: ${7:256}",
+      "\tfc_use_bias: ${8|true,false|}",
+      "\tfc_weights_initializer: ${9:xavier_uniform}",
+      "\tinput_size: ${10:null}",
+      "\tnum_fc_layers: ${11:0}",
+      "\tuse_bias: ${12|true,false|}",
+      "\tweights_initializer: ${13|xavier_uniform,uniform,normal,constant,ones,zeros,eye,dirac,xavier_normal,kaiming_uniform,kaiming_normal,orthogonal,sparse,identity|}",
+      "$0"
+    ],
+    "description": "`regressor` decoder for number output features. Includes every parameter with its Ludwig default."
+  }
+}

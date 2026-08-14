@@ -1,0 +1,117 @@
+{
+  "Backend: local": {
+    "prefix": [
+      "backend-local"
+    ],
+    "body": [
+      "backend:",
+      "\ttype: local",
+      "$0"
+    ],
+    "description": "Run training in-process on the local machine."
+  },
+  "Backend: Ray": {
+    "prefix": [
+      "backend-ray"
+    ],
+    "body": [
+      "backend:",
+      "\ttype: ray",
+      "\tcache_format: ${1|parquet,memory|}",
+      "\tprocessor:",
+      "\t\ttype: ${2|dask,modin|}",
+      "\t\tparallelism: ${3:200}",
+      "\ttrainer:",
+      "\t\tstrategy: ${4|ddp,fsdp,horovod|}",
+      "\t\tuse_gpu: ${5|true,false|}",
+      "\t\tnum_workers: ${6:2}",
+      "\t\tresources_per_worker:",
+      "\t\t\tCPU: ${7:1}",
+      "\t\t\tGPU: ${8:1}",
+      "$0"
+    ],
+    "description": "Distributed training and preprocessing on a Ray cluster."
+  },
+  "ECD config": {
+    "prefix": [
+      "ecd-config",
+      "bootstrap-ecd",
+      "ecd"
+    ],
+    "body": [
+      "model_type: ecd",
+      "",
+      "input_features:",
+      "\t- name: ${1:input_column}",
+      "\t\ttype: ${2|audio,bag,binary,category,date,h3,image,number,sequence,set,text,timeseries,vector|}",
+      "",
+      "output_features:",
+      "\t- name: ${3:target_column}",
+      "\t\ttype: ${4|anomaly,binary,category,category_distribution,image,number,sequence,set,text,timeseries,vector|}",
+      "",
+      "trainer:",
+      "\tepochs: ${5:100}",
+      "$0"
+    ],
+    "description": "Starter ECD (Encoder-Combiner-Decoder) configuration."
+  },
+  "Input feature list": {
+    "prefix": [
+      "input-features",
+      "input-feature-list"
+    ],
+    "body": [
+      "input_features:",
+      "\t- name: ${1:column_1}",
+      "\t\ttype: ${2|audio,bag,binary,category,date,h3,image,number,sequence,set,text,timeseries,vector|}",
+      "\t- name: ${3:column_2}",
+      "\t\ttype: ${4|audio,bag,binary,category,date,h3,image,number,sequence,set,text,timeseries,vector|}",
+      "$0"
+    ],
+    "description": "Declare the input feature list."
+  },
+  "LLM config": {
+    "prefix": [
+      "llm-config",
+      "bootstrap-llm"
+    ],
+    "body": [
+      "model_type: llm",
+      "base_model: ${1:meta-llama/Llama-3.1-8B-Instruct}",
+      "",
+      "input_features:",
+      "\t- name: ${2:prompt_column}",
+      "\t\ttype: ${3|text|}",
+      "",
+      "output_features:",
+      "\t- name: ${4:response_column}",
+      "\t\ttype: ${5|category,text|}",
+      "",
+      "prompt:",
+      "\ttemplate: >-",
+      "\t\t${6:Answer the question: {__sample__\\}}",
+      "",
+      "adapter:",
+      "\ttype: ${7|lora,adalora,ia3|}",
+      "",
+      "trainer:",
+      "\ttype: finetune",
+      "\tepochs: ${8:3}",
+      "$0"
+    ],
+    "description": "Starter LLM fine-tuning configuration."
+  },
+  "Output feature list": {
+    "prefix": [
+      "output-features",
+      "output-feature-list"
+    ],
+    "body": [
+      "output_features:",
+      "\t- name: ${1:target_1}",
+      "\t\ttype: ${2|anomaly,binary,category,category_distribution,image,number,sequence,set,text,timeseries,vector|}",
+      "$0"
+    ],
+    "description": "Declare the output feature list."
+  }
+}
