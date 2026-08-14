@@ -10,7 +10,8 @@ what Ludwig actually accepts.
 
 ## Quick start
 
-Open a `.yaml` file and type a prefix:
+Name your config so the extension recognises it — `model.ludwig.yaml`, or just
+`ludwig.yaml` — then type a prefix:
 
 | Prefix | What you get |
 | ------ | ------------ |
@@ -24,6 +25,45 @@ Open a `.yaml` file and type a prefix:
 | `llm-adapter-lora` | A LoRA adapter block |
 
 Every prefix is listed in **[SNIPPETS.md](SNIPPETS.md)**.
+
+## Which files the snippets appear in
+
+The snippets are scoped to a `ludwig-yaml` language rather than to YAML at large,
+so a Compose or Kubernetes file does not get 644 Ludwig completions it can never
+use. Files pick that language up automatically when they are named:
+
+- `*.ludwig.yaml` / `*.ludwig.yml`
+- `ludwig.yaml` / `ludwig.yml` / `ludwig_config.yaml` / `ludwig_config.yml`
+
+Highlighting, folding and comments behave exactly as in YAML — the language
+reuses the built-in YAML grammar.
+
+If your configs are named something else (`config.yaml`, `experiments/*.yaml`),
+map them yourself:
+
+```jsonc
+// .vscode/settings.json
+{
+  "files.associations": {
+    "config.yaml": "ludwig-yaml",
+    "experiments/*.yaml": "ludwig-yaml"
+  }
+}
+```
+
+You can also switch a single open file with **Change Language Mode**
+(<kbd>Ctrl</kbd>/<kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>M</kbd>) → *Ludwig YAML*.
+
+> **Changed in 0.3.0.** Up to 0.2.1 the snippets were contributed to every
+> `.yaml` file. If you relied on that, add a `files.associations` entry as above.
+
+## Ludwig version
+
+Generated from **Ludwig 0.17.8**. Parameter names, defaults and allowed values
+match that release; the exact version is recorded in `package.json` under
+`ludwig.generatedFrom`. On substantially older Ludwig (0.10 and earlier) some
+parameters will not exist — and Ludwig ignores keys it does not recognise rather
+than reporting them, so the setting would be silently dropped.
 
 ## How the prefixes are built
 
@@ -94,7 +134,8 @@ schema rather than written by hand.
 
 For live validation and hover documentation while you type, pair this extension
 with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
-and point it at a schema exported from your Ludwig install:
+and point it at a schema exported from your own Ludwig install (Ludwig's published
+schema URLs are not currently reachable):
 
 ```bash
 ludwig export_schema --model-type ecd -o ludwig-schema.json

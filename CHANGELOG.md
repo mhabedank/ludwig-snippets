@@ -1,5 +1,15 @@
 ## [0.3.0]
 
+### Breaking
+
+- Snippets are now scoped to a new `ludwig-yaml` language instead of every
+  `.yaml` file. With 644 snippets, contributing them to YAML at large would put
+  Ludwig completions into every Compose, Kubernetes and CI file you open.
+  Files are recognised automatically when named `*.ludwig.yaml`, `*.ludwig.yml`,
+  `ludwig.yaml`, `ludwig.yml`, `ludwig_config.yaml` or `ludwig_config.yml`.
+  For any other name, add a `files.associations` entry — see the README.
+  Highlighting is unchanged; the language reuses the built-in YAML grammar.
+
 Rebuilt the library against **Ludwig 0.17.8**. Snippets are now generated from
 Ludwig's own config schema instead of being written by hand, growing the library
 from 43 to 644 snippets and covering every section of a Ludwig config.
