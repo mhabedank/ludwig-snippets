@@ -1,7 +1,7 @@
 {
   "name": "ludwig-snippets",
   "displayName": "Ludwig Snippets",
-  "description": "Snippets for every section of a Ludwig config: features, encoders, decoders, combiners, losses, preprocessing, trainer, hyperopt and LLM fine-tuning. Generated from Ludwig's own schema.",
+  "description": "644 snippets for every section of a Ludwig config — features, encoders, decoders, combiners, losses, preprocessing, trainer, hyperopt and LLM fine-tuning. Generated from Ludwig 0.17's own schema, so parameter names and defaults match what Ludwig actually accepts. Activates on .ludwig.yaml files.",
   "repository": {
     "type": "git",
     "url": "https://github.com/mhabedank/ludwig-snippets"
@@ -43,149 +43,176 @@
     "yaml": "^2.8.1"
   },
   "contributes": {
+    "languages": [
+      {
+        "id": "ludwig-yaml",
+        "aliases": [
+          "Ludwig YAML",
+          "ludwig-yaml"
+        ],
+        "extensions": [
+          ".ludwig.yaml",
+          ".ludwig.yml"
+        ],
+        "filenames": [
+          "ludwig.yaml",
+          "ludwig.yml",
+          "ludwig_config.yaml",
+          "ludwig_config.yml"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ludwig-yaml",
+        "scopeName": "source.ludwig-yaml",
+        "path": "./syntaxes/ludwig-yaml.tmLanguage.json"
+      }
+    ],
     "snippets": [
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/combiners.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/config.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/anomaly.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/binary.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/category.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/category_distribution.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/image.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/llm-category.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/llm-text.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/number.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/sequence.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/set.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/text.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/timeseries.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/decoders/vector.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/defaults.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/audio.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/bag.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/binary.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/category.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/date.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/h3.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/image.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/llm-text.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/number.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/sequence.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/set.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/text.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/timeseries.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/encoders/vector.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/features.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/hyperopt.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/llm.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/losses.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/preprocessing.code-snippets"
       },
       {
-        "language": "yaml",
+        "language": "ludwig-yaml",
         "path": "./snippets/trainer.code-snippets"
       }
     ]

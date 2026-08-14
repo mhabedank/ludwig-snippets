@@ -1,0 +1,11 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Ludwig YAML",
+  "scopeName": "source.ludwig-yaml",
+  "comment": "Ludwig configs are plain YAML. This grammar exists only so the ludwig-yaml language can carry its own snippet scope; all highlighting is delegated to the built-in YAML grammar.",
+  "patterns": [
+    {
+      "include": "source.yaml"
+    }
+  ]
+}

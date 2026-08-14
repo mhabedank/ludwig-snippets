@@ -820,10 +820,17 @@ function renderReference() {
   return `${out.join("\n")}\n`;
 }
 
+/**
+ * Snippets are scoped to the `ludwig-yaml` language rather than `yaml`, so a
+ * Compose or k8s file does not get 644 Ludwig completions it can never use.
+ * See `contributes.languages` in package.json for how a file gets that id.
+ */
+const SNIPPET_LANGUAGE = "ludwig-yaml";
+
 function packageContribution() {
   return [...files.keys()]
     .sort()
-    .map((file) => ({ language: "yaml", path: `./snippets/${file}` }));
+    .map((file) => ({ language: SNIPPET_LANGUAGE, path: `./snippets/${file}` }));
 }
 
 function main() {
