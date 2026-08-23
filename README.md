@@ -181,6 +181,40 @@ python tools/extract-ludwig-surface.py --stub-heavy-deps --package-path /tmp/lw/
 Ludwig's own config validator; see the comments in that file. It needs Ludwig
 installed, so it is not part of `npm test`.
 
+## Releasing
+
+Publishing is automated. Push a `v*` tag and
+[`.github/workflows/release.yml`](.github/workflows/release.yml) verifies the tag
+matches `package.json`, runs `npm run check`, publishes to the Marketplace and
+attaches the VSIX to a GitHub release:
+
+```bash
+git tag v0.3.0
+git push origin v0.3.0
+```
+
+### One-time setup
+
+The workflow needs a repository secret named `VSCE_PAT`:
+
+1. Sign in to [dev.azure.com](https://dev.azure.com) with the Microsoft account
+   that owns the `MartinHabedank` publisher.
+2. **User settings → Personal access tokens → New Token.**
+3. Set **Organization** to *All accessible organizations* — a token scoped to a
+   single organization is rejected by the Marketplace.
+4. Set **Scopes** to *Custom defined*, then tick **Marketplace → Manage**.
+5. Copy the token into the repository under **Settings → Secrets and variables →
+   Actions → New repository secret**, named `VSCE_PAT`.
+
+Azure DevOps tokens expire (one year maximum), so this recurs.
+
+### Publishing by hand
+
+```bash
+npx @vscode/vsce login MartinHabedank   # prompts for the same token
+npx @vscode/vsce publish
+```
+
 ## Release notes
 
 See [CHANGELOG.md](CHANGELOG.md).

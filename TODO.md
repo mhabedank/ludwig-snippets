@@ -11,17 +11,15 @@ covered by construction. `npm test` fails if that stops being true.
       contribution point, so users get validation and hover docs without
       running `ludwig export_schema` themselves. Ludwig's own published schema
       URLs (`https://ludwig-ai.github.io/schema/…`) currently 404.
-- [ ] Decide whether 644 YAML-scoped snippets are too intrusive. They are
-      contributed to every `.yaml` file, so Compose / k8s / CI files now see
-      Ludwig completions too. The prefixes are distinctive (`txt-enc-bert`,
-      `comb-tabnet`), but a shared leading token (`trainer`, `hyperopt`) can
-      still surface. Options: a dedicated `ludwig-yaml` language that activates
-      on `*.ludwig.yaml`, or a setting that gates the library.
+- [ ] Confirm in a running Extension Development Host that the grammar's
+      `include: source.yaml` resolves against the built-in YAML extension. If
+      highlighting is missing on a `.ludwig.yaml` file, vendor a YAML grammar
+      instead of delegating.
 - [ ] Decide how to handle Ludwig version drift. Options: ship one snippet set
       per major Ludwig version, or add a setting that scopes prefixes.
 - [ ] `tools/verify-against-ludwig.py` re-derives the schema per config and
       takes ~15 minutes for the full library. Cache the compiled validator so
-      it can run in CI.
+      it can run in CI — right now CI only runs `npm run check`.
 - [ ] The longest `-full` snippets are the LLM trainers at ~50 lines. That is
       still tab-through-able, but worth revisiting if users report it.
 
