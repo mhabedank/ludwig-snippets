@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Fails if snippets/, SNIPPETS.md or package.json drift from the
+      # generator, then validates every snippet.
+      - run: npm run check
+
+      # Catches manifest problems that only surface at packaging time.
+      - name: Package
+        run: npx @vscode/vsce package --out /tmp/ludwig-snippets.vsix

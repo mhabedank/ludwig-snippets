@@ -1,0 +1,58 @@
+name: Release
+
+# Publishes to the VS Code Marketplace when a `v*` tag is pushed, e.g.
+#
+#     git tag v0.3.0 && git push origin v0.3.0
+#
+# Requires a repository secret `VSCE_PAT`: an Azure DevOps personal access
+# token scoped to Marketplace > Manage, issued for *all accessible
+# organizations*. See README.md.
+
+on:
+  push:
+    tags: ["v*"]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Tag must match package.json version
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$pkg" ]; then
+            echo "::error::tag ${GITHUB_REF_NAME} does not match package.json version ${pkg}"
+            exit 1
+          fi
+          echo "publishing ${pkg}"
+
+      - run: npm run check
+
+      - name: Package
+        run: npx @vscode/vsce package --out "ludwig-snippets-${GITHUB_REF_NAME#v}.vsix"
+
+      - name: Publish to the Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: npx @vscode/vsce publish --packagePath "ludwig-snippets-${GITHUB_REF_NAME#v}.vsix"
+
+      - name: Attach the VSIX to a GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "${GITHUB_REF_NAME}" \
+            --notes-file CHANGELOG.md \
+            "ludwig-snippets-${GITHUB_REF_NAME#v}.vsix"
+
+permissions:
+  contents: write
